@@ -81,22 +81,22 @@ our website" style="width:20%"><input type="submit" value=">" class="tfbutton2">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="<?php echo site_url('foodieHome/index');?>">Home</a>
                     </li>
                     <li>
-                        <a href="indian.html">Indian</a>
+                        <a href="<?php echo site_url('foodieHome/indian');?>">Indian</a>
                     </li>
                     <li>
-                        <a href="italian.html">Italian</a>
+                        <a href="<?php echo site_url('foodieHome/italian');?>">Italian</a>
                     </li>
 					  <li>
-                        <a href="chinese.html">Chinese</a>
+                        <a href="<?php echo site_url('foodieHome/chinese');?>">Chinese</a>
                     </li>
                     <li>
-                        <a href="continental.html">Continental</a>
+                        <a href="<?php echo site_url('foodieHome/continental');?>">Continental</a>
                     </li>
 					 <li>
-                        <a href="thai.html">Thai</a>
+                        <a href="<?php echo site_url('foodieHome/thai');?>">Thai</a>
                     </li>
                     </li>
                 </ul>
@@ -112,7 +112,7 @@ our website" style="width:20%"><input type="submit" value=">" class="tfbutton2">
      <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a href="login.html">SignUp</a>
+          <a href="<?php echo site_url('foodieHome/login');?>"> User Login</a>
         </h4>
       </div>
   </div>

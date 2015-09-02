@@ -14,5 +14,24 @@ function __construct(){
             
             $this->load->view('FoodiePublicHome');
         }
+        
+        public function login()
+        {
+            
+            $this->load->view('Loginpage');
+        }
+        
+         public function indian()
+        {
+            
+            $this->load->view('indian');
+        }
+        
+         public function italian()
+        {
+            
+            $this->load->view('italian');
+        }
+        
 }
 
