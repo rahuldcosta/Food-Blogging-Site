@@ -172,12 +172,17 @@ our website" style="width:20%"><input type="submit" value=">" class="tfbutton2">
         <div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
-                    <div id="carousel-example-generic" class="carousel slide">
+                     <div id="carousel-example-generic" class="carousel slide">
                         <!-- Indicators -->
                         <ol class="carousel-indicators hidden-xs">
                             <li data-target="#carousel-example-generic" data-slide-to="0" ></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1" class="active" ></li>
                             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="3" ></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+							
+							
                         </ol>
 
                         <!-- Wrapper for slides -->
@@ -188,9 +193,7 @@ our website" style="width:20%"><input type="submit" value=">" class="tfbutton2">
                             <div class="item">
                                 <img class="img-responsive img-full" src="<?php echo base_url(); ?>/resources/img/slide-2.jpg" alt="">
                             </div>
-							<div class="item active">
-                                <img class="img-responsive img-full" src="<?php echo base_url(); ?>/resources/img/slide-5.jpg" alt="">
-                            </div>
+							
                             <div class="item">
                                 <img class="img-responsive img-full" src="<?php echo base_url(); ?>/resources/img/slide-6.jpg" alt="">
                             </div>
@@ -199,6 +202,9 @@ our website" style="width:20%"><input type="submit" value=">" class="tfbutton2">
                             </div>
 							<div class="item">
                                 <img class="img-responsive img-full" src="<?php echo base_url(); ?>/resources/img/slide-1.jpg" alt="">
+                            </div>
+							<div class="item">
+                                <img class="img-responsive img-full" src="<?php echo base_url(); ?>/resources/img/slide-5.jpg" alt="">
                             </div>
                         </div>
 
