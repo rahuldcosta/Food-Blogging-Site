@@ -52,7 +52,7 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
 <body>
 
     <div class="brand">Foodie</div>
-    <div class="address-bar">A convinient hub for the food lovers!!
+    <div class="address-bar">A convenient hub for the food lovers!!
 		<div class="text-right" style="margin-right:1em;margin-top:-2em;margin-bottom:-2em">
 		
 		        <input type="text" id="tfq" class="tftextinput2" name="q" size="41" maxlength="720" value="Search 
