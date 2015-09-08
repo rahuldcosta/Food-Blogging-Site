@@ -34,5 +34,11 @@ function __construct(){
             $this->load->view('italian');
         }
         
+         public function more()
+        {
+            $this->load->view('master');
+            $this->load->view('more');
+        }
+        
 }
 

@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-   
-
 <body>
-
-    
-
-   
-  
-
-
 
 <div id="sidebar" class="col-lg-9">
         <div class="row">
@@ -88,7 +78,7 @@
                     <p><strong>Raspberry-Filled Molten Chocolate Cupcakes.</strong></p>
                     <p>Preheat oven to 400 degrees. Line 12 cup standard muffin tin cups with paper liners. In a large bowl with a mixer, beat butter and sugar on medium high until light and fluffy, about 2 minutes. Add eggs, one at a time, beating well after each addition. With mixer on low, beat in flour and salt. Beat in chocolate until just combined.
 </p>
-                    <p><a href="more" class="floating-link">more </a></p>
+                    <p><a href="<?php echo site_url('foodieHome/more');?>" class="floating-link">more </a></p>
                 </div>
             </div>
         </div>
