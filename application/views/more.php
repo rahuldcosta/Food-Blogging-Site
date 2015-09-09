@@ -15,9 +15,13 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-6">
-                   
-                    <div class="row">
+                <div class="col-md-5">
+                                       <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/resources/img/rasberry.jpg" alt="">
+                                       
+                    </div>
+                <div class="col-md-7">
+                     <div class="row">
+                                      
                     <p><strong>INGREDIENTS</strong></p>
                     <p>1/2 cup granulated sugar</p>
                     <p>6 tablespoons unsalted butter room temperature</p>
@@ -29,12 +33,8 @@
                     <p>Confectioners' sugar, for serving</p>
                     <p>Vanilla ice cream (optional)</p>
                     </div>
-                    
-                    </div>
-                <div class="col-md-6">
-                     <div class="row">
-                    <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/resources/img/intro-pic.jpg" alt="">
-                    </div>
+                </div>
+                <div class="col-md-12">
                     <div class="row">
                     <p><strong>DIRECTIONS</strong></p>
                     <p>Preheat oven to 400 degrees. Line 12 cup standard muffin tin cups with paper liners. 
@@ -49,6 +49,7 @@
                         if desired.</p>
                     </div>
                    </div>
+                </div>
                 <div class="clearfix"></div>
             </div>
         </div>
