@@ -11,7 +11,7 @@ function __construct(){
 	
 	public function index()
         {
-            //Home page title
+            //Home page titles
             $this->load->view('master');
             $this->load->view('FoodiePublicHome');
         }
