@@ -53,10 +53,9 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
 
     <div class="brand">Foodie</div>
     <div class="address-bar">A convenient hub for the food lovers!!
-		<div class="text-right" style="margin-right:1em;margin-top:-2em;margin-bottom:-2em">
-		
-		        <input type="text" id="tfq" class="tftextinput2" name="q" size="41" maxlength="720" value="Search 
-our website" style="width:20%"><input type="submit" value=">" class="tfbutton2">
+		<div class="text-right"  style="padding-right: 0.5em;background-color: whitesmoke;float:right;color: white;width: 150px;margin-top:+1em;margin-bottom:-2em;margin-right: 2em">
+		<a href="<?php echo site_url('foodieHome/login');?>"> User Login</a>
+		    
 		
 		<div class="tfclear"></div>
 	</div>
@@ -112,7 +111,9 @@ our website" style="width:20%"><input type="submit" value=">" class="tfbutton2">
      <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a href="<?php echo site_url('foodieHome/login');?>"> User Login</a>
+                <input type="text" id="tfq" class="tftextinput2" name="q" size="41" maxlength="720" value="Search 
+our website" style="width:85%"><input type="submit" value=">" class="tfbutton2">
+          
         </h4>
       </div>
   </div>
