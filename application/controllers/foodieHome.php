@@ -16,6 +16,13 @@ function __construct(){
             $this->load->view('FoodiePublicHome');
         }
         
+        public function indexedSearch()
+        {
+            //Home page titles
+            $this->load->view('master');
+            $this->load->view('indexedSearch');
+        }
+        
         public function login()
         {
             $this->load->view('master');
