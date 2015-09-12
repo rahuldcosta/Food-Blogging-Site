@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
 <body>
    
 <div id="sidebar" class="col-lg-9">
@@ -10,31 +8,12 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">
-                        <strong>Searching made easy...</strong>Enter any detail you know about it...
+                    <h2 class="intro-text text-center">Indian
+                        <strong>Food</strong>
                     </h2>
                     <hr>
-                    <form action="#" style="margin-left:35%">
-  Dish Name:<br>
-  <input type="text" name="dishName" value="Butter Chicken">
-  <br><br>
-  Dish Category:<br>
-  <input type="text" name="dishCat" value="Meal">
-  <br><br>
-  Chef Name(author):<br>
-  <input type="text" name="chefName" value="Chef M K">
-  <br><br>
-  Date of post:<br>
-  <input type="date" name="ddate" value="12/12/14">
-  <br><br>
-  <br>
-  
-  <input type="submit" style="margin-left:10%" value="Search">
-</form> 
                 </div>
-                <div>
-                    
-                </div>
+          
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -63,3 +42,5 @@
 </body>
 
 </html>
+
+

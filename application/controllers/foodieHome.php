@@ -39,6 +39,16 @@ function __construct(){
             $this->load->view('master');
             $this->load->view('more');
         }
+          public function searchSite()
+        {
+            $this->load->view('master');
+            $this->load->view('searchSite');
+        }
+            public function userPage()
+        {
+            $this->load->view('master');
+            $this->load->view('userPage');
+        }
         
 }
 

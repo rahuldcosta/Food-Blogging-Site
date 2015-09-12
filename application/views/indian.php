@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
 <body>
    
 <div id="sidebar" class="col-lg-9">
