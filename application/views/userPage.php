@@ -5,6 +5,7 @@
 	.topOp{
          border-right:2px dotted grey;
         border-bottom:2px dotted grey;
+        
         padding: 1em;
 }
 .topBox{
@@ -33,20 +34,20 @@
                    
                    <!-----------whats on your mind---------------------------------->
                    
-                     	<div style="background-color:white ;height:8em">
+                     	<div style="border:2px dotted white;padding-left: 1em;padding-right: 1em; background-color:white ;width:36em">
 
 		<div class="topBox" style="height:2em ">
-			<span ><a class="topOp" href="##" value="recipeTitle">recipe title</a></span>
+			<span ><a class="topOp" href="##" value="recipeTitle">Enter recipe title</a></span>
 			<span><a class="topOp" href="##" value="recipe">Add recipe file</a></span>
 			<span><a class="topOp" href="##" value="img">Add image</a></span>
 			<span><a class="topOp" href="##" value="video">Add video</a></span>
 		</div>
 
-		<div class="topBox " contentEditable="true" style="height:2em">
+		<div class="topBox " contentEditable="true" style="height:4em">
 			What is cooking up for today?
 		</div>
 
-		<div style="border:2px dotted blue;height:2em">
+		<div style="border-top:2px dotted grey;height:2em">
 			<button  style=" float:right" type="submit" form="#" value="Submit">Post</button>
 		</div>
 	
