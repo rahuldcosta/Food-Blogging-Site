@@ -97,6 +97,9 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
 					 <li>
                         <a href="<?php echo site_url('foodieHome/thai');?>">Thai</a>
                     </li>
+                    			 <li>
+                        <a href="<?php echo site_url('foodieHome/others');?>">More</a>
+                    </li>
                     </li>
                 </ul>
             </div>

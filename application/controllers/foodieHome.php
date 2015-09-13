@@ -56,6 +56,12 @@ function __construct(){
             $this->load->view('master');
             $this->load->view('userPage');
         }
+        public function adminPage()
+        {
+            //Home page titles
+            $this->load->view('master');
+            $this->load->view('adminPage');
+        }
         
 }
 
