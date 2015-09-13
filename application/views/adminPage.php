@@ -30,6 +30,7 @@
                             <br> <a   style="cursor:pointer ;margin-left:3%" title="edit profile">Change Password</a>
                             <br>  <a   style="cursor:pointer ;margin-left:3%" title="edit profile">Logout</a>
                     </div>
+                         
                         <div style="border-bottom:2px dotted red;width:14em ;float:left; ;float:left;margin-left:0em">
                             <div class=" panel-default">
       <div>
