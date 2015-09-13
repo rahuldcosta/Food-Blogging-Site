@@ -11,33 +11,54 @@
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
-                     <div class="col-lg-10">
+                     <div class="col-lg-9">
                     <hr>
-                    <h2 class="intro-text text-center">Welcome
-                        <strong>Miracle(username)</strong>
+                    <h2 class="intro-text text-center">Welcome!!
+                      
                   
                 <!--    <img class="img-responsive img-border-right"  style="height:5em;float:right;margin-top: -2em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">-->
                    </h2> <hr>
+                     <strong>Pins:</strong>
+                    <div style="margin-top:10em;margin-left:5em;margin-right:5em; text-align: center">
+                    You have not pinned any lists yet.Go to interests!!
+                </div>
                      </div>
-                    <div class="col-lg-2">
-                        <img class="img-responsive img-border-right"  style="height:6em;float:right" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
+                    <div class="col-lg-3" style="border-left:2px dotted red;">
+                        <div>Chef: Miracle Dsouza</div>
+                        <img class="img-responsive img-border-right"  style="height:9em;float:right;width:12em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
+                        <div style="border-bottom:2px dotted red;"> 
+                            <br>  <br><a   style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
+                            <br> <a   style="cursor:pointer ;margin-left:3%" title="change password">Change Password</a>
+                            <br>  <a   style="cursor:pointer ;margin-left:3%" title="help">Help</a>
+                            <br>  <a   style="cursor:pointer ;margin-left:3%" title="logout">Logout</a>
+                    </div>
+                           <div style="border-bottom:2px dotted red;">
+                                <a   style="cursor:pointer ;margin-left:3%" title="Notifications">Notifications(2)</a>
+                            <br> <a   style="cursor:pointer ;margin-left:3%" title="edit profile">Favorites(0)</a>
+              
+                    </div>
+                        <div style="border-bottom:2px dotted red;width:14em ;float:left; ;float:left;margin-left:0em">
+                            <div class=" panel-default">
+      <div>
+        <h4> <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Manage Recipes</a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse" >
+        <div class="panel-body" style="margin-left:-1em"><ul class="list-group">
+          <li class="list-group-item"><a href="edit">Edit recipe</a></li>
+          <li class="list-group-item"><a href="delete">Delete recipe</a></li>
+        </ul>
+         </div>
+    </div>
+      </div>
+                        </div>
                     </div>
                 </div>
               
             <div >
-                <div>
-                <a   style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
-                <a   style="cursor:pointer ;margin-left:3%" title="post">Post recipe</a>
-                <a   style="cursor:pointer ;margin-left:3%" title="edit">Edit recipe</a>
-                <a   style="cursor:pointer ;margin-left:3%" title="delete">Delete recipe</a>
-                 <a  style="cursor:pointer ;margin-left:3%" title="favorite">Favorite(0)</a> <!pinned interests-->
-                 <a   style="cursor:pointer ;margin-left:3%" title="Notifications">notifications(0)</a> <!whether your post accepted or rejected by admin-->
-                 <a style="cursor:pointer ;margin-left:3%" title="Credits">Credits(0)</a><!winning status-->
-                </div>
+              
                 
-                <div style="margin-top:10em;margin-left:5em;margin-right:5em; text-align: center">
-                    You have no pinned lists yet.Edit your profile to add to  add to your interests!!
-                </div>
+               
 	<div></div>
 </div>
                 <div class="clearfix"></div>
@@ -68,3 +89,4 @@
 </body>
 
 </html>
+
