@@ -122,6 +122,7 @@ our website" style="width:85%"><input type="submit" value=">" class="tfbutton2">
 
       </div>
   </div>
+    <div class ="sidebar">
 <strong><h1 class="sideText">Categories</h1></strong>  
        <div class="panel-group" id="accordion">
     <div class="panel panel-default">
@@ -171,6 +172,7 @@ our website" style="width:85%"><input type="submit" value=">" class="tfbutton2">
         </h4>
       </div>
   </div>  
+</div>
 </div>
     </body>
     </html>
