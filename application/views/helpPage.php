@@ -6,15 +6,17 @@
 <div id="sidebar" class="col-lg-9">
         <div class="row">
             <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">
-                        <strong>Help Page</strong>
-                    </h2>
-                    <hr>
-                </div>
+              
               
                 <div class="col-md-9">
+                     <h2 class="intro-text text-center">
+                           <div>
+                    <hr>
+                   <strong>Help Page</strong>
+                    <hr>
+                </div>
+                        
+                    </h2>
 				<p>Why Cant I post my comment? You have no account </p>
 				<p>What is the procedure to add or delete a recipe? The admin needs to approve.</p>
 		
@@ -23,7 +25,8 @@
                         <div>Chef: Miracle Dsouza</div>
                         <img class="img-responsive img-border-right"  style="height:9em;float:right;width:12em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
                         <div style="border-bottom:2px dotted red;"> 
-                            <br>  <br><a   style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
+                            <br><br><a href="<?php echo site_url('foodieHome/userPage');?>"  style="cursor:pointer ;margin-left:3%" title="my home">My Home</a>
+                            <br><a   style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
                             <br> <a   style="cursor:pointer ;margin-left:3%" title="change password">Change Password</a>
                             <br>  <a   href="<?php echo site_url('foodieHome/helpPage');?>" style="cursor:pointer ;margin-left:3%" title="help">Help</a>
                             <br>  <a   style="cursor:pointer ;margin-left:3%" title="logout">Logout</a>
@@ -48,6 +51,7 @@
       </div>
                         </div>
                     </div>
+                    
                 <div class="clearfix"></div>
             </div>
         </div>
