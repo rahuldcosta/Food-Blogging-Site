@@ -1,21 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-     	<style>
-	.topOp{
-         border-right:2px dotted grey;
-        border-bottom:2px dotted grey;
-        
-        padding: 1em;
-}
-.topBox{
-	margin-top:1em;
-       
-}
-</style>
-
-    </head>
-
 
 <body>
    
@@ -23,42 +7,18 @@
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
-                     <div class="col-lg-9">
                     <hr>
-                    <h2 class="intro-text text-center">Welcome!!
-                      
-                  
-                <!--    <img class="img-responsive img-border-right"  style="height:5em;float:right;margin-top: -2em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">-->
-                   </h2> <hr>
-                   
-                   
-                   <!-----------whats on your mind---------------------------------->
-                   
-                     	<div style="border:2px dotted white;padding-left: 1em;padding-right: 1em; background-color:white ;width:36em">
-
-		<div class="topBox" style="height:2em ">
-			<span ><a class="topOp" href="##" value="recipeTitle">Enter recipe title</a></span>
-			<span><a class="topOp" href="##" value="recipe">Add recipe file</a></span>
-			<span><a class="topOp" href="##" value="img">Add image</a></span>
-			<span><a class="topOp" href="##" value="video">Add video</a></span>
-		</div>
-
-		<div class="topBox " contentEditable="true" style="height:4em">
-			What is cooking up for today?
-		</div>
-
-		<div style="border-top:2px dotted grey;height:2em">
-			<button  style=" float:right" type="submit" form="#" value="Submit">Post</button>
-		</div>
-	
-                        </div>
-                   
-                   <!--------------------------------------------------------->
-                   <br> <strong>Pins:</strong>  
-                    <div style="margin-top:10em;margin-left:5em;margin-right:5em; text-align: center">
-                    You have not pinned any lists yet.Go to interests!!
+                    <h2 class="intro-text text-center">
+                        <strong>Help Page</strong>
+                    </h2>
+                    <hr>
                 </div>
-                     </div>
+              
+                <div class="col-md-9">
+				<p>Why Cant I post my comment? You have no account </p>
+				<p>What is the procedure to add or delete a recipe? The admin needs to approve.</p>
+		
+                   </div>
                     <div class="col-lg-3" style="border-left:2px dotted red;">
                         <div>Chef: Miracle Dsouza</div>
                         <img class="img-responsive img-border-right"  style="height:9em;float:right;width:12em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
@@ -88,11 +48,6 @@
       </div>
                         </div>
                     </div>
-                </div>
-              
-            <div >
-	<div></div>
-</div>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -121,4 +76,3 @@
 </body>
 
 </html>
-
