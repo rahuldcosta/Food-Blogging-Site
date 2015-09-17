@@ -8,6 +8,13 @@ function __construct(){
        
         
     }
+    public function notifications()
+        {
+            //Home page titles
+            $this->load->view('master');
+            $this->load->view('notifications');
+            
+        }
 	
 	public function index()
         {
