@@ -106,8 +106,8 @@
                     
                      </span>
                      <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('comment','CommentArea')" class="btn btn-default">Comments</button> </span>
-                    <!-- <span style="margin-right:3em"><button id="share" onclick="expand('share','shareArea')" name="share" class="btn btn-default">Share</button> </span>
-                    --> <span style="margin-right:3em"><button id="cookBook" class="btn btn-default" onclick="location.href='./login'">Add to Cookbook</button></span>
+                     <span style="margin-right:3em"><button id="share" onclick="expand('share','shareArea')" name="share" class="btn btn-default">Share</button> </span>
+                     <span style="margin-right:3em"><button id="cookBook" class="btn btn-default" onclick="location.href='./login'">Add to Cookbook</button></span>
                  
                 <span id="accessThruUserLogin" style="visibility: hidden">
                     <span style="margin-right:3em"><a>Edit</a></span>
@@ -125,7 +125,15 @@
                
                 <div class="clearfix"></div>
             </div>
-          
+                <div id="shareArea" style="margin-top:1em;">
+                    <h5> Share with</h5>
+                   <!-- Twitter -->
+<a href="http://twitter.com/home?status=" style="margin-right:3em" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+ <!-- Facebook -->
+<a href="https://www.facebook.com/sharer/sharer.php?u=" style="margin-right:3em" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+<!-- Google+ -->
+<a href="https://plus.google.com/share?url=" style="margin-right:3em" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+                </div>
              </div>
              </div>
         </div>
