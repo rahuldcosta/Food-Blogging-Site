@@ -40,9 +40,9 @@
       <div id="collapse6" class="panel-collapse collapse" >
         <div class="panel-body" style="margin-left:-1em"><ul class="list-group">
           <li class="list-group-item"><a href="GreenList">Manage GreenList(8)</a></li>
-          <li class="list-group-item"><a href="Blacklist">Manage BlackList(2)</a></li>
+ 
           <li class="list-group-item"><a href="requests">Manage Requests(5)</a></li>
-          <li class="list-group-item"><a href="requests">Winner Lists</a></li>
+
         </ul>
          </div>
     </div>

@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+    <head>
+        <link href="<?php echo base_url(); ?>/resources/css/social-sharing.css" rel="stylesheet">
+        <script>
+        function mark(el) {
+    el.style.border = "1px solid blue";
+    }
+    function expand(id1,id2){
+        document.getElementById(id1).style.display="none";
+        document.getElementById(id2).style.display="block";
+    }
+</script>
+        
+ 
+    </head>
 
 <body>
    
@@ -12,8 +25,46 @@
                     <hr>
                     <h2 class="intro-text text-center">
                         <strong>Raspberry-Filled Molten Chocolate Cupcakes</strong>
+
                     </h2>
                     <hr>
+                    <h5>
+
+                        <span style="float:left"> 
+                        Author:&nbsp;&nbsp;&nbsp;MTD hgkhj<br>
+                        Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12/12/12<br>
+                        Category:&nbsp;Dessert<br>
+                        Regional:&nbsp;&nbsp;&nbsp;Thai <br>
+                        Veg:&nbsp;&nbsp;&nbsp;Yes
+                        <br>
+                        </span>
+                        <span style="float:right">
+                            <div>
+                              Star Ratings: 
+                              <!--markable
+                              <div class="acidjs-rating-stars">
+    <form>
+        <input type="radio" name="group-1" id="group-1-0" value="5" /><label for="group-1-0"></label>
+        <input type="radio" name="group-1" id="group-1-1" value="4" /><label for="group-1-1"></label>
+        <input type="radio" name="group-1" id="group-1-2" value="3" /><label for="group-1-2"></label>
+        <input type="radio" name="group-1" id="group-1-3" value="2" /><label for="group-1-3"></label>
+        <input type="radio" name="group-1" id="group-1-4"  value="1" /><label for="group-1-4"></label>
+    </form>-->
+                              <div class="acidjs-rating-stars acidjs-rating-disabled">
+    <form>
+        <input disabled="disabled" type="radio" name="group-3" id="group-3-0" value="5" /><label for="group-3-0"></label><!--
+        --><input disabled="disabled" type="radio" checked="checked" name="group-3" id="group-3-1" value="4" /><label for="group-3-1"></label><!--
+        --><input disabled="disabled" type="radio" name="group-3" id="group-3-2" value="3" /><label for="group-3-2"></label><!--
+        --><input disabled="disabled" type="radio" name="group-3" id="group-3-3" value="2" /><label for="group-3-3"></label><!--
+        --><input disabled="disabled" type="radio" name="group-3" id="group-3-4"  value="1" /><label for="group-3-4"></label>
+    </form>
+</div>
+  </div>
+                        <div>Views: 24146</div>
+                        </span>
+                            
+
+                    </h5>
                 </div>
                 <div class="col-md-5">
                                        <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/resources/img/rasberry.jpg" alt="">
@@ -49,14 +100,36 @@
                         if desired.</p>
                     </div>
                    </div>
-                </div>
+                 <div>
+                     <span style="margin-right:3em">
+                     <input id="like" type="image" onclick="mark(this)" style="height:2em;width:2em"src="<?php echo base_url(); ?>/resources/img/like.jpg" alt="button">
+                    
+                     </span>
+                     <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('comment','CommentArea')" class="btn btn-default">Comments</button> </span>
+                    <!-- <span style="margin-right:3em"><button id="share" onclick="expand('share','shareArea')" name="share" class="btn btn-default">Share</button> </span>
+                    --> <span style="margin-right:3em"><button id="cookBook" class="btn btn-default" onclick="location.href='./login'">Add to Cookbook</button></span>
+                 
+                <span id="accessThruUserLogin" style="visibility: hidden">
+                    <span style="margin-right:3em"><a>Edit</a></span>
+                    <span style="margin-right:3em"><a>Delete</a></span>
+                </span>
+                     </div>
+                <div id="CommentArea" style="margin-top:1em;border:1px solid black;width:52em">
+                <h5>Your feedback...</h5>
+                <div style="margin-bottom:1em"><span style="margin-right:3em">Rohan Sharma</span><span>Comment 1</span></div>
+                <div style="margin-bottom:1em"><span style="margin-right:3em">Neesha Methla</span><span>Comment 2</span></div>
+                  <div style="margin-bottom:1em"><span style="margin-right:3em">User </span><span><div class="controls"><textarea id="comment" name="comment">Post your comment here</textarea></div>
+                          </span><button id="commentInner" name="comment" class="btn btn-default">Comment</button>
+            </div>
+                
+               
                 <div class="clearfix"></div>
             </div>
+          
+             </div>
+             </div>
         </div>
 
-</div>
-
-    </div>
     <!-- /.container -->
 
     <footer>

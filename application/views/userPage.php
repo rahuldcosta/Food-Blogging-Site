@@ -70,15 +70,14 @@
                     </div>
                            <div style="border-bottom:2px dotted red;">
                                 <a   style="cursor:pointer ;margin-left:3%" title="Notifications">Notifications(2)</a>
-                            <br> <a   style="cursor:pointer ;margin-left:3%" title="edit profile">Favorites(0)</a>
-              
+                            <br> <a   style="cursor:pointer ;margin-left:3%" title="interests">Interests(0)</a>
+                                          <br> <a   style="cursor:pointer ;margin-left:3%" title="cookbook">View CookBook(0)</a>
+                                          <br> <a   style="cursor:pointer ;margin-left:3%" title="manage recipe">Manage Recipe</a>
+
                     </div>
                         <div style="border-bottom:2px dotted red;width:14em ;float:left; ;float:left;margin-left:0em">
                             <div class=" panel-default">
-      <div>
-        <h4> <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Manage Recipes</a>
-        </h4>
-      </div>
+     
       <div id="collapse6" class="panel-collapse collapse" >
         <div class="panel-body" style="margin-left:-1em"><ul class="list-group">
           <li class="list-group-item"><a href="edit">Edit recipe</a></li>
@@ -92,9 +91,6 @@
                 </div>
               
             <div >
-              
-                
-               
 	<div></div>
 </div>
                 <div class="clearfix"></div>
