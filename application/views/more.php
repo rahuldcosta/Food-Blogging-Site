@@ -41,7 +41,7 @@
                         <span style="float:right">
                             <div>
                               Star Ratings: 
-                              <!--markable
+                             
                               <div class="acidjs-rating-stars">
     <form>
         <input type="radio" name="group-1" id="group-1-0" value="5" /><label for="group-1-0"></label>
@@ -49,16 +49,16 @@
         <input type="radio" name="group-1" id="group-1-2" value="3" /><label for="group-1-2"></label>
         <input type="radio" name="group-1" id="group-1-3" value="2" /><label for="group-1-3"></label>
         <input type="radio" name="group-1" id="group-1-4"  value="1" /><label for="group-1-4"></label>
-    </form>-->
-                              <div class="acidjs-rating-stars acidjs-rating-disabled">
+    </form>
+                  <!--display            <div class="acidjs-rating-stars acidjs-rating-disabled">
     <form>
         <input disabled="disabled" type="radio" name="group-3" id="group-3-0" value="5" /><label for="group-3-0"></label><!--
-        --><input disabled="disabled" type="radio" checked="checked" name="group-3" id="group-3-1" value="4" /><label for="group-3-1"></label><!--
-        --><input disabled="disabled" type="radio" name="group-3" id="group-3-2" value="3" /><label for="group-3-2"></label><!--
-        --><input disabled="disabled" type="radio" name="group-3" id="group-3-3" value="2" /><label for="group-3-3"></label><!--
-        --><input disabled="disabled" type="radio" name="group-3" id="group-3-4"  value="1" /><label for="group-3-4"></label>
+        <input disabled="disabled" type="radio" checked="checked" name="group-3" id="group-3-1" value="4" /><label for="group-3-1"></label><!--
+        <input disabled="disabled" type="radio" name="group-3" id="group-3-2" value="3" /><label for="group-3-2"></label><!--
+        <input disabled="disabled" type="radio" name="group-3" id="group-3-3" value="2" /><label for="group-3-3"></label><!--
+        <input disabled="disabled" type="radio" name="group-3" id="group-3-4"  value="1" /><label for="group-3-4"></label>
     </form>
-</div>
+--></div>
   </div>
                         <div>Views: 24146</div>
                         </span>
