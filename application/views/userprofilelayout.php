@@ -14,14 +14,14 @@
                               <br><a  href="<?php echo site_url('foodieHome/editprofile');?>"  style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
                             <br> <a  href="<?php echo site_url('foodieHome/changepassword');?>" style="cursor:pointer ;margin-left:3%" title="change password">Change Password</a>
                             <br>  <a   href="<?php echo site_url('foodieHome/helpPage');?>" style="cursor:pointer ;margin-left:3%" title="help">Help</a>
-                            <br>  <a   style="cursor:pointer ;margin-left:3%" title="logout">Logout</a>
+                            <br>  <a   href="<?php echo site_url('foodieHome/login');?>" style="cursor:pointer ;margin-left:3%" title="logout">Logout</a>
                         </div>
                         <div >
                             <a  href="<?php echo site_url('foodieHome/notifications');?>" style="cursor:pointer ;margin-left:3%" title="Notifications">Notifications(2)</a>
                             <br> 
                             <a   style="cursor:pointer ;margin-left:3%" title="interests">Interests(0)</a>
                             <br> <a  href="<?php echo site_url('foodieHome/CookBook');?>" style="cursor:pointer ;margin-left:3%" title="cookbook">View CookBook(0)</a>
-                            <br> <a   style="cursor:pointer ;margin-left:3%" title="manage recipe">Manage Recipe</a>
+                            <br> <a  href="<?php echo site_url('foodieHome/myRecipes');?>"  style="cursor:pointer ;margin-left:3%" title="manage recipe">Manage Recipe</a>
                          </div>
    
       

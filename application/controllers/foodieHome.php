@@ -17,6 +17,17 @@ function __construct(){
             $this->load->view('footer');
             
         }
+        
+            public function myRecipes()
+        {
+            //Home page titles
+            $this->load->view('master');
+            $this->load->view('userprofilelayout');
+            $this->load->view('myRecipes');
+            $this->load->view('footer');
+            
+        }
+        
 	  public function CookBook()
         {
             //Home page titles
