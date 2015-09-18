@@ -12,6 +12,7 @@ function __construct(){
         {
             //Home page titles
             $this->load->view('master');
+            $this->load->view('userprofilelayout');
             $this->load->view('notifications');
             $this->load->view('footer');
             
@@ -20,6 +21,7 @@ function __construct(){
         {
             //Home page titles
             $this->load->view('master');
+            $this->load->view('userprofilelayout');
             $this->load->view('CookBook');
             $this->load->view('footer');
         }
@@ -43,6 +45,7 @@ function __construct(){
         {
             //Home page titles
             $this->load->view('master');
+             $this->load->view('userprofilelayout');
             $this->load->view('helpPage');
              $this->load->view('footer');
         }
