@@ -23,6 +23,13 @@ function __construct(){
             
         }
 	
+         public function editprofile()
+        {
+            //Home page titles
+            $this->load->view('master');
+            $this->load->view('editprofile');
+            
+        }
 	public function index()
         {
             //Home page titles

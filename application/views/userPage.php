@@ -149,8 +149,8 @@
                         <div>Chef: Miracle Dsouza</div>
                         <img class="img-responsive img-border-right"  style="height:9em;float:right;width:12em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
                         <div style="border-bottom:2px dotted red;"> 
-                           <br> <br><a href="<?php echo site_url('foodieHome/userPage');?>"  style="cursor:pointer ;margin-left:3%" title="my home">My Home</a>
-                              <br><a   style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
+                           <br> <br><a href="<?php echo site_url('foodieHome/userPage');?>"  style="cursor:pointer ;margin-left:3%" title="my profile">My Profile</a>
+                              <br><a  href="<?php echo site_url('foodieHome/editprofile');?>"  style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
                             <br> <a   style="cursor:pointer ;margin-left:3%" title="change password">Change Password</a>
                             <br>  <a   href="<?php echo site_url('foodieHome/helpPage');?>" style="cursor:pointer ;margin-left:3%" title="help">Help</a>
                             <br>  <a   style="cursor:pointer ;margin-left:3%" title="logout">Logout</a>

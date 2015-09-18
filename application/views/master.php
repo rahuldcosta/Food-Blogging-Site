@@ -54,8 +54,7 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
     <div class="brand">Foodie</div>
     <div class="address-bar">A convenient hub for the food lovers!!
 		<div class="text-right"  style="padding-right: 0.5em;background-color: whitesmoke;float:right;color: white;width: 150px;margin-top:1em;margin-bottom:-2em;margin-right: 2em">
-		<a href="<?php echo site_url('foodieHome/login');?>"> User Login</a>
-		    
+		
 		
 		<div class="tfclear"></div>
 	</div>
@@ -96,11 +95,12 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
                     </li>
 					 <li>
                         <a href="<?php echo site_url('foodieHome/thai');?>">Thai</a>
+                                         </li>
+                    <li>
+                        <a href="<?php echo site_url('foodieHome/login');?>">Login</a>
+		    
                     </li>
-                    			 <li>
-                        <a href="<?php echo site_url('foodieHome/others');?>">More</a>
-                    </li>
-                    </li>
+                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
