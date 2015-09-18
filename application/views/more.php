@@ -59,7 +59,7 @@
         <input disabled="disabled" type="radio" name="group-3" id="group-3-4"  value="1" /><label for="group-3-4"></label>
     </form>
 --></div>
-  </div>
+  
                         <div>Views: 24146</div>
                         </span>
                             
@@ -140,15 +140,7 @@
 
     <!-- /.container -->
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Foodie 2014</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+ 
 
     <!-- jQuery -->
     <script src="<?php echo base_url(); ?>/resources/js/jquery.js"></script>

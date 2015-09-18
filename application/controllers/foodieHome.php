@@ -15,6 +15,13 @@ function __construct(){
             $this->load->view('notifications');
             
         }
+	  public function CookBook()
+        {
+            //Home page titles
+            $this->load->view('master');
+            $this->load->view('CookBook');
+            
+        }
 	
 	public function index()
         {
