@@ -14,7 +14,7 @@
                         <strong>Searching made easy...</strong>Enter any detail you know about it...
                     </h2>
                     <hr>
-                    <form action="#" style="margin-left:35%">
+                    <form action="#" style="margin-left:5%">
                         <span style="margin-right:  5em"> Dish Name:</span>
   <input type="text" name="dishName" value="Butter Chicken" >
   <br><br>
