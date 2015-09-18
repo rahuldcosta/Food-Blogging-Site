@@ -91,6 +91,7 @@ function __construct(){
         {
             //Home page titles
             $this->load->view('master');
+            $this->load->view('userprofilelayout');
             $this->load->view('adminPage');
         }
         

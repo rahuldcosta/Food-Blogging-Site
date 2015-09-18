@@ -6,7 +6,7 @@
 
  <div  id="sidebar" class="col-lg-3" >
 <div class ="col-lg-12 box">
-    <div> Chef:Scheweta</div>
+    <div> Ms XYZ</div>
         
                         <img class="img-responsive"  style="height:9em;float:right;width:12em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
                         <div > 
