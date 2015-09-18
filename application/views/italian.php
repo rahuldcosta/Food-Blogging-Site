@@ -11,13 +11,13 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Indian
+                    <h2 class="intro-text text-center">Italian
                         <strong>Food</strong>
                     </h2>
                     <hr>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/resources/img/indian.jpg" alt="">
+                    <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/resources/img/italian.jpg" alt="">
                 </div>
                 <div class="col-md-6">
 				<p>Italian cuisine (Italian: cucina italiana [kuˈtʃiːna itaˈljaːna]) has developed through centuries of 
@@ -32,9 +32,7 @@
 				Italian cooks rely chiefly on the quality of the ingredients rather than on elaborate preparation.
 				Ingredients and dishes vary by region. Many dishes that were once regional, however, 
 				have proliferated with variations throughout the country.</p>
-				<p>Cheese and wine are a major part of the cuisine, 
-				with many variations and Denominazione di origine controllata (DOC) 
-				(regulated appellation) laws. Coffee, specifically espresso, has become important in Italian cuisine.</p>
+				
 		  </div>
                 <div class="clearfix"></div>
             </div>

@@ -91,6 +91,26 @@ function __construct(){
             $this->load->view('footer');
         }
         
+           public function chinese()
+        {
+            $this->load->view('master');
+            $this->load->view('chinese');
+            $this->load->view('footer');
+        }
+            public function Thai()
+        {
+            $this->load->view('master');
+            $this->load->view('Thai');
+            $this->load->view('footer');
+        }
+            public function continental()
+        {
+            $this->load->view('master');
+            $this->load->view('continental');
+            $this->load->view('footer');
+        }
+        
+        
          public function italian()
         {
             $this->load->view('master');

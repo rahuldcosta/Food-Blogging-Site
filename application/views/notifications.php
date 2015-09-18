@@ -16,28 +16,14 @@
                     <hr>
                 
                
-                <div class="col-md-9">
+                <div class="col-md-12">
 				<p>Notification 1 </p>
 				<p>Notification 2</p>
 				<p>Notification 3 </p>
 				<p>Notification 4</p>
                    </div>
                 </div>
-                            <div class="col-lg-3" style="">
-                       
-                        <div style="width:14em ;float:left; ;float:left;margin-left:0em">
-                            <div class=" panel-default">
-     
-      <div id="collapse6" class="panel-collapse collapse" >
-        <div class="panel-body" style="margin-left:-1em"><ul class="list-group">
-          <li class="list-group-item"><a href="edit">Edit recipe</a></li>
-          <li class="list-group-item"><a href="delete">Delete recipe</a></li>
-        </ul>
-         </div>
-    </div>
-      </div>
-                        </div>
-                    </div>
+               
                 <div class="clearfix"></div>
             </div>
         </div>
