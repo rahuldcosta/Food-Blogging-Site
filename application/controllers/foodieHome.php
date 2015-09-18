@@ -27,6 +27,7 @@ function __construct(){
         {
             //Home page titles
             $this->load->view('master');
+            $this->load->view('userprofilelayout');
             $this->load->view('editprofile');
             
         }
@@ -82,7 +83,9 @@ function __construct(){
             public function userPage()
         {
             $this->load->view('master');
+            $this->load->view('userprofilelayout');
             $this->load->view('userPage');
+            
         }
         public function adminPage()
         {

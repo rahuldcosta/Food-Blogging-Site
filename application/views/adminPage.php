@@ -26,7 +26,9 @@
                     <div class="col-lg-3" style="border-left:2px dotted red;">
                         <div>Admin: Talita Dsouza</div>
                         <img class="img-responsive img-border-right"  style="height:9em;float:right;width:12em" src="<?php echo base_url(); ?>/resources/img/admin.jpg" alt="">
-                        <div style="border-bottom:2px dotted red;"> <br><a   style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
+                        <div style="border-bottom:2px dotted red;"> <br>
+                            <a href="<?php echo site_url('foodieHome/adminPage');?>"  style="cursor:pointer ;margin-left:3%" title="my profile">My Profile</a>
+                              <br><a  href="<?php echo site_url('foodieHome/editprofile');?>"  style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
                             <br> <a   style="cursor:pointer ;margin-left:3%" title="edit profile">Change Password</a>
                             <br>  <a   style="cursor:pointer ;margin-left:3%" title="edit profile">Logout</a>
                     </div>
