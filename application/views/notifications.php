@@ -4,7 +4,7 @@
 <body>
    
  
-<div id="sidebar" class="col-lg-6">
+<div id="sidebar1" class="col-lg-6">
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">

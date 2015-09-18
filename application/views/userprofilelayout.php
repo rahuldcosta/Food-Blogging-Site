@@ -12,7 +12,7 @@
                         <div > 
                            <br> <br><a href="<?php echo site_url('foodieHome/userPage');?>"  style="cursor:pointer ;margin-left:3%" title="my profile">My Profile</a>
                               <br><a  href="<?php echo site_url('foodieHome/editprofile');?>"  style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a>
-                            <br> <a   style="cursor:pointer ;margin-left:3%" title="change password">Change Password</a>
+                            <br> <a  href="<?php echo site_url('foodieHome/changepassword');?>" style="cursor:pointer ;margin-left:3%" title="change password">Change Password</a>
                             <br>  <a   href="<?php echo site_url('foodieHome/helpPage');?>" style="cursor:pointer ;margin-left:3%" title="help">Help</a>
                             <br>  <a   style="cursor:pointer ;margin-left:3%" title="logout">Logout</a>
                         </div>

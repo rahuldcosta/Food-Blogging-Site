@@ -115,11 +115,14 @@ footer p {
 }
 
 
+#sidebar1{
+    padding-left: 10px;
+    border-left: 0px;
 
+}
 #sidebar{
-    padding-left: 80px;
+    padding-left: 50px;
     border-left: 5px solid white;
-
 }
     .floating-link {
     float: right;
@@ -184,6 +187,10 @@ footer p {
     .sidebar {
         display : none;
     }
+    #sidebar{
+    padding-left: 0px;
+    border-left: 0px ;
+  }
     
 }
 

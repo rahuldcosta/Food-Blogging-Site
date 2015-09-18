@@ -34,6 +34,15 @@ function __construct(){
             $this->load->view('editprofile');
             $this->load->view('footer');
         }
+        
+         public function changepassword()
+        {
+            //Home page titles
+            $this->load->view('master');
+            $this->load->view('userprofilelayout');
+            $this->load->view('changepassword');
+            $this->load->view('footer');
+        }
 	public function index()
         {
             //Home page titles
