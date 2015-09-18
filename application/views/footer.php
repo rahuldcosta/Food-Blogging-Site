@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <body 
+    <body >
 <footer>
-        <div class="container" >
+    <div class="container"  >
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <p>Copyright &copy; Foodie 2015</p>

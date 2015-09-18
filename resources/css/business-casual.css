@@ -115,12 +115,13 @@ footer p {
 }
 
 
-#sidebar1{
-    padding-left: 10px;
+#sidebar{
+    padding-left: 15px;
     border-left: 0px;
+   
 
 }
-#sidebar{
+#sidebar1{
     padding-left: 50px;
     border-left: 5px solid white;
 }
@@ -187,11 +188,21 @@ footer p {
     .sidebar {
         display : none;
     }
-    #sidebar{
+   
+#sidebar{
     padding-left: 15px;
-    border-left: 0px ;
-  }
-    
+    border-left: 0px;
+
+}
+#sidebar1{
+    padding-left: 15px;
+    border-left: 0px;
+    clear:both;
+}
+    .pull-right {
+  float: left !important;
+  
+}
 }
 
 @media screen and (min-width:768px)  {

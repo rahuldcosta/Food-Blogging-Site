@@ -132,12 +132,22 @@ function __construct(){
         }
             public function userPage()
         {
-            $this->load->view('master');
-            $this->load->view('userprofilelayout');
-            $this->load->view('userPage');
+             $this->load->view('master');
+             $this->load->view('userprofilelayout');
+             $this->load->view('userPage');
              $this->load->view('footer');
             
         }
+        
+         public function interest()
+        {
+             $this->load->view('master');
+             $this->load->view('userprofilelayout');
+             $this->load->view('interest');
+             $this->load->view('footer');
+            
+        }
+        
         public function adminPage()
         {
             //Home page titles
