@@ -44,7 +44,11 @@
 
     </div>
     
-  
+  <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>/resources/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url(); ?>/resources/js/bootstrap.min.js"></script>
 
 </body>
 

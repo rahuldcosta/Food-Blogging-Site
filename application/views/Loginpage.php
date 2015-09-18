@@ -77,10 +77,14 @@
 			</div>
 		</div>
 	</div>
-	
+	<script src="<?php echo base_url(); ?>/resources/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url(); ?>/resources/js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
     <script>
  $(function() {
-
     $('#login-form-link').click(function(e) {
 		$("#login-form").delay(100).fadeIn(100);
  		$("#register-form").fadeOut(100);
@@ -95,7 +99,6 @@
 		$(this).addClass('active');
 		e.preventDefault();
 	});
-
 });
     </script>
 </body>
