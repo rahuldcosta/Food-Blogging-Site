@@ -66,7 +66,7 @@
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="control-label" for="UploadRecipe">Upload Recipe</label>
+  <label class="control-label" for="UploadRecipe">Upload Ingredients</label>
   <div class="controls">
     <input id="UploadRecipe" name="recipetxt" class="input-file" type="file">
   </div>
@@ -118,7 +118,7 @@
 <div class="form-group">
   <label class="control-label" for="dishImg">Upload dish image</label>
   <div class="controls">
-    <input id="dishImg" name="dishImg" class="input-file" type="file">
+    <input id="dishImg" name="dishImg" class="input-file" type="file" accept="image/*">
   </div>
 </div>
 
@@ -126,7 +126,7 @@
 <div class="control-group">
   <label class="control-label" for="VidLinnk">Video Link</label>
   <div class="controls">
-    <input id="VidLinnk" name="VidLinnk" type="text" placeholder="www.youtube.com//dwhg/" class="input-medium">
+    <input id="VidLinnk" name="VidLinnk" type="text"  accept="video/*" placeholder="www.youtube.com//dwhg/" class="input-medium">
     
   </div>
 </div>
