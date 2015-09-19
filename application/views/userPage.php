@@ -124,7 +124,7 @@
 <div class="form-group">
   <label class="control-label" for="dishImg">Upload dish image</label>
   <div class="controls">
-    <input id="dishImg" name="dishImg" class="input-file" type="file" accept="image/*">
+    <input id="dishImg" name="userfile" class="input-file" type="file" size="20" accept="image/*">
   </div>
 </div>
 
