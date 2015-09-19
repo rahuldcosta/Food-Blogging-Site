@@ -25,7 +25,8 @@ function __construct(){
             
             $data = array(
 'rname' => $this->input->post('rname'),
-                'recipetxt' => $this->input->post('recipetxt'),
+                'ingredents' => $this->input->post('ingredients'),
+                'steps' => $this->input->post('steps'),
 'vegselected' => $veg,
 'recipetype' => $this->input->post('foodtype'),
 'regiontype' => $this->input->post('regiontype'),
