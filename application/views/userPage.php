@@ -68,13 +68,13 @@
 <div class="form-group">
   <label class="control-label" for="UploadRecipe"> Ingredients</label>
   <div class="controls">
-      <textarea class="form-control" rows="5" id="ingredients" placeholder="eg.Type out ingredients here"></textarea>
+      <textarea class="form-control" rows="5" id="ingredients" name ="ingredients" placeholder="eg.Type out ingredients here"></textarea>
   </div>
 </div>
 <div class="form-group">
   <label class="control-label" for="UploadRecipe"> Instructions</label>
   <div class="controls">
-      <textarea class="form-control" rows="5" id="ingredients" placeholder="eg.Type out your Recipe steps here"></textarea>
+      <textarea class="form-control" rows="5" id="steps" name="steps" placeholder="eg.Type out your Recipe steps here"></textarea>
   </div>
 </div>
 
