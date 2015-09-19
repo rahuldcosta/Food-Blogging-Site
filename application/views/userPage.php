@@ -66,7 +66,14 @@
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="control-label" for="UploadRecipe">Upload Recipe</label>
+  <label class="control-label" for="UploadRecipe">Upload Ingredients</label>
+  <div class="controls">
+    <input id="UploadRecipe" name="UploadRecipe" class="input-file" type="file">
+  </div>
+</div>
+<!-- File Button --> 
+<div class="form-group">
+  <label class="control-label" for="UploadRecipe">Upload Instructions</label>
   <div class="controls">
     <input id="UploadRecipe" name="UploadRecipe" class="input-file" type="file">
   </div>
