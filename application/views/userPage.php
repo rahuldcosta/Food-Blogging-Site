@@ -50,7 +50,7 @@
                    <div id="PostArea" style="border:1px solid black;">
                      <div class="form-area">  
                            
-        <form role="form">
+                         <form action="<?php echo site_url('recipe/addrecipe');?>" method="post" enctype="multipart/form-data">
         <br style="clear:both">
                     <h3 style="margin-bottom: 25px; text-align: center;">Fill in the Recipe Specifications</h3>
 
@@ -68,7 +68,7 @@
 <div class="form-group">
   <label class="control-label" for="UploadRecipe">Upload Recipe</label>
   <div class="controls">
-    <input id="UploadRecipe" name="UploadRecipe" class="input-file" type="file">
+    <input id="UploadRecipe" name="recipetxt" class="input-file" type="file">
   </div>
 </div>
 
@@ -76,42 +76,42 @@
 <div class="form-group">
     <label class="control-label" for="radios">Vegetarian</label>
 <label class="radio-inline">
-      <input type="radio" name="optradio">Yes
+      <input type="radio" name="vegoption" value="yes">Yes
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio">No
+      <input type="radio" name="vegoption" value="no">No
     </label>
 </div>
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
     <label class="control-label" for="radios">Choose Type</label>
 <label class="radio-inline">
-      <input type="radio" name="optradio">Snack
+      <input type="radio" name="foodtype" value="Snack">Snack
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio">Meal
+      <input type="radio" name="foodtype" value="Meal">Meal
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio">Dessert
+      <input type="radio" name="foodtype" value="Dessert">Dessert
     </label>
 </div>
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
     <label class="control-label" for="radios">Choose Region</label>
 <label class="radio-inline">
-      <input type="radio" name="optradio">Indian
+      <input type="radio" name="regiontype" value="Indian">Indian
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio">Chinese
+      <input type="radio" name="regiontype" value="Chinese">Chinese
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio">Italian
+      <input type="radio" name="regiontype" value="Italian">Italian
     </label>
      <label class="radio-inline">
-      <input type="radio" name="optradio">Thai
+      <input type="radio" name="regiontype" value="Thai">Thai
     </label>
      <label class="radio-inline">
-      <input type="radio" name="optradio">Continental
+      <input type="radio" name="regiontype" value="Continental">Continental
     </label>
 </div>
 <!-- File Button --> 
@@ -132,7 +132,7 @@
 </div>
 
 
-<button style="margin-left: 50%" id="uploadRecipe" name="postRecipe" class="btn btn-primary">Upload</button>
+<button style="margin-left: 50%" id="uploadRecipe"  class="btn btn-primary">Upload</button>
         </form>
  </div>
 </div>
