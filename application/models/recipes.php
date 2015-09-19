@@ -8,14 +8,7 @@
 
 class Recipes extends CI_Model{
     
-     public $rname;
-    public $ingredents;
-    public $directions;
-    public $vegetarian;
-    public $recipetype;
-    public $regiontype;
-    public $dishimgurl;
-    public $videoimgurl;
+    
 function __construct() {
     $this->load->library('mongo_db');
 parent::__construct();
