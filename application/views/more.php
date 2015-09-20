@@ -7,8 +7,7 @@
         function mark(el) {
     el.style.border = "1px solid blue";
     }
-    function expand(id1,id2){
-        document.getElementById(id1).style.display="none";
+    function expand(id2){
         document.getElementById(id2).style.display="block";
     }
 </script>
@@ -101,12 +100,9 @@
                     </div>
                    </div>
                  <div>
-                     <span style="margin-right:3em">
-                     <input id="like" type="image" onclick="mark(this)" style="height:2em;width:2em"src="<?php echo base_url(); ?>/resources/img/like.jpg" alt="button">
-                    
-                     </span>
-                     <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('comment','CommentArea')" class="btn btn-default">Comments</button> </span>
-                     <span style="margin-right:3em"><button id="share" onclick="expand('share','shareArea')" name="share" class="btn btn-default">Share</button> </span>
+                   
+                     <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('CommentArea')" class="btn btn-default">Comments</button> </span>
+                     <span style="margin-right:3em"><button id="share" onclick="expand('shareArea')" name="share" class="btn btn-default">Share</button> </span>
                      <span style="margin-right:3em"><button id="cookBook" class="btn btn-default" onclick="location.href='./login'">Add to Cookbook</button></span>
                  
                 <span id="accessThruUserLogin" style="visibility: hidden">
@@ -114,29 +110,41 @@
                     <span style="margin-right:3em"><a>Delete</a></span>
                 </span>
                      </div>
-                <div id="CommentArea" style="margin-top:1em;border:1px solid black;width:52em">
-                <h5>Your feedback...</h5>
-                <div style="margin-bottom:1em"><span style="margin-right:3em">Rohan Sharma</span><span>Comment 1</span></div>
-                <div style="margin-bottom:1em"><span style="margin-right:3em">Neesha Methla</span><span>Comment 2</span></div>
-                  <div style="margin-bottom:1em"><span style="margin-right:3em">User </span><span><div class="controls"><textarea id="comment" name="comment">Post your comment here</textarea></div>
-                          </span><button id="commentInner" name="comment" class="btn btn-default">Comment</button>
-            </div>
-                
-               
-                <div class="clearfix"></div>
-            </div>
-                <div id="shareArea" style="margin-top:1em;">
+                                       <div id="shareArea" style="margin-top:1em;">
                     <h5> Share with</h5>
-                   <!-- Twitter -->
+                 
 <a href="http://twitter.com/home?status=" style="margin-right:3em" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
- <!-- Facebook -->
+
 <a href="https://www.facebook.com/sharer/sharer.php?u=" style="margin-right:3em" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
-<!-- Google+ -->
+
 <a href="https://plus.google.com/share?url=" style="margin-right:3em" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
                 </div>
+                <div id="CommentArea" style="margin-top:1em;border:1px solid black;width:52em">
+                <h5>Your feedback...</h5>
+                <span>
+                    <div class="controls">
+                        <textarea  cols="88" id="comment" name="comment" placeholder="Post your comment here"></textarea>
+                    </div>
+                 </span>
+                <span>
+                <button id="commentInner" name="comment" style="float:right;margin-top: -3em">Comment</button>
+                </span>
+                <div style="margin-bottom:1em">
+                    <span style="margin-right:3em"><a href="myprofileR" >Rohan Sharma</a></span>
+                    <span>Comment 1</span>
+                </div>
+                <div style="margin-bottom:1em">
+                    <span style="margin-right:3em"><a href="myprofileR" >Neesha Methla</a></span>
+                    <span>Comment 2</span>
+                </div>
+                
+            </div>
+  
              </div>
-             </div>
+              </div>
         </div>
+</div>
+    
 
     <!-- /.container -->
 
