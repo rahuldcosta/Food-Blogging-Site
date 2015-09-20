@@ -7,7 +7,8 @@
         function mark(el) {
     el.style.border = "1px solid blue";
     }
-    function expand(id2){
+    function expand(id1,id2){
+        document.getElementById(id1).style.display="none";
         document.getElementById(id2).style.display="block";
     }
 </script>
@@ -101,8 +102,8 @@
                    </div>
                  <div>
                    
-                     <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('CommentArea')" class="btn btn-default">Comments</button> </span>
-                     <span style="margin-right:3em"><button id="share" onclick="expand('shareArea')" name="share" class="btn btn-default">Share</button> </span>
+                     <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('shareArea','CommentArea')" class="btn btn-default">Comments</button> </span>
+                     <span style="margin-right:3em"><button id="share" onclick="expand('CommentArea','shareArea')" name="share" class="btn btn-default">Share</button> </span>
                      <span style="margin-right:3em"><button id="cookBook" class="btn btn-default" onclick="location.href='./login'">Add to Cookbook</button></span>
                  
                 <span id="accessThruUserLogin" style="visibility: hidden">
