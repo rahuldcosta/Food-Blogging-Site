@@ -52,6 +52,8 @@ function __construct(){
             
             
             $data = array(
+                'recipe_id' => md5("recipe".time()),
+  'author' => "rahuldc99@gmail.com",              
 'rname' => $this->input->post('rname'),
                 'ingredents' => $this->input->post('ingredients'),
                 'steps' => $this->input->post('steps'),
@@ -59,8 +61,12 @@ function __construct(){
 'recipetype' => $this->input->post('foodtype'),
 'regiontype' => $this->input->post('regiontype'),
                 
-'dishImgURL' => "rahuldc99@gmail.com".$upload_data['file_name'],
-                'VidLinkURL' => $this->input->post('VidLinnk')
+'dishImgURL' => $upload_data['file_name'],
+                'VidLinkURL' => $this->input->post('VidLinnk'),
+                    'views' => 0,
+                    'rating' => array(), 
+                    'comments' => array(),
+                'date'=> date("d-m-Y",time()),
 );
            
             
@@ -73,6 +79,16 @@ function __construct(){
         }
         
            }
+           
+   public function viewrecipe()
+   {
+       
+      
+        $this->load->view('master');
+            $this->load->view('more');
+             $this->load->view('footer');
+   }
+           
  }
 
 

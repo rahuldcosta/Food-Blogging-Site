@@ -73,11 +73,10 @@
                         <strong>Dessert </strong>of the month
                     </h2>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="<?php echo base_url(); ?>/resources/img/rasberry.jpg" alt="">
+                    <img class="img-responsive img-border img-left" src="<?php echo base_url(); ?>/uploads/imgfiles/<?php echo $durl?>" alt="">
                     <hr class="visible-xs">
-                    <p><strong>Raspberry-Filled Molten Chocolate Cupcakes.</strong></p>
-                    <p>Preheat oven to 400 degrees. Line 12 cup standard muffin tin cups with paper liners. In a large bowl with a mixer, beat butter and sugar on medium high until light and fluffy, about 2 minutes. Add eggs, one at a time, beating well after each addition. With mixer on low, beat in flour and salt. Beat in chocolate until just combined.
-</p>
+                    <p><strong><?php echo $dname; ?></strong></p>
+                    <p><?php echo $dsteps; ?>
                     <p><a href="<?php echo site_url('foodieHome/more');?>" class="floating-link">more </a></p>
                 </div>
             </div>

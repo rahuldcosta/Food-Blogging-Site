@@ -5,6 +5,7 @@ function __construct(){
         parent::__construct();
         
          $this->load->helper("url");
+          $this->load->model('recipes');
        
         
     }
@@ -56,9 +57,21 @@ function __construct(){
         }
 	public function index()
         {
+           
+            
+            $desertarray= $this->recipes->form_get('5826460f04b8f1f1156c86f531caf205'); 
+           // print_r($desertarray);
+            
+        
             //Home page titles
             $this->load->view('master');
-            $this->load->view('FoodiePublicHome');
+            $this->load->view('FoodiePublicHome',array(
+                
+                'dname'=>$desertarray[0]['rname'],
+                'dsteps'=>$desertarray[0]['steps'],
+                'durl'=>$desertarray[0]['dishImgURL'],
+                
+            ));
             $this->load->view('footer');
         }
         	public function helpPage()
@@ -120,9 +133,7 @@ function __construct(){
         
          public function more()
         {
-            $this->load->view('master');
-            $this->load->view('more');
-             $this->load->view('footer');
+           
         }
           public function searchSite()
         {

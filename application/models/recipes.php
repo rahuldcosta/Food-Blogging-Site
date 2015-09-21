@@ -18,4 +18,18 @@ function form_insert($data){
     $this->mongo_db->insert('recipes', $data);
 
 }
+
+function form_get($data){
+    
+// Inserting in Table(students) of Database(college)
+  $result= $this->mongo_db
+          ->select(array('rname', 'steps','dishImgURL'))
+          ->where(array('recipe_id'=> $data))
+          ->get('recipes');
+   
+   
+   return $result;
+}
+
+
 }
