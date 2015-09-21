@@ -11,6 +11,39 @@
         document.getElementById(id1).style.display="none";
         document.getElementById(id2).style.display="block";
     }
+    
+    
+    function addcomment(r_id,comment,username,uid)
+    {
+       
+jQuery.ajax({
+type: "POST",
+
+url: "<?php echo site_url("recipe/addcomment") ?>",
+dataType: 'json',
+data: {r_id: r_id,uid: uid,uname: username,comment:comment},
+success: function(res) {
+if (res.stat)
+{
+    var oldcm= document.getElementById('oldcomments').innerHTML;
+        var newItem = '<div style="margin-bottom:1em">'+
+'                    '+
+'                <span style="margin-right: 3em">'+comment+'</span>'+
+'                <span style="margin-right:3em;font-size: smaller">commented by <a href="myprofileR" >'+username+'</a></span>'+
+'                </div>';
+
+        document.getElementById('oldcomments').innerHTML=newItem;
+        document.getElementById('oldcomments').innerHTML+=oldcm;
+}
+ 
+}
+
+
+
+
+});
+        
+    }
 </script>
         
  
@@ -24,18 +57,24 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong>Raspberry-Filled Molten Chocolate Cupcakes</strong>
+                        <strong><?php echo $rname?></strong>
 
                     </h2>
                     <hr>
                     <h5>
 
                         <span style="float:left"> 
-                        Author:&nbsp;&nbsp;&nbsp;MTD hgkhj<br>
-                        Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12/12/12<br>
-                        Category:&nbsp;Dessert<br>
-                        Regional:&nbsp;&nbsp;&nbsp;Thai <br>
-                        Veg:&nbsp;&nbsp;&nbsp;Yes
+                        Author:&nbsp;&nbsp;&nbsp;<?php echo $author?><br>
+                        Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $dateadded?><br>
+                        Category:&nbsp;<?php echo $recipetype?><br>
+                        Regional:&nbsp;&nbsp;&nbsp;<?php echo $regiontype?> <br>
+                        Veg:&nbsp;&nbsp;&nbsp;<?php 
+                        if ($vegselected==1)
+                            echo 'Yes';
+                            else 
+                        {echo 'No';
+                            
+                        }?>
                         <br>
                         </span>
                         <span style="float:right">
@@ -60,21 +99,22 @@
     </form>
 --></div>
   
-                        <div>Views: 24146</div>
+                        <div>Views: <?php echo $views?></div>
                         </span>
                             
 
                     </h5>
                 </div>
                 <div class="col-md-5">
-                                       <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/resources/img/rasberry.jpg" alt="">
+                                       <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/uploads/imgfiles/<?php echo $rurl?>" alt="">
                                        
                     </div>
                 <div class="col-md-7">
                      <div class="row">
                                       
                     <p><strong>INGREDIENTS</strong></p>
-                    <p>1/2 cup granulated sugar</p>
+                    <p><?php echo $ingredents?></p>
+<!--                    <p>1/2 cup granulated sugar</p>
                     <p>6 tablespoons unsalted butter room temperature</p>
                     <p>4 large eggs</p>
                     <p>1/2 cup all-purpose flour (spooned and leveled)</p>
@@ -82,13 +122,14 @@
                     <p>11 ounces semisweet chocolate, melted (2 1/2 cups chopped)</p>
                     <p>18 raspberries (36 if they are small)</p>
                     <p>Confectioners' sugar, for serving</p>
-                    <p>Vanilla ice cream (optional)</p>
+                    <p>Vanilla ice cream (optional)</p>-->
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="row">
                     <p><strong>DIRECTIONS</strong></p>
-                    <p>Preheat oven to 400 degrees. Line 12 cup standard muffin tin cups with paper liners. 
+                    <p><?php echo $rsteps?></p>
+<!--                    <p>Preheat oven to 400 degrees. Line 12 cup standard muffin tin cups with paper liners. 
                         In a large bowl with a mixer, beat butter and sugar on medium high until light and fluffy, 
                         about 2 minutes. Add eggs, one at a time, beating well after each addition. 
                         With mixer on low, beat in flour and salt. Beat in chocolate until just combined.</p>
@@ -97,9 +138,11 @@
                         Bake until tops are just set and no longer shiny, 
                         10 to 11 minutes, let cool in pan on a wire rack, 10 minutes. 
                         Remove from pans, dust with confectioners' sugar, and top with ice cream, 
-                        if desired.</p>
+                        if desired.</p>-->
                     </div>
                    </div>
+                           <div>Video Link:- <a><?php echo $VidLinkURL;?></a></div>
+                           <div>Video Link:- <a href="http://<?php echo $VidLinkURL;?>"><?php echo $VidLinkURL;?></a></div>
                  <div>
                    
                      <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('shareArea','CommentArea')" class="btn btn-default">Comments</button> </span>
@@ -120,24 +163,41 @@
 
 <a href="https://plus.google.com/share?url=" style="margin-right:3em" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
                 </div>
+                           
+                           
+                           
                 <div id="CommentArea" style="margin-top:1em;border:1px solid black;width:52em">
                 <h5>Your feedback...</h5>
                 <span>
                     <div class="controls">
-                        <textarea  cols="88" id="comment" name="comment" placeholder="Post your comment here"></textarea>
+                        <textarea  cols="88" id="commentarea"  placeholder="Post your comment here"></textarea>
                     </div>
                  </span>
                 <span>
-                <button id="commentInner" name="comment" style="float:right;margin-top: -3em">Comment</button>
+                    <button id="commentbtton" onclick="addcomment('<?php echo $r_id;?>',document.getElementById('commentarea').value,'rahulDcosta','rahul@gmail.cm')" style="float:right;margin-top: -3em">Comment</button>
                 </span>
+                <div id="oldcomments">
+                <?php
+              //  print_r($comments);
+                
+                      
+                foreach($comments as $row){
+                ?>
                 <div style="margin-bottom:1em">
-                    <span style="margin-right:3em"><a href="myprofileR" >Rohan Sharma</a></span>
-                    <span>Comment 1</span>
+                    
+                <span style="margin-right: 3em"><?php echo $row['comment']?></span>
+                <span style="margin-right:3em;font-size: smaller">commented by <a href="myprofileR" > <?php echo $row['uname']?></a></span>
                 </div>
-                <div style="margin-bottom:1em">
-                    <span style="margin-right:3em"><a href="myprofileR" >Neesha Methla</a></span>
-                    <span>Comment 2</span>
+                
+                <?php
+                
+                
+                        }
+                        
+                        ?>
+              
                 </div>
+                
                 
             </div>
   

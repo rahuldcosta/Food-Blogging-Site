@@ -70,6 +70,7 @@ function __construct(){
                 'dname'=>$desertarray[0]['rname'],
                 'dsteps'=>$desertarray[0]['steps'],
                 'durl'=>$desertarray[0]['dishImgURL'],
+                'recipeid'=>$desertarray[0]['recipe_id'],
                 
             ));
             $this->load->view('footer');

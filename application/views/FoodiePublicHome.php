@@ -77,7 +77,7 @@
                     <hr class="visible-xs">
                     <p><strong><?php echo $dname; ?></strong></p>
                     <p><?php echo $dsteps; ?>
-                    <p><a href="<?php echo site_url('foodieHome/more');?>" class="floating-link">more </a></p>
+                    <p><a href="<?php echo site_url("recipe/viewrecipe?r_id=$recipeid");?>" class="floating-link">more </a></p>
                 </div>
             </div>
         </div>

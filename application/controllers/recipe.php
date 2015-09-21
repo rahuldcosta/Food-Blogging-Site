@@ -17,7 +17,7 @@ function __construct(){
             'upload_path'   => './uploads/imgfiles/',
             'allowed_types' => 'gif|jpg|png',
             'max_size'      => '100',
-            'max_width'     => '1024',
+            'max_width'     => '1366',
             'max_height'    => '768',
             'encrypt_name'  => true,
         );
@@ -82,13 +82,52 @@ function __construct(){
            
    public function viewrecipe()
    {
-       
+        $recipearray= $this->recipes->form_get($this->input->get('r_id')); 
       
+       // print_r($recipearray);
+        
+        
+        
+        
         $this->load->view('master');
-            $this->load->view('more');
+            $this->load->view('r_details',
+                    array(
+                
+                'rname'=>$recipearray[0]['rname'],
+                'rsteps'=>$recipearray[0]['steps'],
+                'rurl'=>$recipearray[0]['dishImgURL'],
+                 'author'=>$recipearray[0]['author'],
+                'ingredents'=>$recipearray[0]['ingredents'],
+                'vegselected'=>$recipearray[0]['vegselected'],
+                        'recipetype'=>$recipearray[0]['recipetype'],
+                'regiontype'=>$recipearray[0]['regiontype'],
+                'VidLinkURL'=>$recipearray[0]['VidLinkURL'],
+                 'dateadded'=>$recipearray[0]['date'],      
+                 'comments' =>array_reverse($recipearray[0]['comments']),      
+                 'views' =>$recipearray[0]['views'],        
+                        
+                        
+                'r_id'=>$recipearray[0]['recipe_id'],
+                
+            )
+                    );
              $this->load->view('footer');
    }
-           
+     
+   
+   
+   public function  addcomment()
+   {
+   
+               $this->recipes->addnewcomment($this->input->post('r_id'),$this->input->post('uid'),$this->input->post('uname'),$this->input->post('comment'));
+       
+                $data = array(
+        'stat' => TRUE,
+               
+                );
+            
+            echo json_encode($data);
+   }
  }
 
 

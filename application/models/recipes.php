@@ -21,14 +21,19 @@ function form_insert($data){
 
 function form_get($data){
     
-// Inserting in Table(students) of Database(college)
+$this->mongo_db->where(array('recipe_id'=> $data))->inc(array('views' => 1))->update('recipes');
+    
   $result= $this->mongo_db
-          ->select(array('rname', 'steps','dishImgURL'))
+          ->select(array())
           ->where(array('recipe_id'=> $data))
           ->get('recipes');
    
    
    return $result;
+}
+
+function addnewcomment($r_id,$uid,$uname,$comment){
+    $this->mongo_db->where(array('recipe_id'=>$r_id))->push('comments', array('uid'=>$uid,'uname'=>$uname,'comment'=>$comment))->update('recipes');
 }
 
 
