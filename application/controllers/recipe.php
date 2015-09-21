@@ -16,7 +16,7 @@ function __construct(){
       $config = array(
             'upload_path'   => './uploads/imgfiles/',
             'allowed_types' => 'gif|jpg|png',
-            'max_size'      => '100',
+            'max_size'      => '75100',
             'max_width'     => '1366',
             'max_height'    => '768',
             'encrypt_name'  => true,
@@ -84,20 +84,39 @@ function __construct(){
    {
         $recipearray= $this->recipes->form_get($this->input->get('r_id')); 
       
+        $uname="Rohan Da silva";
        // print_r($recipearray);
         
+        $ops = array(
+    array(
+        '$match' => array(
+            "recipe_id" => $this->input->get('r_id')
+        
+        )
+    ),
+    array('$unwind' => '$rating'),
+    array(
+        '$group' => array(
+            "_id" => '$recipe_id',
+            "avgstars" => array('$avg' => '$rating.stars'),
+        ),
+    ),
+);
+       
+        $avg=$this->recipes->getavgrating($ops);
         
         
         
         $this->load->view('master');
             $this->load->view('r_details',
                     array(
-                
+                'uname'=>$uname,
                 'rname'=>$recipearray[0]['rname'],
                 'rsteps'=>$recipearray[0]['steps'],
                 'rurl'=>$recipearray[0]['dishImgURL'],
                  'author'=>$recipearray[0]['author'],
                 'ingredents'=>$recipearray[0]['ingredents'],
+                        'avgrate'=>$avg,
                 'vegselected'=>$recipearray[0]['vegselected'],
                         'recipetype'=>$recipearray[0]['recipetype'],
                 'regiontype'=>$recipearray[0]['regiontype'],
@@ -118,8 +137,25 @@ function __construct(){
    
    public function  addcomment()
    {
+       $uid="ron@gmail.com";
+       $uname="Rohan Da silva";
    
-               $this->recipes->addnewcomment($this->input->post('r_id'),$this->input->post('uid'),$this->input->post('uname'),$this->input->post('comment'));
+               $this->recipes->addnewcomment($this->input->post('r_id'),$uid,$uname,$this->input->post('comment'));
+       
+                $data = array(
+        'stat' => TRUE,
+               
+                );
+            
+            echo json_encode($data);
+   }
+   
+    public function  sendrating()
+   {
+       $uid="ron@gmail.com";
+     
+   
+               $this->recipes->addnewrating($this->input->post('r_id'),$uid,(int)$this->input->post('score'));
        
                 $data = array(
         'stat' => TRUE,

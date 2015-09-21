@@ -12,16 +12,42 @@
         document.getElementById(id2).style.display="block";
     }
     
-    
-    function addcomment(r_id,comment,username,uid)
+    function sendrating(r_id,score)
     {
-       
+       jQuery.ajax({
+type: "POST",
+
+url: "<?php echo site_url("recipe/sendrating") ?>",
+dataType: 'json',
+data: {r_id: r_id,score:score},
+success: function(res) {
+
+ if(res.stat)
+ {
+     alert("Thank You For Rating");
+}
+
+
+
+
+}});
+    
+    
+    }
+    
+    function addcomment(r_id,comment,username)
+    {
+       if(comment=="")
+       {
+           alert("type in comment to post");
+           return;
+       }
 jQuery.ajax({
 type: "POST",
 
 url: "<?php echo site_url("recipe/addcomment") ?>",
 dataType: 'json',
-data: {r_id: r_id,uid: uid,uname: username,comment:comment},
+data: {r_id: r_id,comment:comment},
 success: function(res) {
 if (res.stat)
 {
@@ -79,26 +105,28 @@ if (res.stat)
                         </span>
                         <span style="float:right">
                             <div>
-                              Star Ratings: 
+                              Your Rating: 
                              
                               <div class="acidjs-rating-stars">
-    <form>
-        <input type="radio" name="group-1" id="group-1-0" value="5" /><label for="group-1-0"></label>
-        <input type="radio" name="group-1" id="group-1-1" value="4" /><label for="group-1-1"></label>
-        <input type="radio" name="group-1" id="group-1-2" value="3" /><label for="group-1-2"></label>
-        <input type="radio" name="group-1" id="group-1-3" value="2" /><label for="group-1-3"></label>
-        <input type="radio" name="group-1" id="group-1-4"  value="1" /><label for="group-1-4"></label>
-    </form>
+    
+                                  
+                                  <input type="radio" name="group-1" id="group-1-0" value="5" onclick="sendrating('<?php echo $r_id;?>',this.value)" /><label for="group-1-0"></label>
+        <input type="radio" name="group-1" id="group-1-1" value="4" onclick="sendrating('<?php echo $r_id;?>',this.value)"/><label for="group-1-1"></label>
+        <input type="radio" name="group-1" id="group-1-2" value="3" onclick="sendrating('<?php echo $r_id;?>',this.value)" /><label for="group-1-2"></label>
+        <input type="radio" name="group-1" id="group-1-3" value="2" onclick="sendrating('<?php echo $r_id;?>',this.value)" /><label for="group-1-3"></label>
+        <input type="radio" name="group-1" id="group-1-4"  value="1" onclick="sendrating('<?php echo $r_id;?>',this.value)" /><label for="group-1-4"></label>
+    
                   <!--display            <div class="acidjs-rating-stars acidjs-rating-disabled">
-    <form>
+ 
         <input disabled="disabled" type="radio" name="group-3" id="group-3-0" value="5" /><label for="group-3-0"></label><!--
         <input disabled="disabled" type="radio" checked="checked" name="group-3" id="group-3-1" value="4" /><label for="group-3-1"></label><!--
         <input disabled="disabled" type="radio" name="group-3" id="group-3-2" value="3" /><label for="group-3-2"></label><!--
         <input disabled="disabled" type="radio" name="group-3" id="group-3-3" value="2" /><label for="group-3-3"></label><!--
         <input disabled="disabled" type="radio" name="group-3" id="group-3-4"  value="1" /><label for="group-3-4"></label>
-    </form>
+    
 --></div>
   
+                        <div>Avg Rating : <?php echo round($avgrate,2)?> /5</div>
                         <div>Views: <?php echo $views?></div>
                         </span>
                             
@@ -174,7 +202,7 @@ if (res.stat)
                     </div>
                  </span>
                 <span>
-                    <button id="commentbtton" onclick="addcomment('<?php echo $r_id;?>',document.getElementById('commentarea').value,'rahulDcosta','rahul@gmail.cm')" style="float:right;margin-top: -3em">Comment</button>
+                    <button id="commentbtton" onclick="addcomment('<?php echo $r_id;?>',document.getElementById('commentarea').value,'<?php echo $uname;?>')" style="float:right;margin-top: -3em">Comment</button>
                 </span>
                 <div id="oldcomments">
                 <?php

@@ -36,5 +36,21 @@ function addnewcomment($r_id,$uid,$uname,$comment){
     $this->mongo_db->where(array('recipe_id'=>$r_id))->push('comments', array('uid'=>$uid,'uname'=>$uname,'comment'=>$comment))->update('recipes');
 }
 
+function getavgrating($ops)
+{
+   $res=$this->mongo_db->aggregate('recipes', $ops);
+  //if(isset($res['result'][0]['avgstars']))
+   return $res['result'][0]['avgstars'];
+//   else
+//       return 0;
+  
+}
+
+
+function addnewrating($r_id,$uid,$score)
+{
+  $this->mongo_db->where(array('recipe_id'=>$r_id))->push('rating', array('uid'=>$uid,'stars'=>$score))->update('recipes');
+  
+}
 
 }
