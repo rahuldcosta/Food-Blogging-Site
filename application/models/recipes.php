@@ -53,4 +53,30 @@ function addnewrating($r_id,$uid,$score)
   
 }
 
+function getthebestrecipe($recipetype)
+{
+    $ops = array(
+    array(
+        '$match' => array(
+            "recipetype" => $recipetype
+        
+        )
+    ),
+    array('$unwind' => '$rating'),
+    array(
+        '$group' => array(
+            "_id" => '$recipe_id',
+            "avgstars" => array('$avg' => '$rating.stars'),
+        ),
+    ),
+);
+   $res=$this->mongo_db->aggregate('recipes', $ops);
+   if(isset($res['result'][0]['_id']))
+    return $res['result'][0]['_id'];
+   else return "";
+  
+}
+
+
+
 }

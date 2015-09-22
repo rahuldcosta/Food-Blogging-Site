@@ -57,22 +57,90 @@ function __construct(){
         }
 	public function index()
         {
-           
             
-            $desertarray= $this->recipes->form_get('ae6f834b7e843e3eb8f4f09d398c9c7d'); 
+            $a_date=date("d-m-Y",time());
+        $date1=date_create(date("d-m-Y",time()));
+        $date2=date_create(date("Y-m-t", strtotime($a_date)));
+        $diff=date_diff($date1,$date2);
+           $thediffofdates=$diff->format("%a");
+           
+          $desertsend=array("","","","");
+           $mealsend=array("","","","");
+           $snacksend=array("","","","");
+           
+           
+       if($thediffofdates <= 4)
+       {
+        
+           $snackid=$this->recipes->getthebestrecipe("Snack");
+           $dessertid=$this->recipes->getthebestrecipe("Dessert");
+           $mealid=$this->recipes->getthebestrecipe("Meal");
+           
+       
+           
+         //  echo $snackid,$dessertid,$mealid;
+           
+         
+           
+           
+
+           
+            if($dessertid!="")
+            {
+            $desertarray= $this->recipes->form_get($dessertid);
+            $desertsend[0]=$desertarray[0]['rname'];
+                $desertsend[1]=$desertarray[0]['steps'];
+               $desertsend[2]=$desertarray[0]['dishImgURL'];
+                $desertsend[3]=$desertarray[0]['recipe_id'];
+            }
+            if($mealid!="")
+            {
+            $mealarray= $this->recipes->form_get($mealid);
+            $mealsend[0]=$mealarray[0]['rname'];
+                $mealsend[1]=$mealarray[0]['steps'];
+               $mealsend[2]=$mealarray[0]['dishImgURL'];
+                $mealsend[3]=$mealarray[0]['recipe_id'];
+            }
+            
+             if($snackid!="")
+            {
+            $snackarray= $this->recipes->form_get($snackid);
+            $snacksend[0]=$snackarray[0]['rname'];
+                $snacksend[1]=$snackarray[0]['steps'];
+               $snacksend[2]=$snackarray[0]['dishImgURL'];
+                $snacksend[3]=$snackarray[0]['recipe_id'];
+            }
            // print_r($desertarray);
             
-        
+        }
             //Home page titles
             $this->load->view('master');
+            
+            
+            
             $this->load->view('FoodiePublicHome',array(
                 
-                'dname'=>$desertarray[0]['rname'],
-                'dsteps'=>$desertarray[0]['steps'],
-                'durl'=>$desertarray[0]['dishImgURL'],
-                'recipeid'=>$desertarray[0]['recipe_id'],
+                'dname'=>$desertsend[0],
+                'dsteps'=>$desertsend[1],
+                'durl'=>$desertsend[2],
+                'drecipeid'=>$desertsend[3],
+                
+                'mname'=>$mealsend[0],
+                'msteps'=>$mealsend[1],
+                'murl'=>$mealsend[2],
+                'mrecipeid'=>$mealsend[3],
+                
+                'sname'=>$snacksend[0],
+                'ssteps'=>$snacksend[1],
+                'surl'=>$snacksend[2],
+                'srecipeid'=>$snacksend[3],
                 
             ));
+            
+            
+            
+            
+            
             $this->load->view('footer');
         }
         	public function helpPage()

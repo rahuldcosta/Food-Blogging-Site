@@ -73,11 +73,16 @@
                         <strong>Dessert </strong>of the month
                     </h2>
                     <hr>
+                     <?php if($drecipeid!=""){?>
                     <img class="img-responsive img-border img-left" src="<?php echo base_url(); ?>/uploads/imgfiles/<?php echo $durl?>" alt="">
                     <hr class="visible-xs">
                     <p><strong><?php echo $dname; ?></strong></p>
                     <p><?php echo $dsteps; ?>
-                    <p><a href="<?php echo site_url("recipe/viewrecipe?r_id=$recipeid");?>" class="floating-link">more </a></p>
+                    <p><a href="<?php echo site_url("recipe/viewrecipe?r_id=$drecipeid");?>" class="floating-link">more </a></p>
+                     <?php  }else { ?>
+                     <p class="text-center" style="color:blueviolet"><strong>Sorry it yet to be decided</strong></p>
+                    
+                    <?php  } ?>
                 </div>
             </div>
         </div>
@@ -86,14 +91,20 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong>Snack </strong>of the month
+                        <strong>Meal </strong>of the month
                     </h2>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="<?php echo base_url(); ?>/resources/img/spring.jpg" alt="">
+                    
+                    <?php if($mrecipeid!=""){?>
+                    <img class="img-responsive img-border img-left" src="<?php echo base_url(); ?>/uploads/imgfiles/<?php echo $murl?>" alt="">
                     <hr class="visible-xs">
-                    <p><strong>Mini Vegetable Spring Rolls</strong></p>
-                    <p>No urging needed to finish these veggies. When you cook  Mini Vegetable Spring Rolls as a quick and easy Asian-style snack for your family, they’ll discover fresh-cut vegetables inside a delicate, crispy wrapper. The sweet chili dipping sauce only adds to the Asian-inspired experience. It’s a taste discovery that takes mere minutes to prepare at either snack time or dinnertime.</p>
-                    <p><a href="more" class="floating-link">more </a></p>
+                    <p><strong><?php echo $mname; ?></strong></p>
+                    <p><?php echo $msteps; ?>
+                    <p><a href="<?php echo site_url("recipe/viewrecipe?r_id=$mrecipeid");?>" class="floating-link">more </a></p>
+                    <?php  }else { ?>
+                     <p class="text-center" style="color:blueviolet"><strong>Sorry it yet to be decided</strong></p>
+                    
+                    <?php  } ?>
                 </div>
             </div>
         </div>
@@ -103,14 +114,19 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong>Meal </strong>of the month
+                        <strong>Snack </strong>of the month
                     </h2>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="<?php echo base_url(); ?>/resources/img/prawn.jpg" alt="">
+                     <?php if($srecipeid!=""){?>
+                    <img class="img-responsive img-border img-left" src="<?php echo base_url(); ?>/uploads/imgfiles/<?php echo $surl?>" alt="">
                     <hr class="visible-xs">
-                    <p><strong>Prawn Sweet And Sour</strong></p>
-                    <p>Sweet and sour prawns are a traditional Chinese recipe. Forget the local takeaway, these are so quick and easy to make at home.</p>
-                    <p><a href="more" class="floating-link">more </a></p>
+                    <p><strong><?php echo $sname; ?></strong></p>
+                    <p><?php echo $ssteps; ?>
+                    <p><a href="<?php echo site_url("recipe/viewrecipe?r_id=$srecipeid");?>" class="floating-link">more </a></p>
+                    <?php  }else { ?>
+                     <p class="text-center" style="color:blueviolet"><strong>Sorry it yet to be decided</strong></p>
+                    
+                    <?php  } ?>
                 </div>
             </div>
         </div>
