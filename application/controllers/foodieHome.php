@@ -151,13 +151,7 @@ function __construct(){
             $this->load->view('helpPage');
              $this->load->view('footer');
         }
-        public function indexedSearch()
-        {
-            //Home page titles
-            $this->load->view('master');
-            $this->load->view('indexedSearch');
-            $this->load->view('footer');
-        }
+       
         
         public function login()
         {
@@ -204,12 +198,7 @@ function __construct(){
         {
            
         }
-          public function searchSite()
-        {
-            $this->load->view('master');
-            $this->load->view('searchSite');
-             $this->load->view('footer');
-        }
+        
             public function userPage()
         {
              $this->load->view('master');
