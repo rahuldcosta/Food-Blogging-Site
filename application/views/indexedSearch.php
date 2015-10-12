@@ -21,7 +21,7 @@
                                      <?php      $azRange = range('A', 'Z');
 foreach ($azRange as $letter)
 {
-  print("$letter \n");
+  echo"<a>$letter </a>";
 }
 ;?>
                 </div>
