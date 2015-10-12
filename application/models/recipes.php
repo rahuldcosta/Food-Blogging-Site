@@ -19,17 +19,78 @@ function form_insert($data){
 
 }
 
-function get_all_recipes($pageno){
+function  viewall($pageno,$limit,$chara)
+{
+    if($chara=="all")
+    {
+       $regex = new MongoRegex("//"); 
+    }else
+        
+    $regex = new MongoRegex("/^$chara/im");
     
-    $result= $this->mongo_db
+    
+    $resulted= $this->mongo_db
           ->select(array('recipe_id','rname','author'))
+           ->where(array('rname'=>$regex))
             ->offset($pageno*2)
-          ->limit(4)
+          ->limit($limit)
           ->get('recipes');
+    
+    $counter= $this->mongo_db
+          ->select(array('recipe_id','rname','author'))
+            ->where(array('rname'=>$regex))
+             ->count('recipes');
+    $result= array(
+        
+        "results"=> $resulted,
+        "max"=>$counter,
+         "limit"=>$limit,
+            "pgno"=>$pageno
+        
+    );
+    
+    return $result;
+}
+        
+
+function view_fltered($pageno,$whereparameters,$limit){
+    
+    
+  
+    $resulted= $this->mongo_db
+          ->select(array('recipe_id','rname','author'))
+            ->where($whereparameters)
+            ->offset($pageno*2)
+          ->limit($limit)
+          ->get('recipes');
+    
+    $counter= $this->mongo_db
+          ->select(array('recipe_id','rname','author'))
+            ->where($whereparameters)
+             ->count('recipes');
+    
+    $result= array(
+        
+        "results"=> $resulted,
+        "max"=>$counter,
+            "limit"=>$limit,
+            "pgno"=>$pageno
+        
+    );
+    
     return $result;
 }
 
 
+function  get_count($collection){
+    $regex = new MongoRegex("/^g/"); 
+
+    $result= $this->mongo_db
+            ->where(array('rname'=>$regex))
+            ->count($collection);
+    return $result;
+}
+        
 
 
 

@@ -2,8 +2,10 @@
 <html lang="en">
     <script>
 
-<body>
+
    </script>
+   
+   <body>
 <div id="sidebar" class="col-lg-9">
         <div class="row">
             <div class="box">
@@ -18,10 +20,13 @@
           
                 <div class="clearfix"></div>
                 <div>
+                    <a href="<?php echo site_url("search/switchtoalphabetic?alpha=all");?>">All</a>
 				<?php      $azRange = range('A', 'Z');
                     foreach ($azRange as $letter)
                     {
-                      echo"<a>$letter </a>";
+                      ?>
+                       <a href="<?php echo site_url("search/switchtoalphabetic?alpha=$letter");?>"><?php echo $letter ?></a>
+                      <?php
                     }
                  ;?>
                   
@@ -31,31 +36,63 @@
 						<th>Recipe</th>
 						<th>Author</th>
 					 </tr>
+                                         <?php $count=0?>
+                                         <?php   foreach($reciepesset['results'] as $row){?>
 					  <tr>
-						<td>1</td>
-						<td><a href="#"> Spicy Tomato Semolina (Tomato Rava Upma)</a></td>		
-						<td>Scheweta</td>
+						<td><?php $count++;echo $count ?></td>
+                                                <td><a href="#"><?php echo $row['rname'] ?> </a></td>		
+						<td><?php echo $row['author'] ?></td>
 					  </tr>
-					  <tr>
-						<td>2</td>
-						<td> <a href="#"> Savory Bread (Bread Upma)  </a></td>		
-						<td>Rahul</td>
-					  </tr>
-					  <tr>
-						<td>3</td>
-						<td><a href="#"> Cream of Wheat Savory Cakes (Rava Idli) </a></td>		
-						<td>Siddhesh</td>
-					  </tr>
+                                         <?php } ?>
 					</table>
 					</div>
 					<div>
 						<br/>
-						<input type="button" value="Prev" />
-						<a href="#" style="padding:3px"> 1 </a>
-						<a href="#" style="padding:3px"> 2 </a>
-						<a href="#" style="padding:3px"> 3 </a>
-						<a href="#" style="padding:3px"> 4 </a>
-						<input type="button" value="Next"/>
+                                               <?php  
+                                                
+						if($reciepesset['pgno']!=0){
+                    ?>
+                <a id='link' onclick="location.href='<?php echo site_url("search/getnextpage?pgno=0");?>'"> First</a>                    
+              <?php  }
+                                                
+                                               
+                    
+                                                for($wwc=0;$wwc<ceil($reciepesset['max']/$reciepesset['limit']);$wwc++)
+                {
+                    $hit=($wwc)*$reciepesset['limit'];
+                    
+                    if($reciepesset['pgno']==$hit )
+                    {
+                        
+                       ?>
+                            <a id='link' onclick="location.href='<?php echo site_url("search/getnextpage?pgno=$hit");?>'"> <?php echo ($wwc+1)?></a>                    
+                     
+                    <?php  
+                    } else  {
+                        
+                        ?>
+                            <a id='link' onclick="location.href='<?php echo site_url("search/getnextpage?pgno=$hit");?>'"> <?php echo ($wwc+1)?></a>                    
+                     
+                    <?php     }
+                  
+                    
+                }
+                                                
+                                                
+                                        if($hit!=$reciepesset['pgno']) {
+                                            
+                                            
+                                            ?>
+                                                
+              <a id='link' style='margin-left:10px' onclick="location.href='<?php echo site_url("search/getnextpage?pgno=$hit");?>'">Last</a>         
+                                      <?php          
+                                        }  ?>
+                                                
+				
+                                                
+                                                
+                                                
+						
 						
 					</div>
                 </div>

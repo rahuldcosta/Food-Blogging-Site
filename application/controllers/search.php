@@ -24,13 +24,60 @@ function __construct(){
          public function indexedSearch()
         {
             //Home page titles
-             $setofrecipes=$this->recipes->get_all_recipes(1);
+             $setofrecipes=$this->recipes->viewall(0,3,"all");
              
-             print_r($setofrecipes);
+           //  echo $this->recipes->get_count("recipes");
+         //   print_r($setofrecipes);
 //             echo $setofrecipes;
-//            $this->load->view('master');
-//            $this->load->view('indexedSearch');
-//            $this->load->view('footer');
+            $this->load->view('master');
+            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes));
+            $this->load->view('footer');
+        }
+        
+        public function getnextpage()
+        {
+             $setofrecipes=$this->recipes->viewall($this->input->get('pgno'),3,"all");
+             
+           //  echo $this->recipes->get_count("recipes");
+         ///    print_r($setofrecipes);
+//             echo $setofrecipes;
+            $this->load->view('master');
+            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes));
+            $this->load->view('footer');
+        }
+
+
+        
+        public function filsearch()
+        {
+            
+            
+            $wpara= array(
+                'rname'=>$this->input->post('dishName'),
+                'recipetype'=>$this->input->post('cat'),
+                 'regiontype'=>$this->input->post('cusine'),
+                 'author'=>$this->input->post('chefName'),
+                 'date'=>$this->input->post('ddate'),
+                );
+            
+           $setofrecipe=$this->recipes->view_fltered(0,$wpara,3);
+            
+             $this->load->view('master');
+            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipe));
+            $this->load->view('footer');
+            
+            
+        }
+
+
+        public function switchtoalphabetic()
+        {
+           
+            //chr=this.post
+            $setofrecipes=$this->recipes->viewall(0,3,$this->input->get('alpha'));
+             $this->load->view('master');
+            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes));
+            $this->load->view('footer');
         }
         
        
