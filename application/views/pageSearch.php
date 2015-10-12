@@ -18,18 +18,21 @@
           
                 <div class="clearfix"></div>
                 <div>
-                <?php      $azRange = range('A', 'Z');
-                    foreach ($azRange as $letter)
-                    {
-                      echo"<a>$letter </a>";
-                    }
-                    ;?>
+               
                     
                     <a href="#"> Spicy Tomato Semolina (Tomato Rava Upma)</a>
                    
                     <a href="#"> Savory Bread (Bread Upma)  </a>
                    
                     <a href="#"> Cream of Wheat Savory Cakes (Rava Idli) </a>
+                    <a href="#"> Previous </a>
+                     <?php      $azRange = range('A', 'Z');
+                    foreach ($azRange as $letter)
+                    {
+                      echo"<a>$letter </a>";
+                    }
+                    ;?>
+                    <a href="#"> Next </a>
                 </div>
             </div>
         </div>
