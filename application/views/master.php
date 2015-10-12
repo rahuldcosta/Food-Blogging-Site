@@ -118,7 +118,7 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
 our website" style="width:85%"><input type="submit" value=">" class="tfbutton2">
           
         </h4>
-                          <a href="<?php echo site_url('foodieHome/searchSite');?>">Looking out for something else?Search Here!</a>
+                          <a href="<?php echo site_url('search/index');?>">Looking out for something else?Search Here!</a>
 
       </div>
   </div>

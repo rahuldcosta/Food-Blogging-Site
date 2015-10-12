@@ -44,7 +44,7 @@
   
   <input type="submit" value="Search" style="margin-left:  7em">
   <br>
-  <a href="<?php echo site_url('foodieHome/indexedSearch');?>">Unable to find?View complete list!!</a>
+  <a href="<?php echo site_url('search/indexedSearch');?>">Unable to find?View complete list!!</a>
 </form> 
                 </div>
                 <div>

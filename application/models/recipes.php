@@ -19,6 +19,23 @@ function form_insert($data){
 
 }
 
+function get_all_recipes($pageno){
+    
+    $result= $this->mongo_db
+          ->select(array('recipe_id','rname','author'))
+            ->offset($pageno*2)
+          ->limit(4)
+          ->get('recipes');
+    return $result;
+}
+
+
+
+
+
+
+
+
 function form_get($data){
     
 $this->mongo_db->where(array('recipe_id'=> $data))->inc(array('views' => 1))->update('recipes');
