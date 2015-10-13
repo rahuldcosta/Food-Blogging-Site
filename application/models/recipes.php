@@ -55,7 +55,7 @@ function  viewall($pageno,$limit,$chara)
 
 function view_fltered($pageno,$whereparameters,$limit){
     
-    
+   // $whereparameters=array('recipetype'=>'Meal');
   
     $resulted= $this->mongo_db
           ->select(array('recipe_id','rname','author'))

@@ -20,6 +20,7 @@
           
                 <div class="clearfix"></div>
                 <div>
+                    <?php if($type!="vfil") {?>
                     <a href="<?php echo site_url("search/switchtoalphabetic?alpha=all");?>">All</a>
 				<?php      $azRange = range('A', 'Z');
                     foreach ($azRange as $letter)
@@ -27,6 +28,8 @@
                       ?>
                        <a href="<?php echo site_url("search/switchtoalphabetic?alpha=$letter");?>"><?php echo $letter ?></a>
                       <?php
+                    }
+                    
                     }
                  ;?>
                   
@@ -49,10 +52,10 @@
 					<div>
 						<br/>
                                                <?php  
-                                                
+                                                $sno=-1;
 						if($reciepesset['pgno']!=0){
                     ?>
-                <a id='link' onclick="location.href='<?php echo site_url("search/getnextpage?pgno=1&alpha=$alpa");?>'"> First</a>                    
+                <a id='link' onclick="location.href='<?php echo site_url("search/getnextpage?pgno=1&alpha=$alpa&dtype=$type");?>'"> First</a>                    
               <?php  }
               
                                             for($wwc=0;$wwc<ceil($reciepesset['max']/$reciepesset['limit']);$wwc++)
@@ -60,14 +63,14 @@
                                                     $sno=$wwc+1;
                            if($sno==$reciepesset['pgno']+1)    {                     
                        ?>
-                            <a id='link' style="color:red" value="$sno" onclick="location.href='<?php echo site_url("search/getnextpage?pgno=$sno&alpha=$alpa");?>'"> <?php echo ($wwc+1)?></a>                    
+                            <a id='link' style="color:red" value="$sno" onclick="location.href='<?php echo site_url("search/getnextpage?pgno=$sno&alpha=$alpa&dtype=$type");?>'"> <?php echo ($wwc+1)?></a>                    
                      
                    
                            <?php  }else
                            {   ?>
 
 
- <a id='link' value="$sno" onclick="location.href='<?php echo site_url("search/getnextpage?pgno=$sno&alpha=$alpa");?>'"> <?php echo ($wwc+1)?></a>                    
+ <a id='link' value="$sno" onclick="location.href='<?php echo site_url("search/getnextpage?pgno=$sno&alpha=$alpa&dtype=$type");?>'"> <?php echo ($wwc+1)?></a>                    
 
 
  <?php
@@ -80,7 +83,7 @@
                                           
                                             ?>
                                                 
-              <a id='link' style='margin-left:10px' onclick="location.href='<?php echo site_url("search/getnextpage?pgno=$sno&alpha=$alpa");?>'">Last</a>         
+              <a id='link' style='margin-left:10px' onclick="location.href='<?php echo site_url("search/getnextpage?pgno=$sno&alpha=$alpa&dtype=$type");?>'">Last</a>         
                                       <?php          
                                         }  ?>
                   
