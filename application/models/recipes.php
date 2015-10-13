@@ -32,7 +32,7 @@ function  viewall($pageno,$limit,$chara)
     $resulted= $this->mongo_db
           ->select(array('recipe_id','rname','author'))
            ->where(array('rname'=>$regex))
-            ->offset($pageno*2)
+            ->offset($pageno*$limit)
           ->limit($limit)
           ->get('recipes');
     

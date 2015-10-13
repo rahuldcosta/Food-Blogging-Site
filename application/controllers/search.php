@@ -30,19 +30,22 @@ function __construct(){
          //   print_r($setofrecipes);
 //             echo $setofrecipes;
             $this->load->view('master');
-            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes));
+            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes,'alpa'=>"all"));
             $this->load->view('footer');
         }
         
         public function getnextpage()
         {
-             $setofrecipes=$this->recipes->viewall($this->input->get('pgno'),3,"all");
+            $pno=$this->input->get('pgno')-1;
+            $alp=$this->input->get('alpha');
+            
+             $setofrecipes=$this->recipes->viewall($pno,3,$alp);
              
            //  echo $this->recipes->get_count("recipes");
          ///    print_r($setofrecipes);
 //             echo $setofrecipes;
             $this->load->view('master');
-            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes));
+            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes  ,'alpa'=>$alp));
             $this->load->view('footer');
         }
 
@@ -76,7 +79,7 @@ function __construct(){
             //chr=this.post
             $setofrecipes=$this->recipes->viewall(0,3,$this->input->get('alpha'));
              $this->load->view('master');
-            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes));
+            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes,'alpa'=>$this->input->get('alpha')));
             $this->load->view('footer');
         }
         
