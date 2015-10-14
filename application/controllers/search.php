@@ -61,7 +61,7 @@ function __construct(){
                 
             {   $setofrecipes=$this->recipes->viewall($pno,3,$alp);
             $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes  ,'alpa'=>$alp,'type'=>"vall"));
-                 print_r($setofrecipes);
+                // print_r($setofrecipes);
             }
             
             else if($dtype=="vfil")
@@ -69,7 +69,7 @@ function __construct(){
                 echo "asa";
                // print_r($wpara);
                $setofrecipes=$this->recipes->view_fltered($pno,$this->session->userdata('wpara'),3); 
-                print_r($setofrecipes);
+              //  print_r($setofrecipes);
             $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes,'alpa'=>$alp,'type'=>"vfil"));    
             }
              echo $this->recipes->get_count("recipes");
