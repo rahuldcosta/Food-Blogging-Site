@@ -9,10 +9,26 @@ function __construct(){
        
         
     }
+    
+    
+    public function loadmaster()
+    {
+        $popularlist=$this->recipes->loadmasterpage();
+        
+       // print_r($popularlist);
+        $this->load->view('master',array(
+            
+            'popularlist'=>$popularlist,
+            
+        ));
+    }
+
+
+    
     public function notifications()
         {
             //Home page titles
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('userprofilelayout');
             $this->load->view('notifications');
             $this->load->view('footer');
@@ -22,7 +38,7 @@ function __construct(){
             public function myRecipes()
         {
             //Home page titles
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('userprofilelayout');
             $this->load->view('myRecipes');
             $this->load->view('footer');
@@ -32,7 +48,7 @@ function __construct(){
 	  public function CookBook()
         {
             //Home page titles
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('userprofilelayout');
             $this->load->view('CookBook');
             $this->load->view('footer');
@@ -41,7 +57,7 @@ function __construct(){
          public function editprofile()
         {
             //Home page titles
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('userprofilelayout');
             $this->load->view('editprofile');
             $this->load->view('footer');
@@ -50,7 +66,7 @@ function __construct(){
          public function changepassword()
         {
             //Home page titles
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('userprofilelayout');
             $this->load->view('changepassword');
             $this->load->view('footer');
@@ -114,8 +130,8 @@ function __construct(){
             
         }
             //Home page titles
-            $this->load->view('master');
-            
+          //  $this->load->view('master');
+            $this->loadmaster();
             
             
             $this->load->view('FoodiePublicHome',array(
@@ -146,7 +162,7 @@ function __construct(){
         	public function helpPage()
         {
             //Home page titles
-            $this->load->view('master');
+          $this->loadmaster();
              $this->load->view('userprofilelayout');
             $this->load->view('helpPage');
              $this->load->view('footer');
@@ -155,33 +171,33 @@ function __construct(){
         
         public function login()
         {
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('Loginpage');
             $this->load->view('footer');
         }
         
          public function indian()
         {
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('indian');
             $this->load->view('footer');
         }
         
            public function chinese()
         {
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('chinese');
             $this->load->view('footer');
         }
             public function Thai()
         {
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('Thai');
             $this->load->view('footer');
         }
             public function continental()
         {
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('continental');
             $this->load->view('footer');
         }
@@ -189,7 +205,7 @@ function __construct(){
         
          public function italian()
         {
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('italian');
              $this->load->view('footer');
         }
@@ -201,7 +217,7 @@ function __construct(){
         
             public function userPage()
         {
-             $this->load->view('master');
+           $this->loadmaster();
              $this->load->view('userprofilelayout');
              $this->load->view('userPage');
              $this->load->view('footer');
@@ -210,7 +226,7 @@ function __construct(){
         
          public function interest()
         {
-             $this->load->view('master');
+           $this->loadmaster();
              $this->load->view('userprofilelayout');
              $this->load->view('interest');
              $this->load->view('footer');
@@ -220,7 +236,7 @@ function __construct(){
         public function adminPage()
         {
             //Home page titles
-            $this->load->view('master');
+          $this->loadmaster();
             $this->load->view('userprofilelayout');
             $this->load->view('adminPage');
              $this->load->view('footer');

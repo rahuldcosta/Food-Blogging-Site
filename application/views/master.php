@@ -147,6 +147,21 @@ our website" style="width:85%"><input type="submit" value=">" class="tfbutton2">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Popular</a>
         </h4>
+          
+          <?php
+          
+          foreach($popularlist as $row)
+          { 
+              $id=$row['recipe_id'];
+              ?>
+              <a  href="<?php echo site_url("recipe/viewrecipe?r_id=$id");?>" ><?php echo $row['rname']?></a>
+          <br>
+         <?php }
+          
+          
+          ?>
+          
+         
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body"><ul class="list-group">

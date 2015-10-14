@@ -10,6 +10,18 @@ function __construct(){
         
 }
 
+ public function loadmaster()
+    {
+         $popularlist=$this->recipes->loadmasterpage();
+        
+       // print_r($popularlist);
+        $this->load->view('master',array(
+            
+            'popularlist'=>$popularlist,
+            
+        ));
+    }
+    
  public function addrecipe()
         {
      
@@ -64,6 +76,7 @@ function __construct(){
 'dishImgURL' => $upload_data['file_name'],
                 'VidLinkURL' => $this->input->post('VidLinnk'),
                     'views' => 0,
+                    'avgrating'=> 0,
                     'rating' => array(), 
                     'comments' => array(),
                 'date'=> date("d-m-Y",time()),
@@ -103,11 +116,11 @@ function __construct(){
     ),
 );
        
-        $avg=$this->recipes->getavgrating($ops);
+        $avg=$this->recipes->getavgrating($ops, $this->input->get('r_id'));
         
         
         
-        $this->load->view('master');
+        $this->loadmaster();
             $this->load->view('r_details',
                     array(
                 'uname'=>$uname,
@@ -164,6 +177,10 @@ function __construct(){
             
             echo json_encode($data);
    }
+   
+   
+   
+   
  }
 
 

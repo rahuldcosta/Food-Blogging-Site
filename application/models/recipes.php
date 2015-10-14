@@ -114,11 +114,21 @@ function addnewcomment($r_id,$uid,$uname,$comment){
     $this->mongo_db->where(array('recipe_id'=>$r_id))->push('comments', array('uid'=>$uid,'uname'=>$uname,'comment'=>$comment))->update('recipes');
 }
 
-function getavgrating($ops)
+function getavgrating($ops,$rid)
 {
-   $res=$this->mongo_db->aggregate('recipes', $ops);
+   
+  // $res=$this->mongo_db->aggregate('recipes', $ops);
   //if(isset($res['result'][0]['avgstars']))
-   return $res['result'][0]['avgstars'];
+   
+   // $this->mongo_db->where(array('recipe_id'=> $rid))->inc(array('avgrating' => $res['result'][0]['avgstars']))->update('recipes');
+  
+    $rating=$this->mongo_db
+            ->select(array('avgrating'))
+            ->where(array('recipe_id'=>$rid))
+             ->get('recipes');
+    // print_r($rating);
+    
+    return $rating[0]['avgrating'];
 //   else
 //       return 0;
   
@@ -129,9 +139,30 @@ function addnewrating($r_id,$uid,$score)
 {
   $this->mongo_db->where(array('recipe_id'=>$r_id))->push('rating', array('uid'=>$uid,'stars'=>$score))->update('recipes');
   
+   $ops = array(
+    array(
+        '$match' => array(
+            "recipe_id" => $r_id
+        
+        )
+    ),
+    array('$unwind' => '$rating'),
+    array(
+        '$group' => array(
+            "_id" => '$recipe_id',
+            "avgstars" => array('$avg' => '$rating.stars'),
+        ),
+    ),
+);
+   
+   $res=$this->mongo_db->aggregate('recipes', $ops);  //round($res['result'][0]['avgstars'],2)
+   
+  $this->mongo_db->where(array('recipe_id'=> $r_id))->set('avgrating',round($res['result'][0]['avgstars'],2))->update('recipes');
+  
+  
 }
 
-function getthebestrecipe($recipetype)
+function getthebestrecipe($recipetype)   //'avgrating' => $res['result'][0]['avgstars']
 {
     $ops = array(
     array(
@@ -153,6 +184,17 @@ function getthebestrecipe($recipetype)
     return $res['result'][0]['_id'];
    else return "";
   
+}
+
+
+function loadmasterpage()
+{
+    $res=$this->mongo_db
+            ->select(array('recipe_id','rname'))
+            ->order_by(array('avgrating' => -1))
+            ->limit(3)
+          ->get('recipes');
+    return $res;
 }
 
 
