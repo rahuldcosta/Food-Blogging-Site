@@ -35,7 +35,7 @@
                 <div class="col-lg-12">
                     
                     <hr>
-                    <h2 class="intro-text text-center">Welcome!!
+                    <h2 class="intro-text text-center">Welcome User Your can Add a New Recipe Use Post Button!!
                       
                   
                 <!--    <img class="img-responsive img-border-right"  style="height:5em;float:right;margin-top: -2em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">-->
@@ -146,10 +146,7 @@
 
                               
                    <!--------------------------------------------------------->
-                   <br> <strong>Pins:</strong>  
-                    <div style="margin-top:10em;margin-left:5em;margin-right:5em; text-align: center">
-                    You have not pinned any lists yet.Go to interests!!
-                </div>
+                   
                      </div>
                     <div class="col-lg-3" style="">
                        
