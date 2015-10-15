@@ -39,15 +39,7 @@ function __construct(){
             
         }
         
-            public function myRecipes()
-        {
-            //Home page titles
-          $this->loadmaster();
-            $this->load->view('userprofilelayout');
-            $this->load->view('myRecipes');
-            $this->load->view('footer');
-            
-        }
+           
         
 	  public function CookBook()
         {

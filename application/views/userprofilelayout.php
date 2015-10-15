@@ -23,7 +23,7 @@
                             <br> 
                             <a   href="<?php echo site_url('foodieHome/interest');?>" style="cursor:pointer ;margin-left:3%" title="interests">Interests(0)</a>
                             <br> <a  href="<?php echo site_url('foodieHome/CookBook');?>" style="cursor:pointer ;margin-left:3%" title="cookbook">View CookBook(0)</a>
-                            <br> <a  href="<?php echo site_url('foodieHome/myRecipes');?>"  style="cursor:pointer ;margin-left:3%" title="manage recipe">Manage Recipe</a>
+                            <br> <a  href="<?php echo site_url('user/myRecipes');?>"  style="cursor:pointer ;margin-left:3%" title="manage recipe">Manage Recipe</a>
                          </div>
    
       

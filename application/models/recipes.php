@@ -213,6 +213,16 @@ function addingtocookbook($uid,$rid,$rname)
 }
 
 
+function getusersrecipes($email)
+{
+    $res=$this->mongo_db
+            ->select(array('recipe_id','rname'))
+            ->where(array('author'=>"rahuldc99@gmail.com"))
+          ->get('recipes');
+ // print_r($res);
+    return $res;
+}
+        
 
 
 function loadrecentlyaddedlist()

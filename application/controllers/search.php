@@ -70,7 +70,7 @@ function __construct(){
             
             else if($dtype=="vfil")
             {
-                echo "asa";
+               // echo "asa";
                // print_r($wpara);
                $setofrecipes=$this->recipes->view_fltered($pno,$this->session->userdata('wpara'),3); 
               //  print_r($setofrecipes);
