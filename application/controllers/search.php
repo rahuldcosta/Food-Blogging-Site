@@ -26,12 +26,14 @@ function __construct(){
     {
         $popularlist=$this->recipes->loadpopularlist();
         $mostviewedlist=$this->recipes->loadmostviewslist();
+        $recentlyaddedlist=$this->recipes->loadrecentlyaddedlist();
         
        // print_r($popularlist);
         $this->load->view('master',array(
             
             'popularlist'=>$popularlist,
              'mostviewlist'=>$mostviewedlist,
+            'recentlyaddedlist'=>$recentlyaddedlist,
             
         ));
     }

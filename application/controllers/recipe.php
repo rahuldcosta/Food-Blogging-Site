@@ -10,19 +10,37 @@ function __construct(){
         
 }
 
-public function loadmaster()
+ public function loadmaster()
     {
         $popularlist=$this->recipes->loadpopularlist();
         $mostviewedlist=$this->recipes->loadmostviewslist();
+        $recentlyaddedlist=$this->recipes->loadrecentlyaddedlist();
         
        // print_r($popularlist);
         $this->load->view('master',array(
             
             'popularlist'=>$popularlist,
              'mostviewlist'=>$mostviewedlist,
+            'recentlyaddedlist'=>$recentlyaddedlist,
             
         ));
     }
+    
+    
+    public function addtocookbook()
+    {
+        //Check for loged in or not here.....
+        $uid="rahuldc999@gmail.com";
+        $this->recipes->addingtocookbook($uid,$this->input->post('r_id'),$this->input->post('rname'));
+        
+        $data = array(
+        'stat' => TRUE,
+               
+                );
+            
+            echo json_encode($data);
+        
+    }      
     
  public function addrecipe()
         {

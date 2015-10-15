@@ -206,6 +206,15 @@ function loadmostviewslist()
     return $res;
 }
 
+function addingtocookbook($uid,$rid,$rname)
+{
+    $this->mongo_db->where(array('email'=>$uid))->push('cookbook', array('r_id'=>$rid,'rname'=>$rname))->update('users');
+  
+}
+
+
+
+
 function loadrecentlyaddedlist()
 {
     $res=$this->mongo_db

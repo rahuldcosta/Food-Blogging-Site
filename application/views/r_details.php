@@ -12,6 +12,36 @@
         document.getElementById(id2).style.display="block";
     }
     
+    
+    function addingtocookbook(r_id,rname)
+    {
+       jQuery.ajax({
+type: "POST",
+
+url: "<?php echo site_url("recipe/addtocookbook") ?>",
+dataType: 'json',
+data: {r_id: r_id,rname:rname},
+success: function(res) {
+if (res.stat)
+{
+    //cookBookid
+    
+    alert("Added To Your Cook Book Successfully");
+    document.getElementById('cookBookid').innerHTML="+"+document.getElementById('cookBookid').innerHTML;
+     document.getElementById('cookBookid').style.color="red";
+   
+}
+ 
+}
+
+
+
+
+});
+
+
+    }
+    
     function sendrating(r_id,score)
     {
        jQuery.ajax({
@@ -175,7 +205,7 @@ if (res.stat)
                    
                      <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('shareArea','CommentArea')" class="btn btn-default">Comments</button> </span>
                      <span style="margin-right:3em"><button id="share" onclick="expand('CommentArea','shareArea')" name="share" class="btn btn-default">Share</button> </span>
-                     <span style="margin-right:3em"><button id="cookBook" class="btn btn-default" onclick="location.href='./login'">Add to Cookbook</button></span>
+                     <span style="margin-right:3em"><button id="cookBookid" class="btn btn-default" onclick="addingtocookbook('<?php echo $r_id;?>','<?php echo $rname;?>')">Add to Cookbook</button></span>
                  
                 <span id="accessThruUserLogin" style="visibility: hidden">
                     <span style="margin-right:3em"><a>Edit</a></span>
