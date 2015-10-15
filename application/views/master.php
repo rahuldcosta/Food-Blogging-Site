@@ -9,7 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-	
+	<script type="text/javascript">
+	window.onload = function(){ 
+	//Get submit button
+	var submitbutton = document.getElementById("tfq");
+	//Add listener to submit button
+	if(submitbutton.addEventListener){
+		submitbutton.addEventListener("click", function() {
+			if (submitbutton.value == 'Search our website'){//Customize this text string to whatever you want
+				submitbutton.value = '';
+			}
+		});
+	}
+}
+</script>
 
     <title>FOODIE </title>
 
@@ -100,12 +113,12 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
 
      <div class="panel panel-default">
       <div class="panel-heading">
-        
-                Looking out for something else?
-                <br/><input  type="submit" value="Search here!" class="tfbutton2">
+        <h4 class="panel-title">
+                <input type="text" id="tfq" class="tftextinput2" name="q" size="41" maxlength="720" value="Search 
+our website" style="width:85%"><input type="submit" value=">" class="tfbutton2">
           
-        
-                         
+        </h4>
+                          <a href="<?php echo site_url('search/index');?>">Looking out for something else?Search Here!</a>
 
       </div>
   </div>
@@ -120,12 +133,27 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
       </div>
 
       <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">  <ul class="list-group">
-          <li class="list-group-item"><a href="Spring Rolls">Spring Rolls</a></li>
-          <li class="list-group-item"><a href="Butter">Butter Chicken</a></li>
-          <li class="list-group-item"><a href="Sizl">Chicken Sizzlers</a></li>
+        <div class="panel-body">  
+            <ul class="list-group">
+                <?php
+          
+          foreach($recentlyaddedlist as $row)
+          { 
+              $id=$row['recipe_id'];
+              ?>
+                 <li class="list-group-item">
+                     
+              <a  href="<?php echo site_url("recipe/viewrecipe?r_id=$id");?>" ><?php echo $row['rname']?></a>
+             
+                 </li>
+              <br>
+         <?php }
+          
+          
+          ?>
+         
         </ul>
-        <div class="panel-footer"><a href="recent">More..</a></div></div>
+        </div>
       </div>
     </div>
 
@@ -142,7 +170,7 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
               $id=$row['recipe_id'];
               ?>
               <a  href="<?php echo site_url("recipe/viewrecipe?r_id=$id");?>" ><?php echo $row['rname']?></a>
-          <br>
+              <br>
          <?php }
           
           
@@ -150,14 +178,7 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
           
          
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body"><ul class="list-group">
-          <li class="list-group-item"><a href="Spring Rolls">Pizza</a></li>
-          <li class="list-group-item"><a href="Butter">Chocolava</a></li>
-          <li class="list-group-item"><a href="Sizl">Paneer Tikka</a></li>
-        </ul>
-         <div class="panel-footer"><a href="recent">More..</a></div></div>
-    </div>
+     
       </div>
     </div>
     <div class="panel panel-default">
@@ -165,14 +186,28 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Most Viewed Recipe</a>
         </h4>
+          
+          
+          <?php
+          
+          foreach($mostviewlist as $row)
+          { 
+              $id=$row['recipe_id'];
+              ?>
+              <a  href="<?php echo site_url("recipe/viewrecipe?r_id=$id");?>" ><?php echo $row['rname']?></a>
+          <br>
+         <?php }
+          
+          
+          ?>
       </div>
   </div>
       <div class="panel panel-default">
-      <div class="panel-heading">
+<!--      <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Chef of the Month</a>
         </h4>
-      </div>
+      </div>-->
   </div>  
 </div>
 </div>
