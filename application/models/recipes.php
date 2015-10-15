@@ -187,7 +187,7 @@ function getthebestrecipe($recipetype)   //'avgrating' => $res['result'][0]['avg
 }
 
 
-function loadmasterpage()
+function loadpopularlist()
 {
     $res=$this->mongo_db
             ->select(array('recipe_id','rname'))
@@ -196,7 +196,25 @@ function loadmasterpage()
           ->get('recipes');
     return $res;
 }
+function loadmostviewslist()
+{
+    $res=$this->mongo_db
+            ->select(array('recipe_id','rname'))
+            ->order_by(array('views' => -1))
+            ->limit(3)
+          ->get('recipes');
+    return $res;
+}
 
+function loadrecentlyaddedlist()
+{
+    $res=$this->mongo_db
+            ->select(array('recipe_id','rname'))
+            ->order_by(array('date' => -1))
+            ->limit(10)
+          ->get('recipes');
+    return $res;
+}
 
 
 }

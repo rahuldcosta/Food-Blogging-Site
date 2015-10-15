@@ -22,14 +22,16 @@ function __construct(){
         
         }
         
-         public function loadmaster()
+  public function loadmaster()
     {
-         $popularlist=$this->recipes->loadmasterpage();
+        $popularlist=$this->recipes->loadpopularlist();
+        $mostviewedlist=$this->recipes->loadmostviewslist();
         
        // print_r($popularlist);
         $this->load->view('master',array(
             
             'popularlist'=>$popularlist,
+             'mostviewlist'=>$mostviewedlist,
             
         ));
     }
