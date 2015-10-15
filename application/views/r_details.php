@@ -18,7 +18,7 @@
        jQuery.ajax({
 type: "POST",
 
-url: "<?php echo site_url("recipe/addtocookbook") ?>",
+url: "<?php echo site_url("user/addtocookbook") ?>",
 dataType: 'json',
 data: {r_id: r_id,rname:rname},
 success: function(res) {
@@ -31,14 +31,12 @@ if (res.stat)
      document.getElementById('cookBookid').style.color="red";
    
 }
- 
+
+
+
 }
 
-
-
-
 });
-
 
     }
     

@@ -17,10 +17,17 @@
                 
                
                 <div class="col-md-12">
-				<p>Notification 1 </p>
-				<p>Notification 2</p>
-				<p>Notification 3 </p>
-				<p>Notification 4</p>
+                    
+                    <?php
+                    foreach($notis as $row)
+                    {
+                       $drecipeid= $row['recipe_id'];
+                    ?>
+                    <p> you have <?php echo $row['comments_count'] ; echo " comments on your recipe "; ?><a href="<?php echo site_url("recipe/viewrecipe?r_id=$drecipeid");?>"><?php echo $row['rname']; ?></a> </p>
+                      <?php  
+                    }?>
+				
+				
                    </div>
                 </div>
                

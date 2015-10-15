@@ -12,10 +12,26 @@ function __construct(){
         
          $this->load->helper("url");
           $this->load->model('recipes');
+           $this->load->model('users');
         $this->load->library('session');
         
     }
     
+    
+     public function addtocookbook()
+    {
+        //Check for loged in or not here.....
+        $uid="rahuldc999@gmail.com";
+        $this->users->addingtocookbook($uid,$this->input->post('r_id'),$this->input->post('rname'));
+        
+        $data = array(
+        'stat' => TRUE,
+               
+                );
+            
+            echo json_encode($data);
+        
+    }
     
    public function loadmaster()
     {
@@ -56,6 +72,8 @@ function __construct(){
             
         }
         
+      
+        
         
         
         public function getnextpage()
@@ -92,7 +110,22 @@ function __construct(){
            // $this->load->view('footer');
         }
     
-    
+     public function notifications()
+        {
+         
+         $email="rahuldc99@gmail.com";
+         
+         $notis=  $this->users->getnotifications($email);
+         
+        // print_r($notis);
+        // $notifications=  $this->
+            //Home page titles
+          $this->loadmaster();
+            $this->load->view('userprofilelayout');
+            $this->load->view('notifications',array('notis'=>$notis));
+            $this->load->view('footer');
+            
+        }
     
     
     }

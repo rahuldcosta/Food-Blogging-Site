@@ -27,20 +27,7 @@ function __construct(){
     }
     
     
-    public function addtocookbook()
-    {
-        //Check for loged in or not here.....
-        $uid="rahuldc999@gmail.com";
-        $this->recipes->addingtocookbook($uid,$this->input->post('r_id'),$this->input->post('rname'));
-        
-        $data = array(
-        'stat' => TRUE,
-               
-                );
-            
-            echo json_encode($data);
-        
-    }      
+          
     
  public function addrecipe()
         {

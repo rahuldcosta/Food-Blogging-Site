@@ -19,7 +19,7 @@
                             <br>  <a   href="<?php echo site_url('foodieHome/login');?>" style="cursor:pointer ;margin-left:3%" title="logout">Logout</a>
                         </div>
                         <div >
-                            <a  href="<?php echo site_url('foodieHome/notifications');?>" style="cursor:pointer ;margin-left:3%" title="Notifications">Notifications(2)</a>
+                            <a  href="<?php echo site_url('user/notifications');?>" style="cursor:pointer ;margin-left:3%" title="Notifications">Notifications(2)</a>
                              
                            
                             <br> <a  href="<?php echo site_url('foodieHome/CookBook');?>" style="cursor:pointer ;margin-left:3%" title="cookbook">View CookBook(0)</a>
