@@ -9,20 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-	<script type="text/javascript">
-	window.onload = function(){ 
-	//Get submit button
-	var submitbutton = document.getElementById("tfq");
-	//Add listener to submit button
-	if(submitbutton.addEventListener){
-		submitbutton.addEventListener("click", function() {
-			if (submitbutton.value == 'Search our website'){//Customize this text string to whatever you want
-				submitbutton.value = '';
-			}
-		});
-	}
-}
-</script>
+	
 
     <title>FOODIE </title>
 
@@ -113,12 +100,12 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
 
      <div class="panel panel-default">
       <div class="panel-heading">
-        <h4 class="panel-title">
-                <input type="text" id="tfq" class="tftextinput2" name="q" size="41" maxlength="720" value="Search 
-our website" style="width:85%"><input type="submit" value=">" class="tfbutton2">
+        
+                Looking out for something else?
+                <br/><input  type="submit" value="Search here!" class="tfbutton2">
           
-        </h4>
-                          <a href="<?php echo site_url('search/index');?>">Looking out for something else?Search Here!</a>
+        
+                         
 
       </div>
   </div>
