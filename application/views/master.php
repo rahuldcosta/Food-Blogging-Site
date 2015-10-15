@@ -9,20 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-	<script type="text/javascript">
-	window.onload = function(){ 
-	//Get submit button
-	var submitbutton = document.getElementById("tfq");
-	//Add listener to submit button
-	if(submitbutton.addEventListener){
-		submitbutton.addEventListener("click", function() {
-			if (submitbutton.value == 'Search our website'){//Customize this text string to whatever you want
-				submitbutton.value = '';
-			}
-		});
-	}
-}
-</script>
+	
 
     <title>FOODIE </title>
 
@@ -113,13 +100,8 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
 
      <div class="panel panel-default">
       <div class="panel-heading">
-        <h4 class="panel-title">
-                <input type="text" id="tfq" class="tftextinput2" name="q" size="41" maxlength="720" value="Search 
-our website" style="width:85%"><input type="submit" value=">" class="tfbutton2">
-          
-        </h4>
-                          <a href="<?php echo site_url('search/index');?>">Looking out for something else?Search Here!</a>
-
+       Looking out for something else?
+                <br/><input  type="submit" value="Search here!" class="tfbutton2">
       </div>
   </div>
     <div class ="sidebar">
@@ -131,30 +113,77 @@ our website" style="width:85%"><input type="submit" value=">" class="tfbutton2">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Recent</a>
         </h4>
       </div>
-
+        <script> 
+            function seeMore() {
+               document.getElementById("recent1").style.display="none";
+               document.getElementById("recent2").style.display="block";
+               document.getElementById("seeMore").style.display="none";
+               document.getElementById("seeLess").style.display="block";
+           }
+           
+           function seeLess() {
+               document.getElementById("recent2").style.display="none";
+               document.getElementById("recent1").style.display="block";
+               document.getElementById("seeMore").style.display="block";
+               document.getElementById("seeLess").style.display="none";
+           }
+           
+        </script>
       <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">  
+          <div id="recent1" class="panel-body" style="display:block">  
             <ul class="list-group">
                 <?php
-          
+           $count=0;
           foreach($recentlyaddedlist as $row)
           { 
-              $id=$row['recipe_id'];
-              ?>
-                 <li class="list-group-item">
-                     
-              <a  href="<?php echo site_url("recipe/viewrecipe?r_id=$id");?>" ><?php echo $row['rname']?></a>
              
+              $id=$row['recipe_id'];
+               if($count < "3"){
+                   $count++;
+                  ?>
+                 
+                 <li class="list-group-item">
+                 <a  href="<?php echo site_url("recipe/viewrecipe?r_id=$id");?>" ><?php echo $row['rname']?></a>
                  </li>
-              <br>
-         <?php }
-          
-          
-          ?>
+                  <br/>
+                    
+             <?php
+             }
+          }
+                 ?>
          
         </ul>
+           <input id="seeMore"  type="submit" value="See More" class="tfbutton2" onclick="seeMore()">
         </div>
-      </div>
+          <div id="recent2" class="panel-body" style="display:none">  
+            <ul class="list-group">
+                <?php
+           $count=0;
+          foreach($recentlyaddedlist as $row)
+          { 
+             
+              $id=$row['recipe_id'];
+               if($count < "10"){
+                   $count++;
+                  ?>
+                 
+                 <li class="list-group-item">
+                 <a  href="<?php echo site_url("recipe/viewrecipe?r_id=$id");?>" ><?php echo $row['rname']?></a>
+                 </li>
+                  <br/>
+                    
+             <?php
+             }
+          }
+                 ?>
+         
+        </ul>
+            <input id="seeLess" type="submit" style="display: none" value="See Less" class="tfbutton2" onclick="seeLess()">
+     
+        </div>
+          
+          </div>
+        
     </div>
 
     <div class="panel panel-default">
