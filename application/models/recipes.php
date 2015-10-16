@@ -19,7 +19,7 @@ function addnewrecipe($data){
 
 }
 
-function  viewall($pageno,$limit,$chara)
+function  viewall($chara)
 {
     if($chara=="all")
     {
@@ -32,20 +32,14 @@ function  viewall($pageno,$limit,$chara)
     $resulted= $this->mongo_db
           ->select(array('recipe_id','rname','author'))
            ->where(array('rname'=>$regex))
-            ->offset($pageno*$limit)
-          ->limit($limit)
+           
           ->get('recipes');
     
-    $counter= $this->mongo_db
-          ->select(array('recipe_id','rname','author'))
-            ->where(array('rname'=>$regex))
-             ->count('recipes');
+   
     $result= array(
         
         "results"=> $resulted,
-        "max"=>$counter,
-         "limit"=>$limit,
-            "pgno"=>$pageno
+        
         
     );
     
@@ -53,28 +47,19 @@ function  viewall($pageno,$limit,$chara)
 }
         
 
-function view_fltered($pageno,$whereparameters,$limit){
+function view_fltered($whereparameters){
     
    // $whereparameters=array('recipetype'=>'Meal');
   
     $resulted= $this->mongo_db
           ->select(array('recipe_id','rname','author'))
             ->where($whereparameters)
-            ->offset($pageno*2)
-          ->limit($limit)
+            
           ->get('recipes');
-    
-    $counter= $this->mongo_db
-          ->select(array('recipe_id','rname','author'))
-            ->where($whereparameters)
-             ->count('recipes');
     
     $result= array(
         
         "results"=> $resulted,
-        "max"=>$counter,
-            "limit"=>$limit,
-            "pgno"=>$pageno
         
     );
     

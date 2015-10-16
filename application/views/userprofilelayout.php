@@ -29,7 +29,7 @@
                               </a>
                              
                            
-                            <br> <a  href="<?php echo site_url('user/viewCookBook');?>" style="cursor:pointer ;margin-left:3%" title="cookbook">View CookBook(0)</a>
+                            <br> <a  href="<?php echo site_url('user/viewCookBook');?>" style="cursor:pointer ;margin-left:3%" title="cookbook">View CookBook</a>
                             <br> <a  href="<?php echo site_url('user/myRecipes');?>"  style="cursor:pointer ;margin-left:3%" title="manage recipe">Manage Recipe</a>
                          </div>
    

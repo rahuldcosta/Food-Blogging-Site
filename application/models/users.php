@@ -78,6 +78,15 @@ function resetnoticount($email)
     
 }
 
+function viewcookbook($email)
+{
+    $cookbook=$this->mongo_db
+            ->select(array('cookbook'))
+            ->where(array('email'=>$email))
+             ->get('users');
+    return $cookbook[0]['cookbook'];
+}
+
 
 
 }

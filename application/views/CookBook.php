@@ -1,4 +1,46 @@
  
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="<?php echo base_url(); ?>/resources/cookbooklist/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/resources/cookbooklist/bootstrap.min.css">
+		
+        <style type="text/css">
+
+.paging-nav {
+  text-align: right;
+  padding-top: 2px;
+}
+
+.paging-nav a {
+  margin: auto 1px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px 7px;
+  background: #91b9e6;
+  color: white;
+  border-radius: 3px;
+}
+
+.paging-nav .selected-page {
+  background: #187ed5;
+  font-weight: bold;
+}
+
+.paging-nav,
+#tableData {
+  width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+</style>
+        <style type="text/css">
+		</style>
+		</head>
+
+
+
 <div id="sidebar1" class="col-lg-6">
         <div class="row">
             <div class="box">
@@ -12,9 +54,27 @@
                 
                
                 <div class="col-md-9">
-                    <p> <a href="<?php echo site_url('foodieHome/more');?>">Recipe Title 1 </a></p>
-                    <p><a href="<?php echo site_url('foodieHome/more');?>">Recipe Title 2</a></p>
-                    <p><a href="<?php echo site_url('foodieHome/more');?>">Recipe Title 3</a> </p>
+                    <table id="tableData" class="table table-bordered table-striped" >
+					   <thead><th>Sr. No.</th>
+						<th>Recipe</th>
+						
+					 </thead>
+                                         <?php $count=0?>
+                                         <?php   foreach($cookbook as $row) { $rid=$row['r_id'];?>
+					  <tr>
+						<td><?php $count++;echo $count ?></td>
+                                                <td> <a href="<?php echo site_url("recipe/viewrecipe?r_id=$rid");?>"><?php echo $row['rname'] ?> </a></td>		
+						
+					  </tr>
+                                         <?php } ?>
+					</table>
+                    
+                    
+                    <?php // $count=0;foreach($cookbook as $row) {  $rid=$row['r_id'] ?>
+                     <!--<p> <a href="//<?php echo site_url("recipe/viewrecipe?r_id=$rid");?>"><?php $count++;echo $count.". "; echo " ".$row['rname'] ?> </a></p>-->
+                    
+                    <?php// }?>
+                   
 				
                    </div>
                 </div>
@@ -47,6 +107,18 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url(); ?>/resources/js/bootstrap.min.js"></script>
 
-</body>
+    
+    <script type="text/javascript" src="<?php echo base_url(); ?>/resources/cookbooklist/jquery.min.js"></script> 
+<script src="<?php echo base_url(); ?>/resources/cookbooklist/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>/resources/cookbooklist/paging.js"></script> 
+<div class="text-center">
+<script type="text/javascript">
+            $(document).ready(function() {
+                $('#tableData').paging({limit:10});
+            });
+        </script>
+    </div>
+    
+    
+    
 
-</html>

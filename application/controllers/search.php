@@ -43,7 +43,7 @@ function __construct(){
          public function indexedSearch()
         {
             //Home page titles
-             $setofrecipes=$this->recipes->viewall(0,3,"all");
+             $setofrecipes=$this->recipes->viewall("all");
              
            //  echo $this->recipes->get_count("recipes");
          //   print_r($setofrecipes);
@@ -165,7 +165,7 @@ function __construct(){
         {
            
             //chr=this.post
-            $setofrecipes=$this->recipes->viewall(0,3,$this->input->get('alpha'));
+            $setofrecipes=$this->recipes->viewall($this->input->get('alpha'));
              $this->loadmaster();
             $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes,'type'=>"vall",'alpa'=>$this->input->get('alpha')));
             $this->load->view('footer');

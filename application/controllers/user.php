@@ -19,11 +19,18 @@ function __construct(){
     
      public function viewCookBook()
         {
+         $email="rahuldc99@gmail.com";
             //Home page titles
+          $cb=$this->users->viewcookbook($email);
           $this->loadmaster();
-            $this->load->view('userprofilelayout');
-            $this->load->view('CookBook');
+            $noticnt=$this->users->getnoticount($email);
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
+            $this->load->view('CookBook',array('cookbook'=>$cb));
             $this->load->view('footer');
+         
+        
+         
+        // print_r($cb);
         }
         
         
@@ -83,12 +90,13 @@ function __construct(){
          
        //  echo $email;
          
-          $listofrecipes=$this->recipes->view_fltered(0,$whereparameters,$limit);
+          $listofrecipes=$this->recipes->view_fltered($whereparameters);
           $this->session->set_userdata('wpara', $whereparameters);
-          $this->session->set_userdata('dlimit', $limit);
+        
         //  print_r($listofrecipes);
           
-            $this->load->view('userprofilelayout');
+            $noticnt=$this->users->getnoticount($email);
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
             $this->load->view('myRecipes',array('listofrecipes'=>$listofrecipes,'alpa'=>"all",'type'=>"vfil"));
             $this->load->view('footer');
             
@@ -106,20 +114,14 @@ function __construct(){
             $dtype=$this->input->get('dtype');
             $setofrecipes=array();
             $this->loadmaster();
-             if($dtype=="vall")
-                
-            {   $setofrecipes=$this->recipes->viewall($pno,3,$alp);
-            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes  ,'alpa'=>$alp,'type'=>"vall"));
-                // print_r($setofrecipes);
-            }
-            
-            else if($dtype=="vfil")
+              if($dtype=="vfil")
             {
                
                // print_r($wpara);
                $setofrecipes=$this->recipes->view_fltered($pno,$this->session->userdata('wpara'),$this->session->userdata('dlimit')); 
               //  print_r($setofrecipes);
-                $this->load->view('userprofilelayout');
+              $noticnt=$this->users->getnoticount($email);
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
             $this->load->view('myRecipes',array('listofrecipes'=>$setofrecipes,'alpa'=>"all",'type'=>"vfil"));
             $this->load->view('footer');
            // $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes,'alpa'=>$alp,'type'=>"vfil"));    
