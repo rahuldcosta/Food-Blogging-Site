@@ -90,7 +90,7 @@ function __construct(){
 );
            
             
-          $this->recipes->form_insert($data); 
+          $this->recipes->addnewrecipe($data); 
           
           echo "Inserted with image uploading... :p";
           
@@ -102,8 +102,14 @@ function __construct(){
            
    public function viewrecipe()
    {
-        $recipearray= $this->recipes->form_get($this->input->get('r_id')); 
+       //Check for valid login here.............
+       $umail="rahuldc99@gmail.com";
+       
+       
+       
+        $recipearray= $this->recipes->getrecipedetails($this->input->get('r_id')); 
       
+        $count=$this->recipes->checkifpresentincookbook($umail,$this->input->get('r_id'));
         $uname="Rohan Da silva";
        // print_r($recipearray);
         
@@ -130,6 +136,7 @@ function __construct(){
         $this->loadmaster();
             $this->load->view('r_details',
                     array(
+                        'count'=>$count,
                 'uname'=>$uname,
                 'rname'=>$recipearray[0]['rname'],
                 'rsteps'=>$recipearray[0]['steps'],

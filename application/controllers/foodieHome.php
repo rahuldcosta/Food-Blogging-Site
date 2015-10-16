@@ -41,14 +41,7 @@ function __construct(){
         
            
         
-	  public function CookBook()
-        {
-            //Home page titles
-          $this->loadmaster();
-            $this->load->view('userprofilelayout');
-            $this->load->view('CookBook');
-            $this->load->view('footer');
-        }
+	 
 	
          public function editprofile()
         {
@@ -99,7 +92,7 @@ function __construct(){
            
             if($dessertid!="")
             {
-            $desertarray= $this->recipes->form_get($dessertid);
+            $desertarray= $this->recipes->getrecipedetails($dessertid);
             $desertsend[0]=$desertarray[0]['rname'];
                 $desertsend[1]=$desertarray[0]['steps'];
                $desertsend[2]=$desertarray[0]['dishImgURL'];
@@ -107,7 +100,7 @@ function __construct(){
             }
             if($mealid!="")
             {
-            $mealarray= $this->recipes->form_get($mealid);
+            $mealarray= $this->recipes->getrecipedetails($mealid);
             $mealsend[0]=$mealarray[0]['rname'];
                 $mealsend[1]=$mealarray[0]['steps'];
                $mealsend[2]=$mealarray[0]['dishImgURL'];
@@ -116,7 +109,7 @@ function __construct(){
             
              if($snackid!="")
             {
-            $snackarray= $this->recipes->form_get($snackid);
+            $snackarray= $this->recipes->getrecipedetails($snackid);
             $snacksend[0]=$snackarray[0]['rname'];
                 $snacksend[1]=$snackarray[0]['steps'];
                $snacksend[2]=$snackarray[0]['dishImgURL'];

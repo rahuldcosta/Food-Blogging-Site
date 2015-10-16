@@ -13,7 +13,7 @@ function __construct() {
     $this->load->library('mongo_db');
 parent::__construct();
 }
-function form_insert($data){
+function addnewrecipe($data){
 // Inserting in Table(students) of Database(college)
     $this->mongo_db->insert('recipes', $data);
 
@@ -92,12 +92,20 @@ function  get_count($collection){
 }
         
 
+function checkifpresentincookbook($email,$r_id)
+{
+    $result= $this->mongo_db
+            ->where(array('email'=>$email,'cookbook.r_id'=>$r_id))
+            ->count('users');
+    
+    return $result;
+    
+}
 
 
 
 
-
-function form_get($data){
+function getrecipedetails($data){
     
 $this->mongo_db->where(array('recipe_id'=> $data))->inc(array('views' => 1))->update('recipes');
     

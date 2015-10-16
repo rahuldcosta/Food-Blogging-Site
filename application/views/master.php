@@ -101,7 +101,7 @@ http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100itali
      <div class="panel panel-default">
       <div class="panel-heading">
        Looking out for something else?
-                <br/><input  type="submit" value="Search here!" class="tfbutton2">
+       <br/><input  type="submit" value="Search here!" class="tfbutton2" onclick="location.href='<?php echo site_url('search/index');?>'">
       </div>
   </div>
     <div class ="sidebar">

@@ -17,11 +17,20 @@ function __construct(){
         
     }
     
-    
+     public function viewCookBook()
+        {
+            //Home page titles
+          $this->loadmaster();
+            $this->load->view('userprofilelayout');
+            $this->load->view('CookBook');
+            $this->load->view('footer');
+        }
+        
+        
      public function addtocookbook()
     {
         //Check for loged in or not here.....
-        $uid="rahuldc999@gmail.com";
+        $uid="rahuldc99@gmail.com";
         $this->users->addingtocookbook($uid,$this->input->post('r_id'),$this->input->post('rname'));
         
         $data = array(

@@ -27,9 +27,9 @@ if (res.stat)
     //cookBookid
     
     alert("Added To Your Cook Book Successfully");
-    document.getElementById('cookBookid').innerHTML="+"+document.getElementById('cookBookid').innerHTML;
+    document.getElementById('cookBookid').innerHTML="+"+"Added To CookBook";
      document.getElementById('cookBookid').style.color="red";
-   
+   document.getElementById('cookBookid').disabled=true;
 }
 
 
@@ -203,7 +203,19 @@ if (res.stat)
                    
                      <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('shareArea','CommentArea')" class="btn btn-default"> Show comments</button> </span>
                      <span style="margin-right:3em"><button id="share" onclick="expand('CommentArea','shareArea')" name="share" class="btn btn-default">Share</button> </span>
-                     <span style="margin-right:3em"><button id="cookBookid" class="btn btn-default" onclick="addingtocookbook('<?php echo $r_id;?>','<?php echo $rname;?>')">Add to Cookbook</button></span>
+                     <span style="margin-right:3em">
+                         <?php if ($count>0){
+                          ?>
+                         
+                         <button id="cookBookid" disabled=""class="btn btn-default" style="color:red" >+Added To CookBook</button>                     
+                             
+                       <?php      
+                         }else {
+?>
+                         <button id="cookBookid" class="btn btn-default" onclick="addingtocookbook('<?php echo $r_id;?>','<?php echo $rname;?>')">Add to Cookbook</button>
+                         <?php }?>
+                     
+                     </span>
                  
                 <span id="accessThruUserLogin" style="visibility: hidden">
                     <span style="margin-right:3em"><a>Edit</a></span>
