@@ -211,14 +211,7 @@ function __construct(){
            
         }
         
-            public function userPage()
-        {
-           $this->loadmaster();
-             $this->load->view('userprofilelayout');
-             $this->load->view('userPage');
-             $this->load->view('footer');
             
-        }
         
          public function interest()
         {

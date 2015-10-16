@@ -112,6 +112,19 @@ $this->mongo_db->where(array('recipe_id'=> $data))->inc(array('views' => 1))->up
 
 function addnewcomment($r_id,$uid,$uname,$comment){
     $this->mongo_db->where(array('recipe_id'=>$r_id))->push('comments', array('uid'=>$uid,'uname'=>$uname,'comment'=>$comment))->update('recipes');
+
+    $email=$this->mongo_db
+            ->select(array('author'))
+            ->where(array('recipe_id'=>$r_id))
+            ->get('recipes');
+           
+    
+
+     $this->mongo_db
+            ->where(array('email'=>$email[0]['author']))
+            ->inc(array('noticount' => 1))
+             ->update('users');
+    
 }
 
 function getavgrating($ops,$rid)

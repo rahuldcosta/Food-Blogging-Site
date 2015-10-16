@@ -43,7 +43,7 @@ function getnotifications($email)
         ),
     ),
         
-        array( '$sort' => array( 'date'=> -1) )
+        array( '$sort' => array( 'comments_count'=> -1) )
 );
     
     $res=$this->mongo_db->aggregate('recipes', $ops);
@@ -57,6 +57,27 @@ function getnotifications($email)
      
      return $res['result'];
 }
+
+
+function getnoticount($email)
+{
+    $rcount=$this->mongo_db
+            ->select(array('noticount'))
+            ->where(array('email'=>$email))
+             ->get('users');
+    return $rcount[0]['noticount'];
+}
+
+function resetnoticount($email)
+{
+   
+         $this->mongo_db
+            ->where(array('email'=>$email))
+            ->set('noticount', 0)
+             ->update('users');
+    
+}
+
 
 
 }

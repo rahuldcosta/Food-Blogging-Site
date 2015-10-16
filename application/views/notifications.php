@@ -15,9 +15,14 @@
                     </h2>
                     <hr>
                 
-               
                 <div class="col-md-12">
-                    
+                    <p>Your Approvals</p> 
+                    <p>******************************</p>
+                <!--code for recipe approval-->	
+                   </div>
+                <div class="col-md-12">
+                    <p>Notifications for your Recipes</p> 
+                    <p>******************************</p>
                     <?php
                     foreach($notis as $row)
                     {

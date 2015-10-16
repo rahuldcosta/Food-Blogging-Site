@@ -49,6 +49,19 @@ function __construct(){
         ));
     }
     
+    
+    public function userPage()
+        {
+        $email="rahuldc99@gmail.com";
+           $this->loadmaster();
+           
+            $noticnt=$this->users->getnoticount($email);
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
+             $this->load->view('userPage');
+             $this->load->view('footer');
+            
+        }
+    
      public function myRecipes()
         {
             //Home page titles
@@ -120,10 +133,18 @@ function __construct(){
         // print_r($notis);
         // $notifications=  $this->
             //Home page titles
+         
+         
+         
+         
+         $this->users->resetnoticount($email);
+         
+        
           $this->loadmaster();
-            $this->load->view('userprofilelayout');
+            $this->load->view('userprofilelayout',array('ncount'=>0));
             $this->load->view('notifications',array('notis'=>$notis));
             $this->load->view('footer');
+            
             
         }
     

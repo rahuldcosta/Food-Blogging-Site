@@ -60,7 +60,7 @@ success: function(res) {
 
 }});
     
-    
+   
     }
     
     function addcomment(r_id,comment,username)
@@ -201,7 +201,7 @@ if (res.stat)
                            <div>Video Link:- <a href="http://<?php echo $VidLinkURL;?>"><?php echo $VidLinkURL;?></a></div>
                  <div>
                    
-                     <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('shareArea','CommentArea')" class="btn btn-default">Comments</button> </span>
+                     <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('shareArea','CommentArea')" class="btn btn-default"> Show comments</button> </span>
                      <span style="margin-right:3em"><button id="share" onclick="expand('CommentArea','shareArea')" name="share" class="btn btn-default">Share</button> </span>
                      <span style="margin-right:3em"><button id="cookBookid" class="btn btn-default" onclick="addingtocookbook('<?php echo $r_id;?>','<?php echo $rname;?>')">Add to Cookbook</button></span>
                  
