@@ -134,6 +134,8 @@ function __construct(){
         
         
         $this->loadmaster();
+         $this->load->view('userprofilelayout');
+            
             $this->load->view('r_details',
                     array(
                         'count'=>$count,
@@ -191,7 +193,16 @@ function __construct(){
             
             echo json_encode($data);
    }
-   
+    public function editRecipe()
+        {
+          $this->loadmaster();
+           $this->load->view('userprofilelayout');
+            $this->load->view('edit_r');
+            $this->load->view('footer');
+            
+            
+        }
+        
    
    
    

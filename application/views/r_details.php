@@ -104,8 +104,7 @@ if (res.stat)
     </head>
 
 <body>
-   
-<div id="sidebar" class="col-lg-9">
+<div id="sidebar1" class="col-lg-6 ">
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
@@ -217,8 +216,8 @@ if (res.stat)
                      
                      </span>
                  
-                <span id="accessThruUserLogin" style="visibility: hidden">
-                    <span style="margin-right:3em"><a>Edit</a></span>
+                <span id="accessThruUserLogin" style="visibility: visible">
+                    <span style="margin-right:3em"><a href="<?php echo site_url('recipe/editRecipe');?>">Edit</a></span>
                     <span style="margin-right:3em"><a>Delete</a></span>
                 </span>
                      </div>
