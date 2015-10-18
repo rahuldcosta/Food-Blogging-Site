@@ -216,7 +216,7 @@ if (res.stat)
                      
                      </span>
                  
-                <span id="accessThruUserLogin" style="visibility: visible">
+                <span id="accessThruUserLogin" style="visibility: hidden">
                     <span style="margin-right:3em"><a href="<?php echo site_url('recipe/editRecipe');?>">Edit</a></span>
                     <span style="margin-right:3em"><a>Delete</a></span>
                 </span>
