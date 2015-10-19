@@ -244,7 +244,7 @@ function loadrecentlyaddedlist()
 {
     $res=$this->mongo_db
             ->select(array('recipe_id','rname'))
-            ->order_by(array('date' => -1))
+            ->order_by(array('_id' => -1))
             ->limit(10)
           ->get('recipes');
     return $res;
