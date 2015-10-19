@@ -6,6 +6,7 @@ function __construct(){
         
          $this->load->helper("url");
          $this->load->model('recipes');
+         $this->load->model('users');
        
         
 }
@@ -69,9 +70,9 @@ function __construct(){
            }else
                $veg=false;
             
-            
+            $recipeid=md5("recipe".time());
             $data = array(
-                'recipe_id' => md5("recipe".time()),
+                'recipe_id' =>$recipeid ,
   'author' => "rahuldc99@gmail.com",              
 'rname' => $this->input->post('rname'),
                 'ingredents' => $this->input->post('ingredients'),
@@ -92,8 +93,8 @@ function __construct(){
             
           $this->recipes->addnewrecipe($data); 
           
-          echo "Inserted with image uploading... :p";
-          
+         
+          redirect("/recipe/viewrecipe?r_id=$recipeid");
           
           
         }
@@ -134,7 +135,8 @@ function __construct(){
         
         
         $this->loadmaster();
-         $this->load->view('userprofilelayout');
+         $noticnt=$this->users->getnoticount($umail);
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
             
             $this->load->view('r_details',
                     array(
@@ -196,17 +198,86 @@ function __construct(){
     public function editRecipe()
         {
           $this->loadmaster();
-           $this->load->view('userprofilelayout');
-            $this->load->view('edit_r');
+          
+          $email="rahuldc99@gmail.com";
+          
+          $noticnt=$this->users->getnoticount($email);
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
+             
+             $recipeid=$this->input->get('r_id');
+             
+             $recipedetails=$this->recipes->getrecipedetails($recipeid);
+             
+             $rec=$recipedetails[0];
+            $this->load->view('edit_r',array('recipedetails'=>$rec));
             $this->load->view('footer');
             
             
         }
         
+        public function updaterecipe()
+        {
+         $dishimg;
+      $config = array(
+            'upload_path'   => './uploads/imgfiles/',
+            'allowed_types' => 'gif|jpg|png',
+            'max_size'      => '75100',
+            'max_width'     => '1366',
+            'max_height'    => '768',
+            'encrypt_name'  => true,
+        );
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload()) {
+            $error = array('error' => $this->upload->display_errors());
+            $dishimg=$this->input->post('dimg');
+          //  echo "Failure".$error['error'];
+           // $this->load->view('upload_form', $error);
+        } else {
+            $upload_data = $this->upload->data();
+           $dishimg= $upload_data['file_name'];
+
+          //  $this->load->database();
+          //  $this->mongo_db->insert('upload', $data_ary);
+        }
    
-   
+           $name=$this->input->post('rname');
+         //   echo "Hello World";
+           // echo $name;
+        $veg=false;
+           if($this->input->post('vegoption')=="yes")
+           {
+               $veg=true;
+           }else
+               $veg=false;
+            
+          
+            $recipeid=$this->input->post('rid');
+           
+            $data = array(
+                           
+'rname' => $this->input->post('rname'),
+                'ingredents' => $this->input->post('ingredients'),
+                'steps' => $this->input->post('steps'),
+'vegselected' => $veg,
+'recipetype' => $this->input->post('foodtype'),
+'regiontype' => $this->input->post('regiontype'),
+                
+'dishImgURL' => $dishimg,
+                'VidLinkURL' => $this->input->post('VidLinnk')
+                    
+);
+           
+            
+          $this->recipes->updaterecipes($data,$recipeid); 
+          
+        //  echo "updated with image uploading... :p";
+          
+          redirect("/recipe/viewrecipe?r_id=$recipeid");
+          
    
  }
 
 
-
+}

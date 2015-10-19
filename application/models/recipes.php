@@ -103,7 +103,20 @@ $this->mongo_db->where(array('recipe_id'=> $data))->inc(array('views' => 1))->up
    return $result;
 }
 
-function addnewcomment($r_id,$uid,$uname,$comment){
+function  updaterecipes($data,$rid)
+{
+    //print_r($data);
+    $this->mongo_db
+            ->where(array('recipe_id'=> $rid))
+            ->set(array('rname'=>$data['rname'],'ingredents'=>$data['ingredents'],'vegselected'=>$data['vegselected'],
+                'recipetype'=>$data['recipetype'],
+                'steps'=>$data['steps'],
+                'regiontype'=>$data['regiontype'],
+                'dishImgURL'=>$data['dishImgURL'],
+                'VidLinkURL'=>$data['VidLinkURL'],))
+            ->update('recipes');
+}
+        function addnewcomment($r_id,$uid,$uname,$comment){
     $this->mongo_db->where(array('recipe_id'=>$r_id))->push('comments', array('uid'=>$uid,'uname'=>$uname,'comment'=>$comment))->update('recipes');
 
     $email=$this->mongo_db
