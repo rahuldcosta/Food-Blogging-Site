@@ -224,14 +224,13 @@ if (res.stat)
                                        <div id="shareArea" style="margin-top:1em;">
                     <h5> Share with</h5>
                  
-<a href="http://twitter.com/home?status=" style="margin-right:3em" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
-
-<a href="https://www.facebook.com/sharer/sharer.php?u=" style="margin-right:3em" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
-
-<a href="https://plus.google.com/share?url=" style="margin-right:3em" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+<span style="font-size:150%" class='st_facebook_hcount' displayText='Facebook'></span>
+<span class='st_twitter_hcount' displayText='Tweet'></span>
+<span class='st_googleplus_hcount' displayText='Google +'></span>
                 </div>
                            
-                           
+                 <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "ur-db125168-a6f5-d1aa-768-d85ef4da539f", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>          
                            
                 <div id="CommentArea" style="margin-top:1em;border:1px solid black;width:52em">
                 <h5>Your feedback...</h5>
