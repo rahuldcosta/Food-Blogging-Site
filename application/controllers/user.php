@@ -17,6 +17,21 @@ function __construct(){
         
     }
     
+    public function adduser(){
+        $uid=md5("user".time());
+        $user_data =  array(
+            'u_id' => $uid,
+            'noticount' => 0,
+            'username' => $this->input->post('username'),
+            'email' => $this->input->post('email'),
+            'password' => $this->input->post('password'),
+        );
+        
+        $this->users->adduser($user_data);
+        
+        redirect("user/userPage");
+    }
+    
      public function viewCookBook()
         {
          $email="rahuldc99@gmail.com";
