@@ -32,6 +32,19 @@ function __construct(){
         redirect("user/userPage");
     }
     
+    public function userLogin(){
+        $username=  $this->input->post('username');
+        $password=  $this->input->post('password');
+        
+        $query=  $this->users->retrieve_user($username,$password);
+        if(sizeof($query)==1) {
+             redirect("user/userPage");
+         }
+         else{
+             redirect("user/LoginPage");
+         }
+    }
+    
      public function viewCookBook()
         {
          $email="rahuldc99@gmail.com";
@@ -89,6 +102,14 @@ function __construct(){
             $noticnt=$this->users->getnoticount($email);
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
              $this->load->view('userPage');
+             $this->load->view('footer');
+            
+        }
+        
+            public function LoginPage()
+        {
+           $this->loadmaster();
+             $this->load->view('LoginPage');
              $this->load->view('footer');
             
         }
