@@ -27,12 +27,33 @@ function __construct(){
         ));
     }
     
-    
-          
-    
- public function addrecipe()
+    public function addrecipetestCase($verifydata, $status){
+        print_r($verifydata);
+        $flag =1;
+        //if(match email)
+        //$flag=1;
+        //else
+        //$flag=0;
+        
+        
+        
+        if($flag==1)
         {
-     
+           $status=TRUE;
+        }
+        else
+            $status=FALSE;
+        
+        
+        
+         return $status;
+    }
+
+    
+
+    public function addrecipe()
+        {
+        
       $config = array(
             'upload_path'   => './uploads/imgfiles/',
             'allowed_types' => 'gif|jpg|png',
@@ -41,25 +62,59 @@ function __construct(){
             'max_height'    => '768',
             'encrypt_name'  => true,
         );
-
-        $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload()) {
+      
+      $this->load->library('upload', $config);
+       if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors());
             
             echo "Failure".$error['error'];
            // $this->load->view('upload_form', $error);
         } else {
-            $upload_data = $this->upload->data();
-            
+        $upload_data = $this->upload->data();}
+      
+      $veg=false;
+           if($this->input->post('vegoption')=="yes")
+           {
+               $veg=true;
+           }else
+               $veg=false;
+      $verifydata = array(
+            //'recipe_id' =>$recipeid ,
+            'author' => "rahuldc99@gmail.com",              
+            'rname' => $this->input->post('rname'),
+            'ingredents' => $this->input->post('ingredients'),
+            'steps' => $this->input->post('steps'),
+            'vegselected' => $veg,
+            'recipetype' => $this->input->post('foodtype'),
+            'regiontype' => $this->input->post('regiontype'),
+            'dishImgURL' => $upload_data['file_name'],
+            'VidLinkURL' => $this->input->post('VidLinnk'),
+            //'views' => 0,
+            //'avgrating'=> 0,
+            //'rating' => array(), 
+            //'comments' => array(),
+            //'date'=> date("d-m-Y",time()),
+        );
+      
+        if(!$this->addrecipetestCase($verifydata, TRUE))
+        {
+           return; 
+        }
+//      
+//      
+//      
+//
 
-          //  $this->load->database();
-          //  $this->mongo_db->insert('upload', $data_ary);
-     
-     
-     
-     
-     
+       
+//            
+//
+//          //  $this->load->database();
+//          //  $this->mongo_db->insert('upload', $data_ary);
+//     
+//     
+//     
+//     
+//     
             $name=$this->input->post('rname');
          //   echo "Hello World";
            // echo $name;
@@ -97,7 +152,7 @@ function __construct(){
           redirect("/recipe/viewrecipe?r_id=$recipeid");
           
           
-        }
+        
         
            }
            
