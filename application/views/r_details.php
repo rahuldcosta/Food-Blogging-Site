@@ -196,7 +196,7 @@ if (res.stat)
                         if desired.</p>-->
                     </div>
                    </div>
-                           <div>Video Link:- <a><?php echo $VidLinkURL;?></a></div>
+                           <div style="visibility: hidden">Video Link:- <a><?php echo $VidLinkURL;?></a></div>
                            <div>Video Link:- <a href="http://<?php echo $VidLinkURL;?>"><?php echo $VidLinkURL;?></a></div>
                  <div>
                    

@@ -9,7 +9,7 @@
 		
         <style type="text/css">
 
-.paging-nav {
+/*.paging-nav {
   text-align: right;
   padding-top: 2px;
 }
@@ -27,38 +27,37 @@
 .paging-nav .selected-page {
   background: #187ed5;
   font-weight: bold;
-}
+}*/
 
-.paging-nav,
+/*.paging-nav,
 #tableData {
   width: 400px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
-}
+}*/
 </style>
-        <style type="text/css">
-		</style>
+       
 		</head>
 
 
  
    
    <body>
+   
 <div id="sidebar" class="col-lg-9">
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
-                    <hr>
+                    <hr/>
                     <h2 class="intro-text text-center">
                          <?php if($type!="vfil") {?>
-                        
                         <strong>Filtered Search recipes</strong>
                          <?php }else {?>
                        
                         <strong>Alphabetical order recipes</strong>
                          <?php }?>
                     </h2>
-                    <hr>
+                    <hr/>
                 </div>
           
                 <div class="clearfix"></div>
@@ -76,8 +75,8 @@
                     }
                  ;?>
                   
-					<div>
-					<table id="tableData" class="table table-bordered table-striped" >
+                       <div >
+					<table  class="table table-bordered table-striped" >
                                             <thead><th>Sr. No.</th>
 						<th>Recipe</th>
                                                 <th>Author</th>
