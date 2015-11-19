@@ -28,12 +28,7 @@
   font-weight: bold;
 }
 
-.paging-nav,
-#tableData {
-  width: 400px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-}
+
 </style>
         <style type="text/css">
 		</style>

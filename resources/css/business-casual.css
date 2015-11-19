@@ -118,8 +118,15 @@ footer p {
 #sidebar{
     padding-left: 15px;
     border-left: 0px;
-   
+   //visibility: hidden;;
+  
 
+}
+.userlayout{
+        visibility: hidden;
+    }
+#userlayoutresp{
+    visibility:  visible;
 }
 #sidebar1{
     padding-left: 50px;
@@ -187,6 +194,17 @@ footer p {
     
     .sidebar {
         display : none;
+       // visibility: hidden;
+        
+    }
+    
+   
+    #userlayoutresp{
+        visibility: visible;
+    }
+   
+    .userlayout{
+        visibility: hidden;
     }
    
 #sidebar{
@@ -206,6 +224,14 @@ footer p {
 }
 
 @media screen and (min-width:768px)  {
+     #userlayoutresp{
+    visibility: hidden;
+    }
+    
+    .userlayout{
+        visibility: visible;
+    } 
+    
     .brand {
         display: inherit;
         margin: 0;

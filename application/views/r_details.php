@@ -115,29 +115,34 @@ if (res.stat)
                     </h2>
                     <hr>
                     <h5>
-
-                        <span style="float:left"> 
-                        Author:&nbsp;&nbsp;&nbsp;<?php echo $author?><br>
-                        Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $dateadded?><br>
-                        Category:&nbsp;<?php echo $recipetype?><br>
-                        Regional:&nbsp;&nbsp;&nbsp;<?php echo $regiontype?> <br>
-                        Veg:&nbsp;&nbsp;&nbsp;<?php 
+                        <div style="float:left"> 
+                        <span > 
+                            <b>Author:</b>&nbsp;&nbsp;&nbsp;<?php echo $author?><br>
+                        <b>Date:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $dateadded?><br>
+                        <b>Category:</b>&nbsp;<?php echo $recipetype?><br>
+                        <b>Regional:</b>&nbsp;&nbsp;&nbsp;<?php echo $regiontype?> <br>
+                        <b>Veg:</b>&nbsp;&nbsp;&nbsp;<?php 
                         if ($vegselected==1)
                             echo 'Yes';
                             else 
                         {echo 'No';
                             
                         }?>
-                        <br>
+                       
+                        
                         </span>
-                        <span style="float:right">
-                            <div>
-                              Your Rating: 
+                        </div>
+                       
+                        <div style=""> 
+                        <br/><br/>
+                        <span>
+                            
+                            <b> Your Rating:</b> 
                              
                               <div class="acidjs-rating-stars">
     
                                   
-                                  <input type="radio" name="group-1" id="group-1-0" value="5" onclick="sendrating('<?php echo $r_id;?>',this.value)" /><label for="group-1-0"></label>
+         <input type="radio" name="group-1" id="group-1-0" value="5" onclick="sendrating('<?php echo $r_id;?>',this.value)" /><label for="group-1-0"></label>
         <input type="radio" name="group-1" id="group-1-1" value="4" onclick="sendrating('<?php echo $r_id;?>',this.value)"/><label for="group-1-1"></label>
         <input type="radio" name="group-1" id="group-1-2" value="3" onclick="sendrating('<?php echo $r_id;?>',this.value)" /><label for="group-1-2"></label>
         <input type="radio" name="group-1" id="group-1-3" value="2" onclick="sendrating('<?php echo $r_id;?>',this.value)" /><label for="group-1-3"></label>
@@ -152,15 +157,17 @@ if (res.stat)
         <input disabled="disabled" type="radio" name="group-3" id="group-3-4"  value="1" /><label for="group-3-4"></label>
     
 --></div>
-  
-                        <div>Avg Rating : <?php echo round($avgrate,2)?> /5</div>
-                        <div>Views: <?php echo $views?></div>
+  <br/>
+                        <b>Avg Rating : </b><?php echo round($avgrate,2)?> /5
+                        <br/>
+                        <b>Views:</b> <?php echo $views?>
+                        <br/>
                         </span>
-                            
+                        </div>
 
                     </h5>
                 </div>
-                <div class="col-md-5">
+                <div  style="clear:both" class="col-md-5">
                                        <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/uploads/imgfiles/<?php echo $rurl?>" alt="">
                                        
                     </div>
@@ -215,7 +222,7 @@ if (res.stat)
                          <?php }?>
                      
                      </span>
-                 
+                 <br/>
                 <span id="accessThruUserLogin" style="visibility: visible">
                     <span style="margin-right:3em"><a href="<?php echo site_url("recipe/editRecipe?r_id=$r_id");?>">Edit</a></span>
                     <span style="margin-right:3em"><a>Delete</a></span>
