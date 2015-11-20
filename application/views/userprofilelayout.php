@@ -10,8 +10,7 @@
         <div class="dropdown pull-right">
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
         <img class="img-responsive"  style="height:1.3em;width:1.3em;float:left" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
-        &nbsp;&nbsp;&nbsp;Miss. XYZ
-       
+        &nbsp;&nbsp;Tweety       
         
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
@@ -38,7 +37,7 @@
  </div>
  <div  id="sidebar" class="col-lg-3 pull-right userlayout " >
 <div class ="col-lg-12 box" >
-    <div> Miss. XYZ</div>
+    <div> Tweety</div>
       <br><div>
       <img class="img-responsive "  style="height:9em;width:12em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
     </div>

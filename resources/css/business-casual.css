@@ -233,6 +233,7 @@ footer p {
     
     .userlayout{
         visibility: visible;
+         display: block;
     } 
     
     .brand {
