@@ -15,13 +15,45 @@ function __construct() {
 parent::__construct();
 }
 
+function adduser($user_data){
+    $this->mongo_db->insert('users',$user_data);
+}
  function addingtocookbook($uid,$rid,$rname)
 {
     $this->mongo_db->where(array('email'=>$uid))->push('cookbook', array('r_id'=>$rid,'rname'=>$rname))->update('users');
   
 }
 
+function retrieve_user($username,$password){
+    $query=  $this->mongo_db
+            ->select(array('email'))
+            ->where(array('username'=> $username,'password'=>$password))
+            ->get('users');
+      // echo(print_r($query));
+    //echo(sizeof($query));
+    return $query;
+}
 
+function retrieve_username($email){
+    $query=  $this->mongo_db
+            ->select(array('name'))
+            ->where(array('email'=> $email))
+            ->get('users');
+      // echo(print_r($query));
+    //echo(sizeof($query));
+   // print_r($query);
+    return $query[0]['name'];
+}
+
+function updateuserProfile ($user_data,$email){
+    //print_r($user_data);
+    //echo($email);
+    $this->mongo_db
+        ->where(array('email'=>$email))
+        ->set(array('name'=>$user_data['username'],'gender'=>$user_data['gender'],'aboutyourself'=>$user_data['abouturself'],'profilepic'=>$user_data['profilepic']))
+        ->update('users');
+            
+}
 function getnotifications($email)
 {
     
