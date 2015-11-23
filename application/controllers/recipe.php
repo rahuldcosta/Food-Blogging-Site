@@ -71,6 +71,9 @@ function __construct(){
                $veg=false;
             
             $recipeid=md5("recipe".time());
+            
+            
+            
             $data = array(
                 'recipe_id' =>$recipeid ,
   'author' => "rahuldc99@gmail.com",              
@@ -109,6 +112,9 @@ function __construct(){
        
        
         $recipearray= $this->recipes->getrecipedetails($this->input->get('r_id')); 
+        
+        
+        
       
         $count=$this->recipes->checkifpresentincookbook($umail,$this->input->get('r_id'));
         $uname="Rohan Da silva";
