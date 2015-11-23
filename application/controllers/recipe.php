@@ -7,7 +7,7 @@ function __construct(){
          $this->load->helper("url");
          $this->load->model('recipes');
          $this->load->model('users');
-       
+         $this->load->library('session');
         
 }
 
@@ -147,8 +147,13 @@ function __construct(){
    public function viewrecipe()
    {
        //Check for valid login here.............
-       $umail="rhodagaines@greeker.com";
-       
+      // $umail="rhodagaines@greeker.com";
+       $umail=$this->session->userdata('email');
+        $uname=  $this->users->retrieve_username($umail);
+       // echo $uname;
+           $this->loadmaster();
+           
+           
        
        
         $recipearray= $this->recipes->getrecipedetails($this->input->get('r_id')); 
@@ -164,7 +169,7 @@ function __construct(){
         
         
         
-        $uname="Rohan Da silva";
+       // $uname="Rohan Da silva";
        // print_r($recipearray);
         
         $ops = array(
@@ -187,13 +192,14 @@ function __construct(){
         
         
         
-        $this->loadmaster();
+        
          $count=0;
          
          if($umail!="")
          {
              $noticnt=$this->users->getnoticount($umail);
-             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,));
              $count=$this->recipes->checkifpresentincookbook($umail,$this->input->get('r_id'));
              $flag=1;
          } 

@@ -6,6 +6,8 @@ function __construct(){
         
          $this->load->helper("url");
           $this->load->model('recipes');
+           $this->load->model('users');
+            $this->load->library('session');
        
         
     }
@@ -46,8 +48,14 @@ function __construct(){
          public function editprofile()
         {
             //Home page titles
-          $this->loadmaster();
-            $this->load->view('userprofilelayout');
+          $email=$this->session->userdata('email');
+        $uname=  $this->users->retrieve_username($email);
+       // echo $uname;
+           $this->loadmaster();
+           
+            $noticnt=$this->users->getnoticount($email);
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,));
             $this->load->view('editprofile');
             $this->load->view('footer');
         }

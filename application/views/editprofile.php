@@ -20,9 +20,9 @@
                                                                             <label class="radio-inline"><input id="gender" name="gender" type="radio" value="Female">Female</label>          
                                                                         </div>
                                                                 <div class="form-group">
-                                                                     <label class="control-label" for="dishImg">Upload Profile Picture</label>
+                                                                     <label class="control-label" for="profilepic">Upload Profile Picture</label>
                                                                         <div class="controls">
-                                                                     <input id="dishImg" name="userfile" class="input-file" type="file" size="20" accept="image/*">
+                                                                     <input id="profilepic" name="userfile" class="input-file" type="file" size="20" accept="image/*">
                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
@@ -32,7 +32,7 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="update" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Update">
+												<input type="submit"  id="register-submit" tabindex="4" class="form-control btn btn-register" value="Update">
 											</div>
 										</div>
 									</div>
