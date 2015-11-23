@@ -44,6 +44,7 @@ function __construct(){
                 );
             $this->session->set_userdata($sess_array);
             redirect("user/userPage");
+            
          }
          else{
              redirect("user/LoginPage");
@@ -51,7 +52,7 @@ function __construct(){
     }
     
     public function updateProfile(){
-        $email=$this->session->userdata('email');
+        $emailid=$this->session->userdata('email');
         
         $config = array(
             'upload_path'   => './uploads/imgfiles/',
@@ -78,7 +79,7 @@ function __construct(){
     
      public function viewCookBook()
         {
-         $email="rahuldc99@gmail.com";
+         $email=$this->session->userdata('email');
             //Home page titles
           $cb=$this->users->viewcookbook($email);
           $this->loadmaster();
@@ -96,7 +97,7 @@ function __construct(){
      public function addtocookbook()
     {
         //Check for loged in or not here.....
-        $uid="rahuldc99@gmail.com";
+        $uid=$this->session->userdata('email');
         $this->users->addingtocookbook($uid,$this->input->post('r_id'),$this->input->post('rname'));
         
         $data = array(
@@ -127,11 +128,14 @@ function __construct(){
     
     public function userPage()
         {
-        $email="rahuldc99@gmail.com";
+        $email=$this->session->userdata('email');
+        $uname=  $this->users->retrieve_username($email);
+        echo $uname;
            $this->loadmaster();
            
             $noticnt=$this->users->getnoticount($email);
-             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,));
              $this->load->view('userPage');
              $this->load->view('footer');
             
@@ -150,7 +154,7 @@ function __construct(){
             //Home page titles
          //Check for suer Loggedin or Not here.....
          
-         $email="rahuldc99@gmail.com";
+         $email=$this->session->userdata('email');
          $limit=5;
          $whereparameters=array('author'=>$email);
          $this->loadmaster();
@@ -204,7 +208,7 @@ function __construct(){
      public function notifications()
         {
          
-         $email="rahuldc99@gmail.com";
+         $email=$this->session->userdata('email');
          
          $notis=  $this->users->getnotifications($email);
          
