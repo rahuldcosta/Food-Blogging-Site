@@ -55,34 +55,40 @@ function __construct(){
         $email=$this->session->userdata('email');
         
         $config = array(
-            'upload_path'   => './uploads/dp/',
+            'upload_path'   => './uploads/imgfiles/',
             'allowed_types' => 'gif|jpg|png',
             'max_size'      => '75100',
             'max_width'     => '1366',
             'max_height'    => '768',
             'encrypt_name'  => true,
         );
-      
-      $this->load->library('upload', $config);
-       if (!$this->upload->do_upload()) {
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors());
-            
-            echo "Failure".$error['error'];
+            $dp=$this->input->post('dimg');
+          //  echo "Failure".$error['error'];
            // $this->load->view('upload_form', $error);
         } else {
-        $upload_data = $this->upload->data();}
+            $upload_data = $this->upload->data();
+           $dp= $upload_data['file_name'];
+
+          //  $this->load->database();
+          //  $this->mongo_db->insert('upload', $data_ary);
+        }
         
         $user_data = array (
             'username'=>$this->input->post('username'),
             'gender'=>$this->input->post('gender'),
             'abouturself'=>$this->input->post('abouturself'),
-            'profilepic' => $upload_data['file_name'],
+            'profilepic' => $dp,
         );
         
-        print_r($user_data);
+      //  print_r($user_data);
                 
-//        $this->users->updateuserProfile($user_data,$email);
-//        redirect("user/userPage");
+       $this->users->updateuserProfile($user_data,$email);
+       redirect("user/userPage");
     }
     
      public function viewCookBook()

@@ -15,6 +15,19 @@ function __construct() {
 parent::__construct();
 }
 
+function retrieve_dp($email)
+{
+    $query=  $this->mongo_db
+            ->select(array('profilepic'))
+            ->where(array('email'=> $email))
+            ->get('users');
+     
+   // print_r($query);
+    return $query[0]['profilepic'];
+}
+
+
+
 function adduser($user_data){
     $this->mongo_db->insert('users',$user_data);
 }
@@ -24,6 +37,16 @@ function adduser($user_data){
   
 }
 
+function retrieve_userdetails($email)
+{
+    $query=  $this->mongo_db
+            ->select(array('name','profilepic','gender','aboutyourself'))
+            ->where(array('email'=> $email))
+            ->get('users');
+      // echo(print_r($query));
+    //echo(sizeof($query));
+    return $query[0];
+}
 function retrieve_user($username,$password){
     $query=  $this->mongo_db
             ->select(array('email'))

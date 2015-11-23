@@ -56,7 +56,12 @@ function __construct(){
             $noticnt=$this->users->getnoticount($email);
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
                  'uname'=>$uname,));
-            $this->load->view('editprofile');
+             
+            $dp= $this->users->retrieve_dp($email);
+            $udata=$this->users->retrieve_userdetails($email);
+           // print_r($udata);
+//            
+            $this->load->view('editprofile',array('dp'=>$dp ,'name'=>$udata['name'],'gender'=>$udata['gender'],'abturself'=>$udata['aboutyourself']));
             $this->load->view('footer');
         }
         
