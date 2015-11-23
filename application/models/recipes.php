@@ -19,6 +19,18 @@ function addnewrecipe($data){
 
 }
 
+function deleterecipe($rid)
+{
+    $durl=$this->mongo_db
+             ->select(array('dishImgURL'))
+            ->where(array('recipe_id'=> $rid)) 
+            ->get('recipes');
+    $this->mongo_db
+            ->where(array('recipe_id'=> $rid))           
+            ->delete('recipes');
+    unlink("Uploads/imgfiles/".$durl[0]['dishImgURL']);
+}
+
 function  viewall($chara)
 {
     if($chara=="all")

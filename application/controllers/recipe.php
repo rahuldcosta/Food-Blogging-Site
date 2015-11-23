@@ -276,6 +276,13 @@ function __construct(){
             
         }
         
+        public function deleterec() {
+            
+            $this->recipes->deleterecipe($this->input->get('r_id'));
+            
+          
+        }
+        
         public function updaterecipe()
         {
          $dishimg;

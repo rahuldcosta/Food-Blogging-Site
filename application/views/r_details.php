@@ -225,7 +225,7 @@ if (res.stat)
                  <br/>
                 <span id="accessThruUserLogin" style="visibility: visible">
                     <span style="margin-right:3em"><a href="<?php echo site_url("recipe/editRecipe?r_id=$r_id");?>">Edit</a></span>
-                    <span style="margin-right:3em"><a>Delete</a></span>
+                    <span style="margin-right:3em"><a href="<?php echo site_url("recipe/deleterec?r_id=$r_id");?>">Delete</a></span>
                 </span>
                      </div>
                                        <div id="shareArea" style="margin-top:1em;">

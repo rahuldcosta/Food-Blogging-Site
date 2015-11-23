@@ -50,7 +50,7 @@
                    <div id="PostArea" style="border:1px solid black;">
                      <div class="form-area">  
                            
-                         <form action="<?php echo site_url('recipe/addrecipe');?>" method="post" enctype="multipart/form-data">
+                         <form action="<?php echo site_url('recipe/addrecipe');?>" method="get" enctype="multipart/form-data">
         <br style="clear:both">
                     <h3 style="margin-bottom: 25px; text-align: center;">Fill in the Recipe Specifications</h3>
 
