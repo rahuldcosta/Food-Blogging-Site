@@ -52,7 +52,7 @@ function __construct(){
     }
     
     public function updateProfile(){
-        $emailid=$this->session->userdata('email');
+        $email=$this->session->userdata('email');
         
         $config = array(
             'upload_path'   => './uploads/imgfiles/',
