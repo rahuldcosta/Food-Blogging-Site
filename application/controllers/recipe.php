@@ -162,16 +162,23 @@ function __construct(){
    public function viewrecipe()
    {
        //Check for valid login here.............
-       $umail="rahuldc99@gmail.com";
+       $umail="rhodagaines@greeker.com";
        
        
        
         $recipearray= $this->recipes->getrecipedetails($this->input->get('r_id')); 
         
-        
+         $flagofcrud=0;
         
       
-        $count=$this->recipes->checkifpresentincookbook($umail,$this->input->get('r_id'));
+        if($umail==$recipearray[0]['author'])
+        {
+            $flagofcrud=1;
+        }
+        else { $flagofcrud=0;}
+        
+        
+        
         $uname="Rohan Da silva";
        // print_r($recipearray);
         
@@ -196,11 +203,25 @@ function __construct(){
         
         
         $this->loadmaster();
-         $noticnt=$this->users->getnoticount($umail);
+         $count=0;
+         
+         if($umail!="")
+         {
+             $noticnt=$this->users->getnoticount($umail);
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
-            
+             $count=$this->recipes->checkifpresentincookbook($umail,$this->input->get('r_id'));
+             $flag=1;
+         } 
+         else
+         {
+             $noticnt=0;
+             $count=0;
+             $flag=0;
+         }
             $this->load->view('r_details',
                     array(
+                        'flagofcrud'=>$flagofcrud,
+                        'flag'=> $flag,
                         'count'=>$count,
                 'uname'=>$uname,
                 'rname'=>$recipearray[0]['rname'],

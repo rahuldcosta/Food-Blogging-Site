@@ -210,7 +210,9 @@ if (res.stat)
                      <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('shareArea','CommentArea')" class="btn btn-default"> Show comments</button> </span>
                      <span style="margin-right:3em"><button id="share" onclick="expand('CommentArea','shareArea')" name="share" class="btn btn-default">Share</button> </span>
                      <span style="margin-right:3em">
-                         <?php if ($count>0){
+                         <?php 
+                         if($flag==1) {
+                         if ($count>0){
                           ?>
                          
                          <button id="cookBookid" disabled=""class="btn btn-default" style="color:red" >+Added To CookBook</button>                     
@@ -219,14 +221,18 @@ if (res.stat)
                          }else {
 ?>
                          <button id="cookBookid" class="btn btn-default" onclick="addingtocookbook('<?php echo $r_id;?>','<?php echo $rname;?>')">Add to Cookbook</button>
-                         <?php }?>
+                         <?php }
+                         
+                         }?>
                      
                      </span>
                  <br/>
+                 <?php if($flagofcrud==1) {?>
                 <span id="accessThruUserLogin" style="visibility: visible">
                     <span style="margin-right:3em"><a href="<?php echo site_url("recipe/editRecipe?r_id=$r_id");?>">Edit</a></span>
                     <span style="margin-right:3em"><a href="<?php echo site_url("recipe/deleterec?r_id=$r_id");?>">Delete</a></span>
                 </span>
+                 <?php }?>
                      </div>
                                        <div id="shareArea" style="margin-top:1em;">
                     <h5> Share with</h5>

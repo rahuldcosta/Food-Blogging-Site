@@ -20,7 +20,7 @@ function adduser($user_data){
 }
  function addingtocookbook($uid,$rid,$rname)
 {
-    $this->mongo_db->where(array('email'=>$uid))->push('cookbook', array('r_id'=>$rid,'rname'=>$rname))->update('users');
+    $this->mongo_db->where(array('email'=>$uid))->push('cookbook', array('r_id'=>$rid,'r_name'=>$rname))->update('users');
   
 }
 

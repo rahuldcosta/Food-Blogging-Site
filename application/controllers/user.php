@@ -99,7 +99,8 @@ function __construct(){
      public function addtocookbook()
     {
         //Check for loged in or not here.....
-        $uid=$this->session->userdata('email');
+       // $uid=$this->session->userdata('email');
+         $uid="rhodagaines@greeker.com";
         $this->users->addingtocookbook($uid,$this->input->post('r_id'),$this->input->post('rname'));
         
         $data = array(
