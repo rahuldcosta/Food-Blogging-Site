@@ -27,7 +27,7 @@ function adduser($user_data){
 function retrieve_user($username,$password){
     $query=  $this->mongo_db
             ->select(array('email'))
-            ->where(array('username'=> $username,'password'=>$password))
+            ->where(array('email'=> $username,'password'=>$password))
             ->get('users');
       // echo(print_r($query));
     //echo(sizeof($query));
