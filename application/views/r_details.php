@@ -224,7 +224,7 @@ if (res.stat)
                                        <div id="shareArea" style="margin-top:1em;">
                     <h5> Share with</h5>
                  
-<span style="font-size:150%" class='st_facebook_hcount' displayText='Facebook'></span>
+<span  class='st_facebook_hcount' displayText='Facebook'></span>
 <span class='st_twitter_hcount' displayText='Tweet'></span>
 <span class='st_googleplus_hcount' displayText='Google +'></span>
                 </div>
