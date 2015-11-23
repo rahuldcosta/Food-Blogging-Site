@@ -81,6 +81,8 @@ function __construct(){
         {
          $email=$this->session->userdata('email');
             //Home page titles
+         $Broughtback=0;
+         
           $cb=$this->users->viewcookbook($email);
           $this->loadmaster();
             $noticnt=$this->users->getnoticount($email);

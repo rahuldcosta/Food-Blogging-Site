@@ -5,7 +5,8 @@
         <link href="<?php echo base_url(); ?>/resources/cookbooklist/jquerysctipttop.css" rel="stylesheet" type="text/css">
         
         <link rel="stylesheet" href="<?php echo base_url(); ?>/resources/cookbooklist/bootstrap.min.css">
-		
+        <!--		hah ah-->
+<div style="display:none"></div>
         <style type="text/css">
 
 .paging-nav {
