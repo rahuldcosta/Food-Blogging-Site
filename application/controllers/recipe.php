@@ -72,48 +72,33 @@ function __construct(){
         } else {
         $upload_data = $this->upload->data();}
       
-      $veg=false;
-           if($this->input->post('vegoption')=="yes")
-           {
-               $veg=true;
-           }else
-               $veg=false;
-      $verifydata = array(
-            //'recipe_id' =>$recipeid ,
-            'author' => "rahuldc99@gmail.com",              
-            'rname' => $this->input->post('rname'),
-            'ingredents' => $this->input->post('ingredients'),
-            'steps' => $this->input->post('steps'),
-            'vegselected' => $veg,
-            'recipetype' => $this->input->post('foodtype'),
-            'regiontype' => $this->input->post('regiontype'),
-            'dishImgURL' => $upload_data['file_name'],
-            'VidLinkURL' => $this->input->post('VidLinnk'),
-            //'views' => 0,
-            //'avgrating'=> 0,
-            //'rating' => array(), 
-            //'comments' => array(),
-            //'date'=> date("d-m-Y",time()),
-        );
+    
+           
+           
+//      $verifydata = array(
+//            //'recipe_id' =>$recipeid ,
+//            'author' => "rahuldc99@gmail.com",              
+//            'rname' => $this->input->post('rname'),
+//            'ingredents' => $this->input->post('ingredients'),
+//            'steps' => $this->input->post('steps'),
+//            'vegselected' => $veg,
+//            'recipetype' => $this->input->post('foodtype'),
+//            'regiontype' => $this->input->post('regiontype'),
+//            'dishImgURL' => $upload_data['file_name'],
+//            'VidLinkURL' => $this->input->post('VidLinnk'),
+//            //'views' => 0,
+//            //'avgrating'=> 0,
+//            //'rating' => array(), 
+//            //'comments' => array(),
+//            //'date'=> date("d-m-Y",time()),
+//        );
       
-        if(!$this->addrecipetestCase($verifydata, TRUE))
-        {
-           return; 
-        }
+//        if(!$this->addrecipetestCase($verifydata, TRUE))
+//        {
+//           return; 
+//        }
 //      
-//      
-//      
-//
 
-       
-//            
-//
-//          //  $this->load->database();
-//          //  $this->mongo_db->insert('upload', $data_ary);
-//     
-//     
-//     
-//     
 //     
             $name=$this->input->post('rname');
          //   echo "Hello World";
@@ -148,7 +133,7 @@ function __construct(){
                 'date'=> date("d-m-Y",time()),
 );
            
-            
+//print_r($data);
           $this->recipes->addnewrecipe($data); 
           
          
