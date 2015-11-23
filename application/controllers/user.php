@@ -17,6 +17,65 @@ function __construct(){
         
     }
     
+    public function adduser(){
+        $uid=md5("user".time());
+        $user_data =  array(
+            'u_id' => $uid,
+            'noticount' => 0,
+            'username' => $this->input->post('username'),
+            'email' => $this->input->post('email'),
+            'password' => $this->input->post('password'),
+        );
+        
+        $this->users->adduser($user_data);
+        
+        redirect("user/userPage");
+    }
+    
+    public function userLogin(){
+        $username=  $this->input->post('username');
+        $password=  $this->input->post('password');
+        
+        $query=  $this->users->retrieve_user($username,$password);
+        if(sizeof($query)==1) {
+            $email=$query[0]['email'];
+            $sess_array = array(
+                    'email' => $email
+                );
+            $this->session->set_userdata($sess_array);
+            redirect("user/userPage");
+         }
+         else{
+             redirect("user/LoginPage");
+         }
+    }
+    
+    public function updateProfile(){
+        $email=$this->session->userdata('email');
+        
+        $config = array(
+            'upload_path'   => './uploads/imgfiles/',
+            'allowed_types' => 'gif|jpg|png',
+            'max_size'      => '75100',
+            'max_width'     => '1366',
+            'max_height'    => '768',
+            'encrypt_name'  => true,
+        );
+
+        $this->load->library('upload', $config);
+        $upload_data = $this->upload->data();
+        $user_data = array (
+            'username'=>$this->input->post('username'),
+            'gender'=>$this->input->post('gender'),
+            'abouturself'=>$this->input->post('abouturself'),
+            'profilepic' => $upload_data['file_name'],
+        );
+        
+                
+        $this->users->updateuserProfile($user_data,$email);
+        redirect("user/userPage");
+    }
+    
      public function viewCookBook()
         {
          $email="rahuldc99@gmail.com";
@@ -74,6 +133,14 @@ function __construct(){
             $noticnt=$this->users->getnoticount($email);
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
              $this->load->view('userPage');
+             $this->load->view('footer');
+            
+        }
+        
+            public function LoginPage()
+        {
+           $this->loadmaster();
+             $this->load->view('LoginPage');
              $this->load->view('footer');
             
         }
