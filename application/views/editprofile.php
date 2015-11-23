@@ -10,19 +10,25 @@
                     
                                                             <div class="col-lg-9">
                                                             <h2 class="intro-text text-center">Edit Profile</h2>
-                                                            <form id="editprofile" action="./adminPage" method="post" role="form" >
+                                                            <form id="editprofile" action="<?php echo site_url('user/updateProfile');?>" method="post" role="form" >
 									<div class="form-group">
 										Name <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Name" value="">
 									</div>
-									<div class="form-group">
-										Email <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
-									</div>
-									<div class="form-group">
-										Password <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group">
-										Re-enter password <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Re-enter Password">
-									</div>
+                                                                        <div class="form-group">
+                                                                            Gender: 
+                                                                            <label class="radio-inline"><input id="gender" name="gender" type="radio" value="Male">Male</label>
+                                                                            <label class="radio-inline"><input id="gender" name="gender" type="radio" value="Female">Female</label>          
+                                                                        </div>
+                                                                <div class="form-group">
+                                                                     <label class="control-label" for="dishImg">Upload Profile Picture</label>
+                                                                        <div class="controls">
+                                                                     <input id="dishImg" name="userfile" class="input-file" type="file" size="20" accept="image/*">
+                                                                   </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    About Yourself 
+                                                                    <textarea name="abouturself" id="abouturself" rows="5" cold="40"></textarea>
+                                                                </div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
