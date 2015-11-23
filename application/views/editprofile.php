@@ -18,10 +18,13 @@
                                                                         
                                                                         <div class="form-group">
                                                                             Gender: 
-                                                                            <?php if($gender!="male")?>
-                                                                            <label class="radio-inline"><input id="gender" name="gender" type="radio" checked="TRUE" value="Male">Male</label>
-                                                                            
-                                                                            <label class="radio-inline"><input id="gender" name="gender" type="radio" value="Female">Female</label>          
+                                                                             <?php if($gender=="male"){?>
+                                                                            <label class="radio-inline"><input id="gender" name="gender" checked="TRUE" type="radio"  value="Male">Male</label>
+                                                                           <label class="radio-inline"><input id="gender" name="gender"  type="radio" value="Female">Female</label>          
+                                                                             <?php }else if($gender=="female"){?>
+                                                                           <label class="radio-inline"><input id="gender" name="gender"  type="radio"  value="Male">Male</label>
+                                                                            <label class="radio-inline"><input id="gender" name="gender" checked="TRUE" type="radio" value="Female">Female</label>          
+                                                                       <?php } ?>
                                                                         </div>
                                                                         
                                                                        
