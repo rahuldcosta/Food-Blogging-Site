@@ -280,7 +280,7 @@ function __construct(){
             
             $this->recipes->deleterecipe($this->input->get('r_id'));
             
-          
+             redirect("/foodieHome/index");
         }
         
         public function updaterecipe()
