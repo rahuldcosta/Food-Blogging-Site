@@ -166,7 +166,7 @@ if (res.stat)
                         </div>
 
                     </h5>
-             
+                </div>
                 <div  style="clear:both" class="col-md-5">
                                        <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/uploads/imgfiles/<?php echo $rurl?>" alt="">
                                        
@@ -213,10 +213,13 @@ if (res.stat)
                          <?php 
                          if($flag==1) {
                          if ($count>0){
-                          ?>
-                         
-                         <button id="cookBookid" disabled=""class="btn btn-default" style="color:red" >+Added To CookBook</button>                     
                              
+                             
+                             if($count==1)
+                             { ?>
+                               <button id="cookBookid" disabled=""class="btn btn-default" style="color:red" >+Added To CookBook</button>                        
+                           <?php  }
+                             ?>
                        <?php      
                          }else {
 ?>
