@@ -112,11 +112,11 @@ function __construct(){
             
             $recipeid=md5("recipe".time());
             
-            
+            $email=$this->session->userdata('email');
             
             $data = array(
                 'recipe_id' =>$recipeid ,
-  'author' => "rahuldc99@gmail.com",              
+  'author' => $email,              
 'rname' => $this->input->post('rname'),
                 'ingredents' => $this->input->post('ingredients'),
                 'steps' => $this->input->post('steps'),
