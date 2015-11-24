@@ -93,14 +93,16 @@ function __construct(){
     
      public function viewCookBook()
         {
-         $email=$this->session->userdata('email');
+        $email=$this->session->userdata('email');
+        $uname=  $this->users->retrieve_username($email);
             //Home page titles
          $Broughtback=0;
          
           $cb=$this->users->viewcookbook($email);
           $this->loadmaster();
-            $noticnt=$this->users->getnoticount($email);
-             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
+           $noticnt=$this->users->getnoticount($email);
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,));
             $this->load->view('CookBook',array('cookbook'=>$cb));
             $this->load->view('footer');
          
