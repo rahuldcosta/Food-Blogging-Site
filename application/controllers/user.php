@@ -116,7 +116,10 @@ function __construct(){
     {
         //Check for loged in or not here.....
        // $uid=$this->session->userdata('email');
-         $uid="rhodagaines@greeker.com";
+       //  $uid="rhodagaines@greeker.com";
+         $uid=$this->session->userdata('email');
+       // $uname=  $this->users->retrieve_username($email);
+         
         $this->users->addingtocookbook($uid,$this->input->post('r_id'),$this->input->post('rname'));
         
         $data = array(
