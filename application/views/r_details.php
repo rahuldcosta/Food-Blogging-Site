@@ -209,7 +209,7 @@ if (res.stat)
                    
                      <span style="margin-right:3em"><button id="comment" name="comment" onclick="expand('shareArea','CommentArea')" class="btn btn-default"> Show comments</button> </span>
                      <span style="margin-right:3em"><button id="share" onclick="expand('CommentArea','shareArea')" name="share" class="btn btn-default">Share</button> </span>
-                     <span style="margin-right:3em">
+                     <span style="margin-right:1em">
                          <?php 
                          if($flag==1) {
                          if ($count>0){
@@ -260,7 +260,7 @@ if (res.stat)
                 <span>
                     
                     <div class="controls">
-                        <textarea  cols="50" id="commentarea"  placeholder="Post your comment here"></textarea>
+                        <textarea  cols="40" id="commentarea"  placeholder="Post your comment here"></textarea>
                     </div>
                  </span>
                     <span>
@@ -272,9 +272,9 @@ if (res.stat)
                     ?>    
                
                       
-                 
+                  <h5 style="font-weight: bold;font-family: 'Times New Roman', Times, serif;">Reviews from users...</h5>
                 <div id="oldcomments">
-                    <h5 style="font-weight: bold;font-family: 'Times New Roman', Times, serif;">Reviews from users...</h5>
+                   
                 <?php
               //  print_r($comments);
                 
