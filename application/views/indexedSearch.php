@@ -44,13 +44,13 @@
    
    <body>
    
-<div id="sidebar" class="col-lg-9">
+<div  class="col-lg-9">
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
                     <hr/>
                     <h2 class="intro-text text-center">
-                         <?php if($type!="vfil") {?>
+                         <?php if($type=="vfil") {?>
                         <strong>Filtered Search recipes</strong>
                          <?php }else {?>
                        
@@ -60,8 +60,9 @@
                     <hr/>
                 </div>
           
-                <div class="clearfix"></div>
+             
                 <div>
+                    <center>
                     <?php if($type!="vfil") {?>
                     <a href="<?php echo site_url("search/switchtoalphabetic?alpha=all");?>">All</a>
 				<?php      $azRange = range('A', 'Z');
@@ -74,7 +75,9 @@
                     
                     }
                  ;?>
-                  
+                  </center>
+                    
+                    <?php if (sizeof($reciepesset['results'])>0) { ?>
                        <div >
 					<table  class="table table-bordered table-striped" >
                                             <thead><th>Sr. No.</th>
@@ -92,6 +95,27 @@
                                          <?php } ?>
 					</table>
 					</div>
+                    <?php } else {?>
+                    <div style="margin-top: 1em">
+                        <div style="text-align: center">
+                                <img style="border-radius: 25px;" width="30%" height="30%" src="<?php echo base_url(); ?>/resources/img/sorry.jpg" alt="">
+                            </div>
+                        <p class="text-center" style="color:red">
+                           <?php if($alpa!="all"){?>
+                            
+                            
+                            <strong>
+                                Sorry No recipe with the selected Alphabet <?php echo $alpa;?>
+                            </strong>
+                           <?php }else{?>
+                            <strong>
+                                Sorry No recipe in Database
+                            </strong>
+                            <?php } ?>
+                        </p>
+                    </div>
+                    
+                    <?php } ?>
 					
                 </div>
             </div>

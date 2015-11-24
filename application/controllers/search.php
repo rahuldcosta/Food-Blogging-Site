@@ -15,7 +15,7 @@ function __construct(){
 
  public function index()
         {
-          
+          //Updating look of Search
             $this->loadmaster();
             $this->load->view('searchSite');
              $this->load->view('footer');
@@ -53,36 +53,7 @@ function __construct(){
             $this->load->view('footer');
         }
         
-        public function getnextpage()
-        {
-            //print_r($this->wpara);
-            $pno=$this->input->get('pgno')-1;
-            $alp=$this->input->get('alpha');
-            $dtype=$this->input->get('dtype');
-            $setofrecipes=array();
-            $this->loadmaster();
-             if($dtype=="vall")
-                
-            {   $setofrecipes=$this->recipes->viewall($pno,3,$alp);
-            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes  ,'alpa'=>$alp,'type'=>"vall"));
-                // print_r($setofrecipes);
-            }
-            
-            else if($dtype=="vfil")
-            {
-               // echo "asa";
-               // print_r($wpara);
-               $setofrecipes=$this->recipes->view_fltered($pno,$this->session->userdata('wpara'),3); 
-              //  print_r($setofrecipes);
-            $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes,'alpa'=>$alp,'type'=>"vfil"));    
-            }
-             echo $this->recipes->get_count("recipes");
-          //  print_r($setofrecipes);
-            // echo $setofrecipes;
-            
-            
-           // $this->load->view('footer');
-        }
+        
         
        
         
@@ -117,14 +88,14 @@ function __construct(){
               
             }
             
-            if($recipetype=="")
+            if($recipetype=="Any")
             {
                // echo "Not set";
                 unset($wpara['recipetype']);
                
             }
             
-            if($regiontype=="")
+            if($regiontype=="Any")
             {
                // echo "Not set";
                  unset($wpara['regiontype']);
@@ -150,7 +121,9 @@ function __construct(){
             
            
             
-           $setofrecipe=$this->recipes->view_fltered(0,$wpara,3);
+           $setofrecipe=$this->recipes->view_fltered($wpara);
+           
+         //  print_r($setofrecipe);
             $this->session->set_userdata('wpara', $wpara);
         // print_r($setofrecipe);
              $this->loadmaster();
@@ -166,6 +139,9 @@ function __construct(){
            
             //chr=this.post
             $setofrecipes=$this->recipes->viewall($this->input->get('alpha'));
+            
+           // print_r($setofrecipes);
+        //   echo sizeof($setofrecipes['results']);
              $this->loadmaster();
             $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes,'type'=>"vall",'alpa'=>$this->input->get('alpha')));
             $this->load->view('footer');
