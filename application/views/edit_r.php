@@ -99,7 +99,7 @@
 </div>
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
-    <label class="control-label" for="radios">Choose Type</label>
+    <label class="control-label" for="radios"> Type</label>
 
     
     
@@ -160,7 +160,7 @@
 </div>
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
-    <label class="control-label" for="radios">Choose Region <?php echo $recipedetails['regiontype'];?></label>
+    <label class="control-label" for="radios"> Region <?php echo $recipedetails['regiontype'];?></label>
 
       <?php if($recipedetails['regiontype']=="Indian"){ ?>
     <label class="radio-inline">
