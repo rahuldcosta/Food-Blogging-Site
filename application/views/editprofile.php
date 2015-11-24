@@ -24,6 +24,10 @@
                                                                              <?php }else if($gender=="female"){?>
                                                                            <label class="radio-inline"><input id="gender" name="gender"  type="radio"  value="male">Male</label>
                                                                             <label class="radio-inline"><input id="gender" name="gender" checked="TRUE" type="radio" value="female">Female</label>          
+                                                                       
+                                                                            <?php }else if($gender==""){?>
+                                                                           <label class="radio-inline"><input id="gender" name="gender"  type="radio"  value="male">Male</label>
+                                                                            <label class="radio-inline"><input id="gender" name="gender"  type="radio" value="female">Female</label>          
                                                                        <?php } ?>
                                                                         </div>
                                                                         
