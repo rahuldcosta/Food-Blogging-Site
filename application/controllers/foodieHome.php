@@ -31,16 +31,7 @@ function __construct(){
 
 
     
-    public function notifications()
-        {
-            //Home page titles
-          $this->loadmaster();
-            $this->load->view('userprofilelayout');
-            $this->load->view('notifications');
-            $this->load->view('footer');
-            
-        }
-        
+    
            
         
 	 
@@ -54,8 +45,11 @@ function __construct(){
            $this->loadmaster();
            
             $noticnt=$this->users->getnoticount($email);
+            
+            $dp=$this->users->retrieve_dp($email);
+            
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
-                 'uname'=>$uname,));
+                 'uname'=>$uname,'dp'=>$dp));
              
             $dp= $this->users->retrieve_dp($email);
             $udata=$this->users->retrieve_userdetails($email);
@@ -69,7 +63,13 @@ function __construct(){
         {
             //Home page titles
           $this->loadmaster();
-            $this->load->view('userprofilelayout');
+          $email=$this->session->userdata('email');
+            $noticnt=$this->users->getnoticount($email);
+             $uname=  $this->users->retrieve_username($email);
+            $dp=$this->users->retrieve_dp($email);
+            
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,'dp'=>$dp));
             $this->load->view('changepassword');
             $this->load->view('footer');
         }
@@ -164,8 +164,23 @@ function __construct(){
         	public function helpPage()
         {
             //Home page titles
-          $this->loadmaster();
-             $this->load->view('userprofilelayout');
+         // $this->loadmaster();
+             
+          
+          $email=$this->session->userdata('email');
+        $uname=  $this->users->retrieve_username($email);
+       // echo $uname;
+           $this->loadmaster();
+           
+            $noticnt=$this->users->getnoticount($email);
+            
+            $dp=$this->users->retrieve_dp($email);
+            
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,'dp'=>$dp));
+          
+          
+          
             $this->load->view('helpPage');
              $this->load->view('footer');
         }
@@ -219,23 +234,9 @@ function __construct(){
         
             
         
-         public function interest()
-        {
-           $this->loadmaster();
-             $this->load->view('userprofilelayout');
-             $this->load->view('interest');
-             $this->load->view('footer');
-            
-        }
+       
         
-        public function adminPage()
-        {
-            //Home page titles
-          $this->loadmaster();
-            $this->load->view('userprofilelayout');
-            $this->load->view('adminPage');
-             $this->load->view('footer');
-        }
+        
         
 }
 

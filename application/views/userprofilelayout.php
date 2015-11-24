@@ -9,7 +9,7 @@
      <div  class="col-lg-3   " id="userlayoutresp" style="margin-left:60% " >
         <div class="dropdown pull-right">
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-        <img class="img-responsive"  style="height:1.3em;width:1.3em;float:left" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
+        <img class="img-responsive"  style="height:1.3em;width:1.3em;float:left" src="<?php echo base_url(); ?>/Uploads/imgfiles/<?php echo $dp?>" alt="">
         &nbsp;&nbsp;<?php echo $uname?>     
         
     <span class="caret"></span></button>
@@ -39,7 +39,7 @@
 <div class ="col-lg-12 box" >
     <div> <?php echo $uname?></div>
       <br><div>
-      <img class="img-responsive "  style="height:9em;width:12em" src="<?php echo base_url(); ?>/resources/img/me.jpg" alt="">
+      <img class="img-responsive "  style="height:9em;width:12em" src="<?php echo base_url(); ?>/Uploads/imgfiles/<?php echo $dp?>" alt="">
     </div>
                         <div > 
                             

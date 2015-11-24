@@ -198,8 +198,11 @@ function __construct(){
          if($umail!="")
          {
              $noticnt=$this->users->getnoticount($umail);
+            
+            $dp=$this->users->retrieve_dp($umail);
+            
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
-                 'uname'=>$uname,));
+                 'uname'=>$uname,'dp'=>$dp));
              $count=$this->recipes->checkifpresentincookbook($umail,$this->input->get('r_id'));
              $flag=1;
          } 
@@ -285,9 +288,12 @@ function __construct(){
           
          
            
-            $noticnt=$this->users->getnoticount($email);
+           $noticnt=$this->users->getnoticount($email);
+            
+            $dp=$this->users->retrieve_dp($email);
+            
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
-                 'uname'=>$uname,));
+                 'uname'=>$uname,'dp'=>$dp));
              
              $recipeid=$this->input->get('r_id');
              

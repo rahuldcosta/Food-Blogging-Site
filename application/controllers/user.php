@@ -22,6 +22,9 @@ function __construct(){
         $user_data =  array(
             'u_id' => $uid,
             'noticount' => 0,
+            'cookbook'=>array(),
+            'aboutyourself'=>"",
+            'gender'=>"",
             'name'=>$this->input->post('uname'),
             'email' => $this->input->post('email'),
             'password' => $this->input->post('password'),
@@ -107,9 +110,14 @@ function __construct(){
          
           $cb=$this->users->viewcookbook($email);
           $this->loadmaster();
-           $noticnt=$this->users->getnoticount($email);
+           
+          $noticnt=$this->users->getnoticount($email);
+            
+            $dp=$this->users->retrieve_dp($email);
+            
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
-                 'uname'=>$uname,));
+                 'uname'=>$uname,'dp'=>$dp));
+          
             $this->load->view('CookBook',array('cookbook'=>$cb));
             $this->load->view('footer');
          
@@ -169,9 +177,10 @@ function __construct(){
            
             $noticnt=$this->users->getnoticount($email);
             
+            $dp=$this->users->retrieve_dp($email);
             
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
-                 'uname'=>$uname,));
+                 'uname'=>$uname,'dp'=>$dp));
              $this->load->view('userPage');
              $this->load->view('footer');
             
@@ -203,8 +212,11 @@ function __construct(){
         //  print_r($listofrecipes);
           
             $noticnt=$this->users->getnoticount($email);
-              $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
-                 'uname'=>$uname,));
+            
+            $dp=$this->users->retrieve_dp($email);
+            
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,'dp'=>$dp));
             $this->load->view('myRecipes',array('listofrecipes'=>$listofrecipes,'alpa'=>"all",'type'=>"vfil"));
             $this->load->view('footer');
             
@@ -229,7 +241,12 @@ function __construct(){
                $setofrecipes=$this->recipes->view_fltered($pno,$this->session->userdata('wpara'),$this->session->userdata('dlimit')); 
               //  print_r($setofrecipes);
               $noticnt=$this->users->getnoticount($email);
-             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
+            
+            $dp=$this->users->retrieve_dp($email);
+            
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,'dp'=>$dp));
+             
             $this->load->view('myRecipes',array('listofrecipes'=>$setofrecipes,'alpa'=>"all",'type'=>"vfil"));
             $this->load->view('footer');
            // $this->load->view('indexedSearch',array('reciepesset'=> $setofrecipes,'alpa'=>$alp,'type'=>"vfil"));    
@@ -249,18 +266,24 @@ function __construct(){
          
          $notis=  $this->users->getnotifications($email);
          
-        // print_r($notis);
-        // $notifications=  $this->
-            //Home page titles
-         
-         
-         
+       
          
          $this->users->resetnoticount($email);
          
         
           $this->loadmaster();
-            $this->load->view('userprofilelayout',array('ncount'=>0));
+          
+          /////////////////////
+          $noticnt=$this->users->getnoticount($email);
+             $uname=  $this->users->retrieve_username($email);
+            $dp=$this->users->retrieve_dp($email);
+            
+             $this->load->view('userprofilelayout',array('ncount'=>0,
+                 'uname'=>$uname,'dp'=>$dp));
+          
+          
+          ///////////////////
+           // $this->load->view('userprofilelayout',array('ncount'=>0));
             $this->load->view('notifications',array('notis'=>$notis));
             $this->load->view('footer');
             
