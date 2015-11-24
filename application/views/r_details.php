@@ -260,11 +260,11 @@ if (res.stat)
                 <span>
                     
                     <div class="controls">
-                        <textarea  cols="40" id="commentarea"  placeholder="Post your comment here"></textarea>
+                        <textarea  cols="40" id="commentarea1"  placeholder="Post your comment here"></textarea>
                     </div>
                  </span>
                     <span>
-                    <button id="commentbtton" onclick="addcomment('<?php echo $r_id;?>',document.getElementById('commentarea').value,'<?php echo $uname;?>')" style="float:right;margin-top: -3em;">Comment</button>
+                    <button id="commentbtton" onclick="addcomment('<?php echo $r_id;?>',document.getElementById('commentarea1').value,'<?php echo $uname;?>')" style="float:right;margin-top: -3em;">Comment</button>
                  </span>
                       <?php
                     }
