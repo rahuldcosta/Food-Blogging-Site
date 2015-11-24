@@ -49,7 +49,7 @@
 										</div>
 									</div>
 								</form>
-                                                            <form id="register-form" action="./adminPage" method="post" role="form" style="display: none;">
+                                                            <form id="register-form" action="<?php echo site_url('user/adduser');?>" method="post" role="form" style="display: none;">
 									
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">

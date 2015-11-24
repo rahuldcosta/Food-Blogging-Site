@@ -59,7 +59,7 @@
                                          <?php   foreach($cookbook as $row) { $rid=$row['r_id'];?>
 					  <tr>
 						<td><?php $count++;echo $count ?></td>
-                                                <td> <a href="<?php echo site_url("recipe/viewrecipe?r_id=$rid");?>"><?php echo $row['r_name'] ?> </a></td>		
+                                                <td> <a href="<?php echo site_url("recipe/viewrecipe?r_id=$rid");?>"><?php echo $row['rname'] ?> </a></td>		
 						
 					  </tr>
                                          <?php } ?>
