@@ -209,11 +209,6 @@ function __construct(){
              $count=0;
              $flag=0;
          }
-         
-         if($recipearray[0]['author']==$umail)
-         {
-             $count=2;
-         }
             $this->load->view('r_details',
                     array(
                         'flagofcrud'=>$flagofcrud,
@@ -246,10 +241,12 @@ function __construct(){
    
    public function  addcomment()
    {
-       $uid="ron@gmail.com";
-       $uname="Rohan Da silva";
-   
-               $this->recipes->addnewcomment($this->input->post('r_id'),$uid,$uname,$this->input->post('comment'));
+       //$uid="ron@gmail.com";
+       //$uname="Rohan Da silva";
+       $uid=$this->session->userdata('email');
+        $uname=$this->users->retrieve_username($uid);
+       //$rr = $this->input->post('r_id');
+       $this->recipes->addnewcomment($this->input->post('r_id'),$uid,$uname,$this->input->post('comment'));
        
                 $data = array(
         'stat' => TRUE,
@@ -257,6 +254,7 @@ function __construct(){
                 );
             
             echo json_encode($data);
+       
    }
    
     public function  sendrating()

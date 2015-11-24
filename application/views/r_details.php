@@ -213,13 +213,10 @@ if (res.stat)
                          <?php 
                          if($flag==1) {
                          if ($count>0){
+                          ?>
+                         
+                         <button id="cookBookid" disabled=""class="btn btn-default" style="color:red" >+Added To CookBook</button>                     
                              
-                             
-                             if($count==1)
-                             { ?>
-                               <button id="cookBookid" disabled=""class="btn btn-default" style="color:red" >+Added To CookBook</button>                        
-                           <?php  }
-                             ?>
                        <?php      
                          }else {
 ?>
@@ -247,19 +244,34 @@ if (res.stat)
                            
                  <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "ur-db125168-a6f5-d1aa-768-d85ef4da539f", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>          
-                           
-                <div id="CommentArea" style="margin-top:1em;border:1px solid black;">
-                    <div id="ucomment"><h5>Your feedback...</h5>
+                   
+                
+                <div id="CommentArea" style="margin-top:1em;">
+                    <?php
+                    $this->load->model('users');
+                    $this->load->library('session');
+                    if($this->session->userdata('email')!=null){
+                        
+                    ?>
+                   <h5>Your feedback...</h5>
                 <span>
+                    
                     <div class="controls">
                         <textarea  cols="50" id="commentarea"  placeholder="Post your comment here"></textarea>
                     </div>
                  </span>
-                <span>
+                    <span>
                     <button id="commentbtton" onclick="addcomment('<?php echo $r_id;?>',document.getElementById('commentarea').value,'<?php echo $uname;?>')" style="float:right;margin-top: -3em;">Comment</button>
-                </span>
-                    </div>
+                 </span>
+                      <?php
+                    }
+                    
+                    ?>    
+               
+                      
+                 
                 <div id="oldcomments">
+                    <h5 style="font-weight: bold;font-family: 'Times New Roman', Times, serif;">Reviews from users...</h5>
                 <?php
               //  print_r($comments);
                 
@@ -268,8 +280,16 @@ if (res.stat)
                 ?>
                 <div style="margin-bottom:1em">
                     
+                <?php
+                if($row['uname']==null){
+                }
+                else{
+                ?>
                 <span style="margin-right: 3em"><?php echo $row['comment']?></span>
                 <span style="margin-right:3em;font-size: smaller">commented by <a href="myprofileR" > <?php echo $row['uname']?></a></span>
+                <?php
+                }
+                ?>
                 </div>
                 
                 <?php
