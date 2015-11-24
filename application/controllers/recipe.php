@@ -272,10 +272,14 @@ function __construct(){
         {
           $this->loadmaster();
           
-          $email="rahuldc99@gmail.com";
+          $email=$this->session->userdata('email');
+        $uname=  $this->users->retrieve_username($email);
           
-          $noticnt=$this->users->getnoticount($email);
-             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
+         
+           
+            $noticnt=$this->users->getnoticount($email);
+             $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,));
              
              $recipeid=$this->input->get('r_id');
              

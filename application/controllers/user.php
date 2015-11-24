@@ -180,11 +180,12 @@ function __construct(){
          
           $listofrecipes=$this->recipes->view_fltered($whereparameters);
           $this->session->set_userdata('wpara', $whereparameters);
-        
+        $uname=  $this->users->retrieve_username($email);
         //  print_r($listofrecipes);
           
             $noticnt=$this->users->getnoticount($email);
-             $this->load->view('userprofilelayout',array('ncount'=>$noticnt));
+              $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
+                 'uname'=>$uname,));
             $this->load->view('myRecipes',array('listofrecipes'=>$listofrecipes,'alpa'=>"all",'type'=>"vfil"));
             $this->load->view('footer');
             

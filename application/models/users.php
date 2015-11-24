@@ -58,6 +58,8 @@ function retrieve_user($username,$password){
 }
 
 function retrieve_username($email){
+    
+    $name="";
     $query=  $this->mongo_db
             ->select(array('name'))
             ->where(array('email'=> $email))
@@ -65,7 +67,15 @@ function retrieve_username($email){
       // echo(print_r($query));
     //echo(sizeof($query));
    // print_r($query);
-    return $query[0]['name'];
+    if($query[0]['name']=="")
+    {
+        $name="";
+            
+    }else
+    $name= $query[0]['name'];
+    
+    
+    return $name;
 }
 
 function updateuserProfile ($user_data,$email){
