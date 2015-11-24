@@ -209,6 +209,11 @@ function __construct(){
              $count=0;
              $flag=0;
          }
+         
+         if($recipearray[0]['author']==$umail)
+         {
+             $count=2;
+         }
             $this->load->view('r_details',
                     array(
                         'flagofcrud'=>$flagofcrud,

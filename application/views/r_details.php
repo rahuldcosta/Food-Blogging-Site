@@ -213,10 +213,13 @@ if (res.stat)
                          <?php 
                          if($flag==1) {
                          if ($count>0){
-                          ?>
-                         
-                         <button id="cookBookid" disabled=""class="btn btn-default" style="color:red" >+Added To CookBook</button>                     
                              
+                             
+                             if($count==1)
+                             { ?>
+                               <button id="cookBookid" disabled=""class="btn btn-default" style="color:red" >+Added To CookBook</button>                        
+                           <?php  }
+                             ?>
                        <?php      
                          }else {
 ?>
