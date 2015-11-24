@@ -166,7 +166,7 @@ if (res.stat)
                         </div>
 
                     </h5>
-                </div>
+             
                 <div  style="clear:both" class="col-md-5">
                                        <img class="img-responsive img-border-left" src="<?php echo base_url(); ?>/uploads/imgfiles/<?php echo $rurl?>" alt="">
                                        
@@ -248,16 +248,17 @@ if (res.stat)
                  <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "ur-db125168-a6f5-d1aa-768-d85ef4da539f", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>          
                            
-                <div id="CommentArea" style="margin-top:1em;border:1px solid black;width:52em">
-                <h5>Your feedback...</h5>
+                <div id="CommentArea" style="margin-top:1em;border:1px solid black;">
+                    <div id="ucomment"><h5>Your feedback...</h5>
                 <span>
                     <div class="controls">
-                        <textarea  cols="88" id="commentarea"  placeholder="Post your comment here"></textarea>
+                        <textarea  cols="50" id="commentarea"  placeholder="Post your comment here"></textarea>
                     </div>
                  </span>
                 <span>
-                    <button id="commentbtton" onclick="addcomment('<?php echo $r_id;?>',document.getElementById('commentarea').value,'<?php echo $uname;?>')" style="float:right;margin-top: -3em">Comment</button>
+                    <button id="commentbtton" onclick="addcomment('<?php echo $r_id;?>',document.getElementById('commentarea').value,'<?php echo $uname;?>')" style="float:right;margin-top: -3em;">Comment</button>
                 </span>
+                    </div>
                 <div id="oldcomments">
                 <?php
               //  print_r($comments);
@@ -282,7 +283,7 @@ if (res.stat)
                 
                 
             </div>
-  
+     </div>
              </div>
               </div>
         </div>
@@ -298,5 +299,4 @@ if (res.stat)
     <script src="<?php echo base_url(); ?>/resources/js/bootstrap.min.js"></script>
 
 </body>
-
 </html>
