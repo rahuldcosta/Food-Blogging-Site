@@ -17,19 +17,26 @@ function __construct(){
         
     }
     
-    public function adduser(){
+     public function adduser(){
         $uid=md5("user".time());
         $user_data =  array(
             'u_id' => $uid,
             'noticount' => 0,
-            'username' => $this->input->post('username'),
+            'name'=>$this->input->post('uname'),
             'email' => $this->input->post('email'),
             'password' => $this->input->post('password'),
+            'profilepic' => 'usr.png'
         );
         
+        $emailid = $this->input->post('email');
+        $sess_array = array(
+                    'email' => $emailid
+                );
+        $this->session->set_userdata($sess_array);
         $this->users->adduser($user_data);
-        
+        //$this->load->view('user/userprofilelayout',array('name'=>$emailid));
         redirect("user/userPage");
+        
     }
     
     public function userLogin(){
@@ -147,15 +154,22 @@ function __construct(){
         ));
     }
     
+     public function logout()
+        {
+         $this->session->sess_destroy();
+        }
     
     public function userPage()
         {
         $email=$this->session->userdata('email');
         $uname=  $this->users->retrieve_username($email);
-        echo $uname;
+       // echo $uname;
+       // echo $email;
            $this->loadmaster();
            
             $noticnt=$this->users->getnoticount($email);
+            
+            
              $this->load->view('userprofilelayout',array('ncount'=>$noticnt,
                  'uname'=>$uname,));
              $this->load->view('userPage');

@@ -126,11 +126,13 @@ function getnotifications($email)
 
 function getnoticount($email)
 {
+    echo $email;
     $rcount=$this->mongo_db
             ->select(array('noticount'))
             ->where(array('email'=>$email))
              ->get('users');
-    return $rcount[0]['noticount'];
+     print_r($rcount);
+   // return $rcount[0]['noticount'];
 }
 
 function resetnoticount($email)
@@ -149,7 +151,9 @@ function viewcookbook($email)
             ->select(array('cookbook'))
             ->where(array('email'=>$email))
              ->get('users');
+    if(isset($cookbook[0]['cookbook']))
     return $cookbook[0]['cookbook'];
+    else return $cookbook=array();
 }
 
 

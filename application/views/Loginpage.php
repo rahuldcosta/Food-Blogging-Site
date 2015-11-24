@@ -51,6 +51,9 @@
 								</form>
                                                             <form id="register-form" action="<?php echo site_url('user/adduser');?>" method="post" role="form" style="display: none;">
 									
+                                                                <div class="form-group">
+										<input type="text" name="uname" id="email" tabindex="1" class="form-control" placeholder="Enter Name" value="">
+									</div>
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
 									</div>

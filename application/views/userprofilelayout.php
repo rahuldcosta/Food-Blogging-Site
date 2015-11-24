@@ -18,7 +18,7 @@
         <li><a  href="<?php echo site_url('foodieHome/editprofile');?>"  style="cursor:pointer ;margin-left:3%" title="edit profile">Edit Profile</a></li>
         <li><a  href="<?php echo site_url('foodieHome/changepassword');?>" style="cursor:pointer ;margin-left:3%" title="change password">Change Password</a></li>
         <li><a   href="<?php echo site_url('foodieHome/helpPage');?>" style="cursor:pointer ;margin-left:3%" title="help">Help</a></li>
-        <li><a   href="<?php echo site_url('foodieHome/login');?>" style="cursor:pointer ;margin-left:3%" title="logout">Logout</a></li>
+        <li><a   href="<?php echo site_url('user/logout');?>" style="cursor:pointer ;margin-left:3%" title="logout">Logout</a></li>
         <li><a  href="<?php echo site_url('user/notifications');?>" style="cursor:pointer ;margin-left:3%" title="Notifications">Notifications
                                 
                                 <?php
