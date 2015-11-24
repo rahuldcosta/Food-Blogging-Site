@@ -67,12 +67,12 @@ function retrieve_username($email){
       // echo(print_r($query));
     //echo(sizeof($query));
    // print_r($query);
-    if($query[0]['name']=="")
+    if(isset($query[0]['name']))
     {
-        $name="";
+        $name=$query[0]['name'];
             
     }else
-    $name= $query[0]['name'];
+    $name= "";
     
     
     return $name;
